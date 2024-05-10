@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Seat extends Model
 {
     use HasFactory;
+    //fillable theather id, row, seat_number
 }

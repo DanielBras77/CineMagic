@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Configuration extends Model
 {
     use HasFactory;
+    //timestamps false
+
+    //fillable com os 2 campos
 }
