@@ -3,13 +3,16 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, Notifiable,SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -20,6 +23,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'type',
+        'blocked',
+        'photo_filename',
     ];
 
     /**
@@ -43,5 +49,30 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function customer():HasOne
+    {
+        // Se a chave puder ser apagada temos que conseguir ver o cliente à mesma
+        return $this->hasOne(Customer::class)->withTrashed();
+    }
+
+    public function tickets():HasMany
+    {
+        // O ticket não pode ser apagado
+        return $this->hasMany(Ticket::class);
+    }
+
+    //Meter aqui função getPhotoFull....
+
+    public function getPhotoFullUrlAttribute()
+    {
+        debug($this->photo_filename);
+
+        if ($this->photo_filename && Storage::exists("public/photos/{$this->photo_filename}")) {
+            return asset("storage/photos/{$this->photo_filename}");
+        } else {
+            return asset("img/anonymous.png");
+        }
     }
 }

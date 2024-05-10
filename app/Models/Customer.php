@@ -15,6 +15,7 @@ class Customer extends Model
 
     public function user():BelongsTo
     {
+        // O primeiro id é chave estrangeira e o segundo é primária do user
         return $this->belongsTo(User::class, 'id', 'id')->withTrashed();
     }
 }
