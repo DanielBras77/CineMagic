@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('header-title', $department->name)
+@section('header-title', $genre->name)
 
 @section('main')
 <div class="flex flex-col space-y-6">
@@ -8,20 +8,20 @@
         <div class="max-full">
             <section>
                 <div class="flex flex-wrap justify-end items-center gap-4 mb-4">
-                    @can('create', App\Models\Department::class)
+                    @can('create', App\Models\Genre::class)
                     <x-button
-                        href="{{ route('departments.create') }}"
+                        href="{{ route('genres.create') }}"
                         text="New"
                         type="success"/>
                     @endcan
-                    @can('update', $department)
+                    @can('update', $genre)
                     <x-button
-                        href="{{ route('departments.edit', ['department' => $department]) }}"
+                        href="{{ route('genres.edit', ['genre' => $genre]) }}"
                         text="Edit"
                         type="primary"/>
                     @endcan
-                    @can('delete', $department)
-                    <form method="POST" action="{{ route('departments.destroy', ['department' => $department]) }}">
+                    @can('delete', $genre)
+                    <form method="POST" action="{{ route('genres.destroy', ['genre' => $genre]) }}">
                         @csrf
                         @method('DELETE')
                         <x-button
@@ -33,23 +33,26 @@
                 </div>
                 <header>
                     <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-                        Department "{{ $department->name }}"
+                        Genre "{{ $genre->name }}"
                     </h2>
                 </header>
                 <div class="mt-6 space-y-4">
-                    @include('departments.shared.fields', ['mode' => 'show'])
+                    @include('genres.shared.fields', ['mode' => 'show'])
                 </div>
-                @can('viewAny', App\Models\Teacher::class)
+                @can('viewAny', App\Models\Movie::class)
                     <h3 class="pt-16 pb-4 text-2xl font-medium text-gray-900 dark:text-gray-100">
-                        Teachers
+                        Moveis
                     </h3>
-                    <x-teachers.table :teachers="$department->teachers"
-                        :showDepartment="false"
+                    <!--
+                    <x-teachers.table :teachers="$genre->teachers"
+                        :showGenre="false"
                         :showView="true"
                         :showEdit="false"
                         :showDelete="false"
                         class="pt-4"
                         />
+
+                        mostrar movies ver como está nos departamentos a mostrar teachers -->
                 @endcan
             </section>
         </div>
