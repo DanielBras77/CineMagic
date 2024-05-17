@@ -2,17 +2,18 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Movie extends Model
 {
     use HasFactory, SoftDeletes;
 
-    // protected $fillable=['title','genre_code', 'poster_filename', 'synopsis', 'trailer_url'];
-
-
+    protected $fillable=['title','genre_code','year', 'poster_filename', 'synopsis', 'trailer_url'];
 
 
     public function getPosterFullUrlAttribute()
@@ -26,7 +27,19 @@ class Movie extends Model
         }
     }
 
-    //genre this seta belongs to with trashed
+
+    public function genre():BelongsTo
+    {
+        return $this->belongsTo(Genre::class, 'genre_code', 'code')->withTrashed();
+    }
 
     //has many screeeningsssssssssssss
+ /* genre this seta belongs to with trashed
+    public function screenings():HasMany
+    {
+        return $this->hasMany(Screening::class, '', '');
+    }
+
+
+     */
 }

@@ -8,7 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Configuration extends Model
 {
     use HasFactory;
-    //timestamps false
 
-    //fillable com os 2 campos
+    public $timestamps = false;
+    protected $fillable=['ticket_price','registered_customer_ticket_discount'];
+
+    // Não tem relacionamentos
 }

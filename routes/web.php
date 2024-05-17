@@ -1,11 +1,15 @@
 <?php
 
-use App\Http\Controllers\CourseController;
-use App\Http\Controllers\DisciplineController;
 use Illuminate\Support\Facades\Route;
-
-// Route::get('/', function () {
-//     return view('welcome');
-// })->name('home');
+use App\Http\Controllers\ProfileController;
 
 Route::view('/', 'home')->name('home');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/password', [ProfileController::class, 'editPassword'])->name('profile.edit.password');
+});
+
+
+Route::view('/dashboard', 'dashboard')->name('dashboard');
+
+require __DIR__ . '/auth.php';
