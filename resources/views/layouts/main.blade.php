@@ -34,58 +34,45 @@
                     <div id="menu-container" class="grow flex flex-col sm:flex-row items-stretch
                     invisible h-0 sm:visible sm:h-auto">
                         <!-- Menu Item: Courses -->
-                        <x-menus.menu-item
-                            content="Filmes"
-                            href="#"
-                            selected="#"
-                        />
+                        <x-menus.menu-item content="Filmes" href="#" selected="#" />
 
                         <div class="grow"></div>
 
                         <!-- Menu Item: Cart -->
-                        <x-menus.cart
-                            href="#"
-                            selectable="0"
-                            selected="1"
-                            total="2"/>
+                        <x-menus.cart href="#" selectable="0" selected="1" total="2" />
 
-                        <x-menus.submenu
-                            selectable="0"
-                            uniqueName="submenu_user"
-                            >
+                        @auth
+                        <x-menus.submenu selectable="0" uniqueName="submenu_user">
                             <x-slot:content>
                                 <div class="pe-1">
-                                    <img src="{{ Vite::asset('resources/img/photos/photo_example.jpeg') }}" class="w-11 h-11 min-w-11 min-h-11 rounded-full">
+                                    <img src="{{ Auth::user()->photoFullUrl}}" class="w-11 h-11 min-w-11 min-h-11 rounded-full">
                                 </div>
                                 {{-- ATENÇÃO - ALTERAR FORMULA DE CALCULO DAS LARGURAS MÁXIMAS QUANDO O MENU FOR ALTERADO --}}
                                 <div class="ps-1 sm:max-w-[calc(100vw-39rem)] md:max-w-[calc(100vw-41rem)] lg:max-w-[calc(100vw-46rem)] xl:max-w-[34rem] truncate">
-                                    João Miguel da Silva Pereira Antunes
+                                    {{ Auth::user()->name }}
                                 </div>
-                            </x-slot>
-                             <!-- Por um também para "meus bilhetes" -->
-                            <x-menus.submenu-item
-                                content="Profile"
-                                selectable="0"
-                                href="#"/>
-                            <x-menus.submenu-item
-                                content="Change Password"
-                                selectable="0"
-                                href="#"/>
-                            <hr>
-                            <x-menus.submenu-item
-                                content="Log Out"
-                                selectable="0"
-                                href="#"/>
+                                </x-slot>
+                                <hr>
+                                <x-menus.submenu-item content="Profile" selectable="0" href="#" />
+                                <x-menus.submenu-item content="Change Password" selectable="0" href="{{ route('profile.edit.password') }}" />
+
+                                <hr>
+                                <form id="form_to_logout_from_menu" method="POST" action="{{ route('logout') }}" class="hidden">
+                                    @csrf
+                                </form>
+                                <x-menus.submenu-item content="Log Out" selectable="0" form="form_to_logout_from_menu" />
                         </x-menus.submenu>
+                        @else
+                        <!-- Menu Item: Login -->
+                        <x-menus.menu-item content="Login" selectable="1" href="{{ route('login') }}" selected="{{ Route::currentRouteName() == 'login'}}" />
+                        @endauth
                     </div>
                     <!-- Hamburger -->
                     <div class="absolute right-0 top-0 flex sm:hidden pt-3 pe-3 text-black dark:text-gray-50">
                         <button id="hamburger_btn">
                             <svg class="h-8 w-8" stroke="currentColor" fill="none" viewBox="0 0 24 24">
-                                <path id="hamburger_btn_open" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                                <path class="invisible" id="hamburger_btn_close" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                <path id="hamburger_btn_open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                                <path class="invisible" id="hamburger_btn_close" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
                         </button>
                     </div>
@@ -108,12 +95,12 @@
         <main>
             <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
                 @if (session('alert-msg'))
-                    <x-alert type="{{ session('alert-type') ?? 'info' }}">
-                        {!! session('alert-msg') !!}
-                    </x-alert>
+                <x-alert type="{{ session('alert-type') ?? 'info' }}">
+                    {!! session('alert-msg') !!}
+                </x-alert>
                 @endif
                 @if (!$errors->isEmpty())
-                        <x-alert type="warning" message="Operation failed because there are validation errors!"/>
+                <x-alert type="warning" message="Operation failed because there are validation errors!" />
                 @endif
                 @yield('main')
             </div>
