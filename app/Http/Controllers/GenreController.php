@@ -2,64 +2,95 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Genre;
 use Illuminate\Http\Request;
+use App\Models\Genre;
+use App\Models\Movie;
+use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\GenreFormRequest;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class GenreController extends Controller
+class GenreController extends \Illuminate\Routing\Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    use AuthorizesRequests;
+
+    public function __construct()
     {
-        //
+        $this->authorizeResource(Genre::class);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function index(): View
     {
-        //
+        return view('genres.index')
+            ->with('genres', Genre::orderBy('name')->paginate(20)->withQueryString());
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function create(): View
     {
-        //
+        $newGenre = new Genre();
+        return view('genres.create')
+            ->with('genre', $newGenre);
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Genre $genre)
+    public function store(GenreFormRequest $request): RedirectResponse
     {
-        //
+        $newGenre = Genre::create($request->validated());
+        $url = route('genres.show', ['genre' => $newGenre]);
+        $htmlMessage = "Genre <a href='$url'><u>{$newGenre->name}</u></a> ({$newGenre->code}) has been created successfully!";
+        return redirect()->route('genres.index')
+            ->with('alert-type', 'success')
+            ->with('alert-msg', $htmlMessage);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Genre $genre)
+    public function edit(Genre $genre): View
     {
-        //
+        return view('genres.edit')
+            ->with('genre', $genre);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Genre $genre)
+    public function update(GenreFormRequest $request, Genre $genre): RedirectResponse
     {
-        //
+        $genre->update($request->validated());
+        $url = route('genres.show', ['genre' => $genre]);
+        $htmlMessage = "Genre <a href='$url'><u>{$genre->name}</u></a> ({$genre->code}) has been updated successfully!";
+        return redirect()->route('genres.index')
+            ->with('alert-type', 'success')
+            ->with('alert-msg', $htmlMessage);
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Genre $genre)
+    public function destroy(Genre $genre): RedirectResponse
     {
-        //
+        try {
+            $url = route('genres.show', ['genre' => $genre]);
+
+            $totalMovies = $genre->movies()->count();
+            if ($totalMovies == 0) {
+                $genre->delete();
+                $alertType = 'success';
+                $alertMsg = "Genre {$genre->name} ({$genre->code}) has been deleted successfully!";
+            } else {
+                $alertType = 'warning';
+                $justification = match (true) {
+                    $totalMovies <= 0 => "",
+                    $totalMovies == 1 => "there is 1 movie in the genre",
+                    $totalMovies > 1 => "there are $totalMovies movies in the genre",
+                };
+                $alertMsg = "Genre <a href='$url'><u>{$genre->name}</u></a> ({$genre->code}) cannot be deleted because $justification.";
+            }
+        } catch (\Exception $error) {
+            $alertType = 'danger';
+            $alertMsg = "It was not possible to delete the genre
+                            <a href='$url'><u>{$genre->name}</u></a> ({$genre->code})
+                            because there was an error with the operation!";
+        }
+        return redirect()->route('genres.index')
+            ->with('alert-type', $alertType)
+            ->with('alert-msg', $alertMsg);
+    }
+
+    public function show(Genre $genre): View
+    {
+        return view('genres.show')->with('genre', $genre);
     }
 }
