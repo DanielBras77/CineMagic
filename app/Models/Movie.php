@@ -34,10 +34,10 @@ class Movie extends Model
     }
 
     //has many screeeningsssssssssssss
- /* genre this seta belongs to with trashed
+ /*
     public function screenings():HasMany
     {
-        return $this->hasMany(Screening::class, '', '');
+        return $this->hasMany(Screening::class, 'movie_id', 'id');
     }
 
 

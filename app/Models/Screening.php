@@ -18,12 +18,13 @@ class Screening extends Model
     {
         return $this->hasMany(Ticket::class);
     }
-/* Aqui acho que é belong to with trashed
-    public function theaters():HasMany
+
+    public function theater():BelongsTo
     {
-        return $this->hasMany(Theater::class);
+        return $this->belongsTo(Theater::class, '', '')->withTrashed(); //confirmar se está bem
     }
-*/
+
+
     public function movie():BelongsTo
     {
         return $this->belongsTo(Movie::class, 'movie_id', 'id')->withTrashed(); //confirmar se está bem

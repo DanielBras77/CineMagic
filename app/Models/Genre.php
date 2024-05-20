@@ -21,7 +21,6 @@ class Genre extends Model
 
     public function movies():HasMany
     {
-        // O ticket não pode ser apagado
         return $this->hasMany(Movie::class, 'genre_code', 'code');
     }
 
