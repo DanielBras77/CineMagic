@@ -58,12 +58,6 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(Customer::class)->withTrashed();
     }
 
-    public function tickets():HasMany
-    {
-        // O ticket não pode ser apagado
-        return $this->hasMany(Ticket::class);
-    }
-
 
     public function getPhotoFullUrlAttribute()
     {

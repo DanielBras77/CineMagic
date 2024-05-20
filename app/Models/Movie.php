@@ -33,6 +33,7 @@ class Movie extends Model
         return $this->belongsTo(Genre::class, 'genre_code', 'code')->withTrashed();
     }
 
+
     public function screenings():HasMany
     {
         return $this->hasMany(Screening::class, 'movie_id', 'id');

@@ -21,12 +21,12 @@ class Screening extends Model
 
     public function theater():BelongsTo
     {
-        return $this->belongsTo(Theater::class, '', '')->withTrashed(); //confirmar se está bem
+        return $this->belongsTo(Theater::class, 'theather_id', 'id')->withTrashed();
     }
 
 
     public function movie():BelongsTo
     {
-        return $this->belongsTo(Movie::class, 'movie_id', 'id')->withTrashed(); //confirmar se está bem
+        return $this->belongsTo(Movie::class, 'movie_id', 'id')->withTrashed();
     }
 }
