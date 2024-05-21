@@ -13,7 +13,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasFactory, Notifiable,SoftDeletes;
+    use HasFactory, Notifiable, SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -52,7 +52,7 @@ class User extends Authenticatable implements MustVerifyEmail
         ];
     }
 
-    public function customer():HasOne
+    public function customer(): HasOne
     {
         // Se a chave puder ser apagada temos que conseguir ver o cliente à mesma
         return $this->hasOne(Customer::class)->withTrashed();

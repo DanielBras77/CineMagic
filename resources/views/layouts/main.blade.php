@@ -7,7 +7,7 @@
 
     <!-- Icon and Title -->
     <title>CineMagic</title>
-    <link rel="icon" type="image/png" href="../../public/img/logoCinemagic.png" >
+    <link rel="icon" type="image/png" href="../../../img/logoCinemagic.png" >
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
