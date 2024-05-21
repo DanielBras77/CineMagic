@@ -26,13 +26,14 @@
                     <!-- Logo -->
                     <div class="shrink-0 -ms-4">
                         <a href="{{ route('home')}}">
-                            <div class="h-16 w-20 bg-cover bg-[url('../img/logoCinemagic.png')] dark:bg-[url('../img/politecnico_h_white.svg')]"></div>
+                        <div class="h-16 w-20 bg-no-repeat bg-center bg-contain bg-[url('../img/logoCinemagic.png')] dark:bg-[url('../img/logoCinemagic.png')]"></div>
                         </a>
                     </div>
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">CineMagic</span>
 
                     <!-- Menu Items -->
                     <div id="menu-container" class="grow flex flex-col sm:flex-row items-stretch
-                    invisible h-0 sm:visible sm:h-auto">
+                    invisible h-0 sm:visible sm:h-auto ms-14">
                         <!-- Menu Item: Courses -->
                         <x-menus.menu-item content="Filmes" href="#" selected="#" />
 
