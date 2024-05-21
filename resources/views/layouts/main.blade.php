@@ -5,10 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Icon and Title -->
     <title>CineMagic</title>
+    <link rel="icon" type="image/png" href="../../public/img/logoCinemagic.png" >
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <!-- Scripts AND CSS Fileds -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -34,8 +38,8 @@
                     <!-- Menu Items -->
                     <div id="menu-container" class="grow flex flex-col sm:flex-row items-stretch
                     invisible h-0 sm:visible sm:h-auto ms-14">
-                        <!-- Menu Item: Courses -->
-                        <x-menus.menu-item content="Filmes" href="#" selected="#" />
+                        <!-- Menu Item: Films -->
+                        <x-menus.menu-item content="Films" href="#" selected="#" />
 
                         <div class="grow"></div>
 
