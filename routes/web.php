@@ -11,10 +11,13 @@ use App\Http\Controllers\TheaterController;
 use App\Http\Controllers\TicketController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+
 /*use App\Models\Genre;
 use App\Models\User;*/
 
-Route::view('/', 'home')->name('home');
+
+//Route::view('/', 'home')->name('home');
 
 Route::middleware('auth')->group(function () {
     Route::get('/password', [ProfileController::class, 'editPassword'])->name('profile.edit.password');
@@ -26,7 +29,7 @@ Route::view('/dashboard', 'dashboard')->name('dashboard');
 require __DIR__ . '/auth.php';
 
 
-
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource("genres", GenreController::class);
 Route::resource("user", UserController::class);
 Route::resource("costumers", CustomerController::class);
