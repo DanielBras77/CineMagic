@@ -27,4 +27,3 @@ require __DIR__ . '/auth.php';
 
 
 Route::resource("genres", GenreController::class);
-Route::resource("user", UserController::class);
