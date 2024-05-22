@@ -7,9 +7,10 @@ use Illuminate\View\View;
 
 class HomeController extends Controller
 {
-    public function index(): View
+    public function index()
     {
-        $genres = Genre::orderBy('name')->get();
-        return view('home')->with('genres', $genres);
+        //public function index(): View
+        //$movies = Movie::orderBy('name')->get();
+        //return view('home')->with('genres', $genres);
     }
 }
