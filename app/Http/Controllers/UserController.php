@@ -2,80 +2,60 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
-use App\Models\Movie;
+use App\Models\User;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
-use App\Http\Requests\GenreFormRequest;
+use App\Http\Requests\UserFormRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class UserController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index(Request $request) // pode precisar de altecoes
+      /*  use AuthorizesRequests;
+    public function __construct()
     {
-        // Pegar os parâmetros de filtro (se houver)
-        $email = $request->input('email', '');
+        $this->authorizeResource(User::class);
+    }*/
 
-        // Buscar usuários, você pode adicionar filtros aqui
-        $users = User::query()
-            ->when($email, function ($query, $email) {
-                return $query->where('email', 'like', '%' . $email . '%');
-            })
-            ->paginate(10);
 
-        return view('user.index', compact('users', 'email'));
+    public function index()
+    {
+        return view('user.index');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
-        //
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
-        //
+
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(User $user)
+
+    public function show(Ticket $ticket)
     {
-        //
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(User $user)
+
+    public function edit(Ticket $ticket)
     {
-        //
+
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Ticket $ticket)
     {
-        //
+
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(User $user)
+
+    public function destroy(Ticket $ticket)
     {
-        //
+
     }
 }

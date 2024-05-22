@@ -19,7 +19,7 @@
                     type="success"/>
             </div>
             <div class="mt-4">
-                {{ $users->links() }}
+                {{ $user->links() }}
             </div>
         </div>
     </div>
