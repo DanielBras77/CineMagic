@@ -59,7 +59,7 @@ class CustomerController extends Controller
 
         return view(
             'customers.index',
-            compact('customers', 'courseOptions', 'filterByCourse', 'filterByName')
+            compact('customers', 'courseOptions', 'filterByCourse', 'filterByName') //Courseeeeeeeeeeeeeeeeeeeeeee
         );
     }
 
@@ -95,7 +95,7 @@ class CustomerController extends Controller
             $newUser->save();
             $newCustomer = new Customer();
             $newCustomer->user_id = $newUser->id;
-            $newCustomer->course = $validatedData['course'];
+            $newCustomer->course = $validatedData['course'];  // Courseeeeeeeeeeeeeeee
             $newCustomer->number = $validatedData['number'];
             $newCustomer->save();
             if ($request->hasFile('photo_file')) {
