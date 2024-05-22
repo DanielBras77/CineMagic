@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('header-title', 'Register')
+@section('header-title', 'Signup')
 
 @section('main')
     <div class="min-h-screen flex flex-col justify-start items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
@@ -48,11 +48,11 @@
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                    {{ __('Already signed up?') }}
                 </a>
 
                 <x-primary-button class="ms-4">
-                    {{ __('Register') }}
+                    {{ __('Signup') }}
                 </x-primary-button>
             </div>
         </form>
