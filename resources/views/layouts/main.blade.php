@@ -7,7 +7,7 @@
 
     <!-- Icon and Title -->
     <title>CineMagic</title>
-    <link rel="icon" type="image/png" href="../../../img/logoCinemagic.png" >
+    <link rel="icon" type="image/png" href="../../../img/logoCinemagic.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
@@ -20,7 +20,6 @@
 
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-gray-100 dark:bg-gray-800">
-
         <!-- Navigation Menu -->
         <nav class="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800">
             <!-- Navigation Menu Full Container -->
@@ -30,7 +29,7 @@
                     <!-- Logo -->
                     <div class="shrink-0 -ms-4">
                         <a href="{{ route('home')}}">
-                        <div class="h-16 w-20 bg-no-repeat bg-center bg-contain bg-[url('../img/logoCinemagic.png')] dark:bg-[url('../img/logoCinemagic.png')]"></div>
+                            <div class="h-16 w-20 bg-no-repeat bg-center bg-contain bg-[url('../img/logoCinemagic.png')] dark:bg-[url('../img/logoCinemagic.png')]"></div>
                         </a>
                     </div>
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">CineMagic</span>
@@ -38,6 +37,12 @@
                     <!-- Menu Items -->
                     <div id="menu-container" class="grow flex flex-col sm:flex-row items-stretch
                     invisible h-0 sm:visible sm:h-auto ms-14">
+                        <!-- Menu Item: Home -->
+                        <x-menus.menu-item content="Home" href="#" selected="#" />
+                        <!-- Menu Item: Films -->
+                        <x-menus.menu-item content="Films" href="#" selected="#" />
+                        <!-- Menu Item: Films -->
+                        <x-menus.menu-item content="Films" href="#" selected="#" />
                         <!-- Menu Item: Films -->
                         <x-menus.menu-item content="Films" href="#" selected="#" />
 
@@ -86,16 +91,13 @@
         </nav>
 
         <!-- Page Heading -->
-        <header class="bg-white dark:bg-gray-900 shadow">
+        <!--<header class="bg-white dark:bg-gray-900 shadow">
             <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                <h4 class="mb-1 text-base text-gray-500 dark:text-gray-400 leading-tight">
-                    CineMagic
-                </h4>
                 <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
                     @yield('header-title')
                 </h2>
             </div>
-        </header>
+        </header>-->
 
         <main>
             <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">

@@ -41,7 +41,7 @@
                 </div>
                 @can('viewAny', App\Models\Movie::class)
                     <h3 class="pt-16 pb-4 text-2xl font-medium text-gray-900 dark:text-gray-100">
-                        Moveis
+                        Movies
                     </h3>
                     <!--
                     <x-teachers.table :teachers="$genre->teachers"
