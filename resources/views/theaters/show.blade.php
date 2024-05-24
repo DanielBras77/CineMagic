@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('header-title', 'Administrative "' . $administrative->name . '"')
+@section('header-title', 'Theater "' . $theater->name . '"')
 
 @section('main')
 <div class="flex flex-col space-y-6">
@@ -9,14 +9,14 @@
             <section>
                 <div class="flex flex-wrap justify-end items-center gap-4 mb-4">
                     <x-button
-                        href="{{ route('administratives.create', ['administrative' => $administrative]) }}"
+                        href="{{ route('theaters.create', ['theater' => $theater]) }}"
                         text="New"
                         type="success"/>
                     <x-button
-                        href="{{ route('administratives.edit', ['administrative' => $administrative]) }}"
+                        href="{{ route('theaters.edit', ['theater' => $theater]) }}"
                         text="Edit"
                         type="primary"/>
-                    <form method="POST" action="{{ route('administratives.destroy', ['administrative' => $administrative]) }}">
+                    <form method="POST" action="{{ route('theaters.destroy', ['theater' => $theater]) }}">
                         @csrf
                         @method('DELETE')
                         <x-button
@@ -27,10 +27,10 @@
                 </div>
                 <header>
                     <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-                        Administrative "{{ $administrative->name }}"
+                        Theater "{{ $theater->name }}"
                     </h2>
                 </header>
-                @include('administratives.shared.fields', ['mode' => 'show'])
+                @include('theaters.shared.fields', ['mode' => 'show'])
             </section>
         </div>
     </div>
