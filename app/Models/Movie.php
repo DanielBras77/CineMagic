@@ -36,7 +36,7 @@ class Movie extends Model
 
     public function screenings():HasMany
     {
-        return $this->hasMany(Screening::class, 'movie_id', 'id');
+        return $this->hasMany(Screening::class);
     }
 
 }

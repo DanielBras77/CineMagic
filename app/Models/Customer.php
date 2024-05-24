@@ -23,6 +23,6 @@ class Customer extends Model
     public function purchases():HasMany
     {
         // O ticket não pode ser apagado
-        return $this->hasMany(Purchase::class, 'customer_id', 'id');
+        return $this->hasMany(Purchase::class);
     }
 }

@@ -11,8 +11,8 @@ class Genre extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $primaryKey='code';
-    public $incrementing=false;
+    protected $primaryKey = 'code';
+    public $incrementing = false;
     public $timestamps = false;
     protected $keyType = "string";
 
