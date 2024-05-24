@@ -14,14 +14,21 @@ class MovieController extends Controller
 {
     public function index(): View
     {
-        $allMovie = Movie::paginate(20);
+        $allMovies = Movie::paginate(20);
         return view('movies.index')->with('allMovies', $allMovies);
     }
+  
+    /*
+
+    Ver para que serve
 
     public function showCase(): View
     {
         return view('movies.showcase');
     }
+
+    
+    */
 
     public function create(): View
     {
@@ -33,7 +40,7 @@ class MovieController extends Controller
     {
         $newMovie = Movie::create($request->validated());
         $url = route('movies.show', ['movie' => $newMovie]);
-        $htmlMessage = "Course <a href='$url'><u>{$newMovie->name}</u></a> ({$newMovie->abbreviation}) has been created successfully!";
+        $htmlMessage = "Course <a href='$url'><u>{$newMovie->name}</u></a> ({$newMovie->id}) has been created successfully!";
         return redirect()->route('courses.index')
             ->with('alert-type', 'success')
             ->with('alert-msg', $htmlMessage);
