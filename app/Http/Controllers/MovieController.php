@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Movie;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
-use Illuminate\Http\RedirectResponse;
-use App\Http\Requests\CourseFormRequest;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\MovieFormRequest;
+use App\Http\Requests\CourseFormRequest;
 
 class MovieController extends Controller
 {
