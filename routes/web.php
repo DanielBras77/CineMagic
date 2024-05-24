@@ -27,11 +27,10 @@ Route::view('/dashboard', 'dashboard')->name('dashboard');
 
 require __DIR__ . '/auth.php';
 
-
 Route::view('/', 'home')->name('home');
 //Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::resource('movies', MovieController::class);
 Route::resource("genres", GenreController::class);
 Route::resource("theaters",TheaterController::class);
 Route::resource("user", UserController::class);
 Route::resource("costumers", CustomerController::class);
-Route::resource('movie', MovieController::class);

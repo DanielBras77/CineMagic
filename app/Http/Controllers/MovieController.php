@@ -5,24 +5,28 @@ namespace App\Http\Controllers;
 use App\Models\Movie;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;
+use App\Http\Requests\CourseFormRequest;
+use Illuminate\Support\Facades\DB;
 
 class MovieController extends Controller
 {
-
     public function index(): View
     {
         $allMovies = Movie::paginate(20);
         return view('movies.index')->with('allMovies', $allMovies);
     }
-
+  
     /*
 
     Ver para que serve
+
     public function showCase(): View
     {
         return view('movies.showcase');
     }
+
     
     */
 
@@ -32,8 +36,7 @@ class MovieController extends Controller
         return view('movies.create')->with('movie', $newMovie);
     }
 
-
-    public function store(Request $request): RedirectResponse
+    public function store(MovieFormRequest $request): RedirectResponse
     {
         $newMovie = Movie::create($request->validated());
         $url = route('movies.show', ['movie' => $newMovie]);
@@ -43,19 +46,12 @@ class MovieController extends Controller
             ->with('alert-msg', $htmlMessage);
     }
 
-    public function show(Movie $movie): View
-    {
-        return view('movies.show')->with('movie', $movie);
-    }
-
-
     public function edit(Movie $movie): View
     {
         return view('movie.edit')->with('movie', $movie);
     }
 
-
-    public function update(Request $request, Movie $movie): RedirectResponse
+    public function update(MovieFormRequest $request, Movie $movie): RedirectResponse
     {
         $movie->update($request->validated());
         $url = route('movies.show', ['movie' => $movie]);
@@ -64,14 +60,9 @@ class MovieController extends Controller
             ->with('alert-type', 'success')
             ->with('alert-msg', $htmlMessage);
     }
-
-
-    public function destroy(Movie $movie)
+/*
+    public function destroy(Movie $movie): RedirectResponse
     {
-        /*
-
-        public function destroy(Movie $movie): RedirectResponse
-
         try {
             $url = route('movie.show', ['movie' => $movie]);
             $totalStudents = DB::scalar(
@@ -110,7 +101,10 @@ class MovieController extends Controller
         return redirect()->back()
             ->with('alert-type', $alertType)
             ->with('alert-msg', $alertMsg);
-
-            */
+    }
+*/
+    public function show(Movie $movie): View
+    {
+        return view('movies.show')->with('movie', $movie);
     }
 }
