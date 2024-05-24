@@ -47,12 +47,12 @@ class MovieController extends Controller
     {
         $movie->update($request->validated());
         $url = route('movies.show', ['movie' => $movie]);
-        $htmlMessage = "Movie <a href='$url'><u>{$movie->name}</u></a> ({$movie->abbreviation}) has been updated successfully!";
+        $htmlMessage = "Movie <a href='$url'><u>{$movie->name}</u></a> ({$movie->id}) has been updated successfully!";
         return redirect()->route('movies.index')
             ->with('alert-type', 'success')
             ->with('alert-msg', $htmlMessage);
     }
-
+/*
     public function destroy(Movie $movie): RedirectResponse
     {
         try {
@@ -94,7 +94,7 @@ class MovieController extends Controller
             ->with('alert-type', $alertType)
             ->with('alert-msg', $alertMsg);
     }
-
+*/
     public function show(Movie $movie): View
     {
         return view('movies.show')->with('movie', $movie);
