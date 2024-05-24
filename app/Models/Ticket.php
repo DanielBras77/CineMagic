@@ -14,16 +14,16 @@ class Ticket extends Model
 
     public function purchase(): BelongsTo
     {
-        return $this->belongsTo(Purchase::class, 'purchase_id', 'id');
+        return $this->belongsTo(Purchase::class);
     }
 
     public function seat(): BelongsTo
     {
-        return $this->belongsTo(Seat::class, 'seat_id', 'id')->withTrashed();
+        return $this->belongsTo(Seat::class)->withTrashed();
     }
 
     public function screening(): BelongsTo
     {
-        return $this->belongsTo(Screening::class, 'screening_id', 'id');
+        return $this->belongsTo(Screening::class);
     }
 }

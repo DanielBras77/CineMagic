@@ -55,7 +55,7 @@ class User extends Authenticatable implements MustVerifyEmail
     public function customer(): HasOne
     {
         // Se a chave puder ser apagada temos que conseguir ver o cliente à mesma
-        return $this->hasOne(Customer::class)->withTrashed();
+        return $this->hasOne(Customer::class, 'id', 'id')->withTrashed();
     }
 
 
