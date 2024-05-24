@@ -13,18 +13,6 @@ class Screening extends Model
 
     protected $fillable=['movie_id','theater_id', 'date', 'start_time'];
 
-
-    public function tickets():HasMany
-    {
-        return $this->hasMany(Ticket::class);
-    }
-
-    public function theater():BelongsTo
-    {
-        return $this->belongsTo(Theater::class, 'theather_id', 'id')->withTrashed();
-    }
-
-
     public function movie():BelongsTo
     {
         return $this->belongsTo(Movie::class, 'movie_id', 'id')->withTrashed();
