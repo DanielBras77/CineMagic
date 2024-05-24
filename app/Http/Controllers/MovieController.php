@@ -16,11 +16,14 @@ class MovieController extends Controller
         return view('movies.index')->with('allMovies', $allMovies);
     }
 
-    /* Ver para que serve
+    /*
+
+    Ver para que serve
     public function showCase(): View
     {
         return view('movies.showcase');
     }
+    
     */
 
     public function create(): View

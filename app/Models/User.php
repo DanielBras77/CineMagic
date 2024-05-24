@@ -61,7 +61,6 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function getPhotoFullUrlAttribute()
     {
-        debug($this->photo_filename);
 
         if ($this->photo_filename && Storage::exists("public/photos/{$this->photo_filename}")) {
             return asset("storage/photos/{$this->photo_filename}");

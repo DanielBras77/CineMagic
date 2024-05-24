@@ -1,4 +1,4 @@
-<?phpComponent
+<?php
 
 namespace App\View\Components\Theaters;
 

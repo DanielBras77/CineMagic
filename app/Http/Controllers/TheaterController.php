@@ -1,31 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use App\Models\Theater;
 use Illuminate\View\View;
-use Illuminate\Http\RedirectResponse;
-use App\Http\Requests\TheaterFormRequest;
-use App\Models\Theater;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Storage;
+use App\Http\Requests\TheaterFormRequest;
 
 class TheaterController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-        */
 
     public function index(Request $request): View
     {
-        $theaters = Theater::all();
+        $theaters = Theater::paginate(10);
         return view('theaters.index',compact('theaters'));
     }
 
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create(): View
     {
         $theater = new Theater();

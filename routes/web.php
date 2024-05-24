@@ -13,8 +13,10 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
+
 /*use App\Models\Genre;
-use App\Models\User;*/
+use App\Models\User;
+use App\Models\Theater;*/
 
 Route::middleware('auth')->group(function () {
     Route::get('/password', [ProfileController::class, 'editPassword'])->name('profile.edit.password');
@@ -29,6 +31,7 @@ require __DIR__ . '/auth.php';
 Route::view('/', 'home')->name('home');
 //Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::resource("genres", GenreController::class);
+Route::resource("theaters",TheaterController::class);
 Route::resource("user", UserController::class);
 Route::resource("costumers", CustomerController::class);
 Route::resource('movie', MovieController::class);
