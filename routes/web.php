@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 
 
+
 /*use App\Models\Genre;
 use App\Models\User;
 use App\Models\Theater;*/
