@@ -10,7 +10,7 @@ class HomeController extends Controller
 {
     public function index(): View
     {
-        $movies = Movie::orderBy('name')->get();
+        $movies = Movie::orderBy('title')->get();
         return view('home')->with('movies', $movies);
     }
 }
