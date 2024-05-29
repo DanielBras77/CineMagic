@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('header-title', $movie->name)
+@section('header-title', $movie->title)
 
 @section('main')
 <div class="flex flex-col space-y-6">
@@ -9,7 +9,7 @@
             <section>
                 <header>
                     <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
-                        Edit movie "{{ $movie->name }}"
+                        Edit movie "{{ $movie->title }}"
                     </h2>
                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-300  mb-6">
                         Click on "Save" button to store the information.
