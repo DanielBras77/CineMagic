@@ -39,11 +39,7 @@
         <ul>
             <li>
                 <a class="font-medium text-sm text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center py-1 px-3"
-                 href="{{ match(Auth::user()->type) {
-                    'A' => route('administratives.edit', ['administrative' => Auth::user()]),
-                    'T' => route('teachers.edit', ['teacher' => Auth::user()->teacher]),
-                    'S' => route('students.edit', ['student' => Auth::user()->student])
-                 } }}" @click="open = false" @focus="open = true" @focusout="open = false">Profile</a>
+                 href="#" @click="open = false" @focus="open = true" @focusout="open = false">Profile</a>
             </li>
             <li>
                 <form method="POST" action="{{route("logout")}}" x-data>

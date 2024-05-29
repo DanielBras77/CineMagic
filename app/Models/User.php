@@ -68,4 +68,14 @@ class User extends Authenticatable implements MustVerifyEmail
             return asset("img/anonymous.png");
         }
     }
+
+    public function getTypeDescriptionAttribute()
+    {
+        return match ($this->type) {
+            'A'       => "Administrator",
+            'E'       => "Employee",
+            'C'       => "Customer",
+            default => '?'
+        };
+    }
 }

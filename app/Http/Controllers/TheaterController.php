@@ -11,6 +11,10 @@ use App\Http\Requests\TheaterFormRequest;
 
 class TheaterController extends Controller
 {
+    public function __construct()
+    {
+        $this->authorizeResource(Theater::class);
+    }
 
     public function index(Request $request): View
     {

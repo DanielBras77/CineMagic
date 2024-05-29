@@ -28,17 +28,23 @@
 
                 @if($showView)
                 <td>
+                    <!-- meter @can como do students -->
                     <x-table.icon-show class="ps-3 px-0.5" href="{{ route('theaters.show', ['theater' => $theater]) }}" />
+                    <!-- meter else como do students -->
                 </td>
                 @endif
                 @if($showEdit)
                 <td>
+                    <!-- meter @can como do students -->
                     <x-table.icon-edit class="px-0.5" href="{{ route('theaters.edit', ['theater' => $theater]) }}" />
+                    <!-- meter else como do students -->
                 </td>
                 @endif
                 @if($showDelete)
                 <td>
+                    <!-- meter @can como do students -->
                     <x-table.icon-delete class="px-0.5" action="{{ route('theaters.destroy', ['theater' => $theater]) }}" />
+                    <!-- meter else como do students -->
                 </td>
                 @endif
             </tr>

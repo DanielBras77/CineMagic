@@ -1,110 +1,159 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Genre;
 use App\Models\Movie;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\MovieFormRequest;
-use App\Http\Requests\CourseFormRequest;
+use Illuminate\Support\Facades\Storage;
 
 class MovieController extends Controller
 {
-    public function index(): View
+
+    public function index(Request $request): View
     {
-        $allMovies = Movie::paginate(20);
-        return view('movies.index')->with('allMovies', $allMovies);
+        $genres = Genre::orderBy('title')->pluck('title', 'code')->toArray();
+        $genres = array_merge([null => 'Any genre'], $genres);
+        $filterByGenre = $request->query('genre');
+        $filterByTitle = $request->query('title');
+        $filterByYear = $request->query('year');
+
+        $moviesQuery = Movie::query();
+        if ($filterByGenre !== null) {
+            $moviesQuery->where('genre_code', $filterByGenre);
+        }
+
+        if ($filterByTitle !== null) {
+            $moviesQuery->where('title', 'like', "%$filterByTitle%");
+        }
+
+        if($filterByYear !== null){
+            $moviesQuery->where('year', $filterByYear);
+        }
+
+        $movies = $moviesQuery::with('genre')->paginate(10)->withQueryString();
+        return view('movies.index',compact('movies', 'genres', 'filterByGenre', 'filterByTitle', 'filterByYear'));
     }
 
-    /*
-
-    Ver para que serve
-
-    public function showCase(): View
-    {
-        return view('movies.showcase');
-    }
-
-
-    */
 
     public function create(): View
     {
-        $newMovie = new Movie();
-        return view('movies.create')->with('movie', $newMovie);
+        $movie = new Movie();
+        $genres = Genre::orderBy("title")->pluck('title', 'code')->toArray();
+        return view('movies.create', compact('movie', 'genres'));
+
     }
 
-    public function store(MovieFormRequest $request): RedirectResponse
+
+    public function  store(MovieFormRequest $request): RedirectResponse
     {
         $newMovie = Movie::create($request->validated());
+
+        if ($request->hasFile('photo_file')) {
+            $path = $request->photo_file->store('public/posters');
+            $newMovie->poster_filename = basename($path);
+            $newMovie->save();
+        }
+
+
         $url = route('movies.show', ['movie' => $newMovie]);
-        $htmlMessage = "Course <a href='$url'><u>{$newMovie->name}</u></a> ({$newMovie->id}) has been created successfully!";
-        return redirect()->route('courses.index')
-            ->with('alert-type', 'success')
-            ->with('alert-msg', $htmlMessage);
+        $htmlMessage = "Movie <a href='$url'><u>{$newMovie->title}</u></a> ({$newMovie->abbreviation}) has been created successfully!";
+        return redirect()->route('movies.index')
+        ->with('alert-type', 'success')
+        ->with('alert-msg', $htmlMessage);
     }
+
+
+
+    public function show(Movie $movie): View
+    {
+        $genres = Genre::orderBy("title")->pluck('title', 'code')->toArray();
+        return view('movies.show', compact('movie','genres'));
+    }
+
 
     public function edit(Movie $movie): View
     {
-        return view('movie.edit')->with('movie', $movie);
+        $genres = Genre::orderBy("title")->pluck('title', 'code')->toArray();
+        return view('movies.edit', compact('movie', 'genres'));
     }
+
 
     public function update(MovieFormRequest $request, Movie $movie): RedirectResponse
     {
         $movie->update($request->validated());
+
+        if ($request->hasFile('photo_file')) {
+            // Delete previous file (if any)
+            if ($movie->poster_filename &&
+                Storage::fileExists('public/posters/' . $movie->poster_filename)) {
+                Storage::delete('public/posters/' . $movie->poster_filename);
+            }
+            $path = $request->photo_file->store('public/posters');
+            $movie->user->poster_filename = basename($path);
+            $movie->user->save();
+        }
+
+
         $url = route('movies.show', ['movie' => $movie]);
-        $htmlMessage = "Movie <a href='$url'><u>{$movie->name}</u></a> ({$movie->id}) has been updated successfully!";
+        $htmlMessage = "Movie <a href='$url'><u>{$movie->title}</u></a> ({$movie->abbreviation}) has been updated successfully!";
         return redirect()->route('movies.index')
             ->with('alert-type', 'success')
             ->with('alert-msg', $htmlMessage);
     }
-/*
+
+
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy(Movie $movie): RedirectResponse
     {
         try {
-            $url = route('movie.show', ['movie' => $movie]);
-            $totalStudents = DB::scalar(
-                'select count(*) from students where course = ?', // por fazer
-                [$course->abbreviation]);
-            $totalDisciplines = DB::scalar(
-                'select count(*) from disciplines where course = ?',
-                [$course->abbreviation]);
-            if ($totalStudents == 0 && $totalDisciplines == 0) {
-                $course->delete();
+            $url = route('movies.show', ['movie' => $movie]);
+            $totalScreenings = $movie->screenings()->count();
+
+            if ($totalScreenings == 0) {
+                $movie->delete();
                 $alertType = 'success';
-                $alertMsg = "Course {$course->name} ({$course->abbreviation}) has been deleted successfully!";
+                $alertMsg = "Movie {$movie->title} ({$movie->abbreviation}) has been deleted successfully!";
             } else {
                 $alertType = 'warning';
-                $studentsStr = match(true) {
-                    $totalStudents <= 0 => "",
-                    $totalStudents == 1 => "there is 1 student enrolled in it",
-                    $totalStudents > 1 => "there are $totalStudents students enrolled in it",
+                $justification = match (true) {
+                    $totalScreenings <= 0 => "",
+                    $totalScreenings == 1 => "there is 1 screening enrolled in it",
+                    $totalScreenings > 1 => "there are $totalScreenings screenings enrolled in it",
                 };
-                $disciplinesStr = match(true) {
-                    $totalDisciplines <= 0 => "",
-                    $totalDisciplines == 1 => "it already includes 1 discipline",
-                    $totalDisciplines > 1 => "it already includes $totalDisciplines disciplines",
-                };
-                $justification = $studentsStr && $disciplinesStr
-                    ? "$disciplinesStr and $studentsStr"
-                    : "$disciplinesStr$studentsStr";
-                $alertMsg = "Course <a href='$url'><u>{$course->name}</u></a> ({$course->abbreviation}) cannot be deleted because $justification.";
+
+                $alertMsg = "Movie <a href='$url'><u>{$movie->title}</u></a> ({$movie->id}) cannot be deleted because $justification.";
             }
         } catch (\Exception $error) {
             $alertType = 'danger';
-            $alertMsg = "It was not possible to delete the course
-                            <a href='$url'><u>{$course->name}</u></a> ({$course->abbreviation})
+            $alertMsg = "It was not possible to delete the movie
+                            <a href='$url'><u>{$movie->title}</u></a> ({$movie->id})
                             because there was an error with the operation!";
         }
-        return redirect()->back()
+        return redirect()->route('movies.index')
             ->with('alert-type', $alertType)
             ->with('alert-msg', $alertMsg);
     }
-*/
-    public function show(Movie $movie): View
+
+    // Onde a foto pode ser nula é necessário colocar este método
+
+    public function destroyPhoto(Movie $movie): RedirectResponse
     {
-        return view('movies.show')->with('movie', $movie);
+        if ($movie->user->photo_url) {
+            if (Storage::fileExists('public/posters/' . $movie->poster_filename)) {
+                Storage::delete('public/posters/' . $movie->poster_filename);
+            }
+            $movie->poster_filename = null;
+            $movie->save();
+        return redirect()->back()
+            ->with('alert-type', 'success')
+            ->with('alert-msg', "Photo of movie $movie {$movie->title} has been deleted.");
+        }
+        return redirect()->back();
     }
 }
