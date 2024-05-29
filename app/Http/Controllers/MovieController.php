@@ -25,6 +25,7 @@ class MovieController extends Controller
     public function create(): View
     {
         $newMovie = new Movie();
+        $genres = Genre::orderBY("name")->pluck('name','code')->toArray();
         return view('movies.create')->with('movie', $newMovie);
     }
 
@@ -97,6 +98,7 @@ class MovieController extends Controller
 */
     public function show(Movie $movie): View
     {
-        return view('movies.show')->with('movie', $movie);
+        $genres = Genre::orderBY("name")->pluck('name','code')->toArray();
+        return view('movies.show',compact('movie', $genres);
     }
 }
