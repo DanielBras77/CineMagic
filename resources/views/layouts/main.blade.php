@@ -39,12 +39,17 @@
                     invisible h-0 sm:visible sm:h-auto ms-14">
                         <!-- Menu Item: Home -->
                         <x-menus.menu-item content="Home" href="#" selected="#" />
-                        <!-- Menu Item: Films -->
-                        <x-menus.menu-item content="Films" href="#" selected="#" />
-                        <!-- Menu Item: Films -->
-                        <x-menus.menu-item content="Films" href="#" selected="#" />
-                        <!-- Menu Item: Films -->
-                        <x-menus.menu-item content="Films" href="#" selected="#" />
+                        <!-- Menu Item: Movies -->
+                        <x-menus.menu-item content="Movies" selectable="1" href="#" selected="#" />
+                        <!-- Menu Item: Theaters -->
+                        <x-menus.menu-item content="Theaters" selectable="1" href="{{ route('theaters.index') }}" selected="{{ Route::currentRouteName() == 'theaters.index'}}" />
+                        <!-- Ver quando mostrar os géneros-->
+
+                        <!-- Menu Item: Genres -->
+                        <x-menus.menu-item content="Genres" selectable="1" href="{{ route('genres.index') }}" selected="{{ Route::currentRouteName() == 'genres.index'}}" />
+
+
+
 
                         <div class="grow"></div>
 
