@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Components\Theaters;
+namespace App\View\Components\Movies;
 
 use Closure;
 use Illuminate\Contracts\View\View;
@@ -10,7 +10,7 @@ class Table extends Component
 {
 
     public function __construct(
-        public object $theaters,
+        public object $movies,
         public bool $showView = true,
         public bool $showEdit = true,
         public bool $showDelete = true,

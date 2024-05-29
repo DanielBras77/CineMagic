@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.admin')
 
 @section('header-title', 'New Movie')
 
@@ -16,7 +16,7 @@
                     </p>
                 </header>
 
-                <form method="POST" action="{{ route('movies.store') }}">
+                <form method="POST" action="{{ route('movies.store') }}" enctype = "multipart/form-data">
                     @csrf
                     <div class="mt-6 space-y-4">
                         @include('movies.shared.fields', ['mode' => 'create'])

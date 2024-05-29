@@ -9,7 +9,7 @@
         </a>
         <div class="h-auto p-6 text-center md:text-left space-y-1 flex flex-col">
             <a class="font-semibold text-lg text-gray-800 dark:text-gray-200 leading-tight" href="{{ route('movies.show', ['movie' => $movie]) }}">
-                {{ $movie->tittle }}
+                {{ $movie->title }}
             </a>
             <p class="pt-4 font-light text-gray-700 dark:text-gray-300 overflow-y-auto">
                 {{ $movie->synopsis }}

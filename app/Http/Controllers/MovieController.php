@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 use App\Models\Genre;
 use App\Models\Movie;
+use App\Models\Screening;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\MovieFormRequest;
@@ -15,7 +17,7 @@ class MovieController extends Controller
 
     public function index(Request $request): View
     {
-        $genres = Genre::orderBy('title')->pluck('title', 'code')->toArray();
+        $genres = Genre::orderBy('name')->pluck('name', 'code')->toArray();
         $genres = array_merge([null => 'Any genre'], $genres);
         $filterByGenre = $request->query('genre');
         $filterByTitle = $request->query('title');
@@ -34,21 +36,53 @@ class MovieController extends Controller
             $moviesQuery->where('year', $filterByYear);
         }
 
-        $movies = $moviesQuery::with('genre')->paginate(10)->withQueryString();
+        $movies = $moviesQuery->with('genre')->paginate(10)->withQueryString();
         return view('movies.index',compact('movies', 'genres', 'filterByGenre', 'filterByTitle', 'filterByYear'));
+    }
+
+    public function showMovies(Request $request): View
+    {
+        $genres = Genre::orderBy('name')->pluck('name', 'code')->toArray();
+        $genres = array_merge([null => 'Any genre'], $genres);
+        $filterByGenre = $request->query('genre');
+        $filterByTitle = $request->query('title');
+        $filterByYear = $request->query('year');
+
+        $moviesQuery = Movie::query();
+
+        // Ver o between
+        $movies_id = Screening::where('date', '>=', Carbon::today())
+        ->where('date', '<=', Carbon::today()->addWeeks(2))->pluck('movie_id')->unique();
+
+        $moviesQuery->whereIntegerInRaw('id', $movies_id);
+
+        if ($filterByGenre !== null) {
+            $moviesQuery->where('genre_code', $filterByGenre);
+        }
+
+        if ($filterByTitle !== null) {
+            $moviesQuery->where('title', 'like', "%$filterByTitle%");
+        }
+
+        if($filterByYear !== null){
+            $moviesQuery->where('year', $filterByYear);
+        }
+
+        $movies = $moviesQuery->with('genre')->paginate(10)->withQueryString();
+        return view('movies.showcase',compact('movies', 'genres', 'filterByGenre', 'filterByTitle', 'filterByYear'));
     }
 
 
     public function create(): View
     {
         $movie = new Movie();
-        $genres = Genre::orderBy("title")->pluck('title', 'code')->toArray();
+        $genres = Genre::orderBy("name")->pluck('name', 'code')->toArray();
         return view('movies.create', compact('movie', 'genres'));
 
     }
 
 
-    public function  store(MovieFormRequest $request): RedirectResponse
+    public function store(MovieFormRequest $request): RedirectResponse
     {
         $newMovie = Movie::create($request->validated());
 
@@ -60,7 +94,7 @@ class MovieController extends Controller
 
 
         $url = route('movies.show', ['movie' => $newMovie]);
-        $htmlMessage = "Movie <a href='$url'><u>{$newMovie->title}</u></a> ({$newMovie->abbreviation}) has been created successfully!";
+        $htmlMessage = "Movie <a href='$url'><u>{$newMovie->title}</u></a> ({$newMovie->id}) has been created successfully!";
         return redirect()->route('movies.index')
         ->with('alert-type', 'success')
         ->with('alert-msg', $htmlMessage);
@@ -70,14 +104,14 @@ class MovieController extends Controller
 
     public function show(Movie $movie): View
     {
-        $genres = Genre::orderBy("title")->pluck('title', 'code')->toArray();
+        $genres = Genre::orderBy("name")->pluck('name', 'code')->toArray();
         return view('movies.show', compact('movie','genres'));
     }
 
 
     public function edit(Movie $movie): View
     {
-        $genres = Genre::orderBy("title")->pluck('title', 'code')->toArray();
+        $genres = Genre::orderBy("name")->pluck('name', 'code')->toArray();
         return view('movies.edit', compact('movie', 'genres'));
     }
 
@@ -99,7 +133,7 @@ class MovieController extends Controller
 
 
         $url = route('movies.show', ['movie' => $movie]);
-        $htmlMessage = "Movie <a href='$url'><u>{$movie->title}</u></a> ({$movie->abbreviation}) has been updated successfully!";
+        $htmlMessage = "Movie <a href='$url'><u>{$movie->title}</u></a> ({$movie->id}) has been updated successfully!";
         return redirect()->route('movies.index')
             ->with('alert-type', 'success')
             ->with('alert-msg', $htmlMessage);
@@ -118,7 +152,7 @@ class MovieController extends Controller
             if ($totalScreenings == 0) {
                 $movie->delete();
                 $alertType = 'success';
-                $alertMsg = "Movie {$movie->title} ({$movie->abbreviation}) has been deleted successfully!";
+                $alertMsg = "Movie {$movie->title} ({$movie->id}) has been deleted successfully!";
             } else {
                 $alertType = 'warning';
                 $justification = match (true) {

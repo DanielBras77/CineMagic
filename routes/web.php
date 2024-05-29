@@ -18,6 +18,7 @@ use App\Http\Controllers\HomeController;
 /*use App\Models\Genre;
 use App\Models\User;
 use App\Models\Theater;*/
+use App\Models\Movie;
 
 Route::middleware('auth')->group(function () {
     Route::get('/password', [ProfileController::class, 'editPassword'])->name('profile.edit.password');
@@ -30,7 +31,16 @@ require __DIR__ . '/auth.php';
 
 Route::view('/', 'home')->name('home');
 //Route::get('/', [HomeController::class, 'index'])->name('home');
+
+
+
+
+
+
+//Movie resource routes are protected by MoviePolicy on the controller
 Route::resource('movies', MovieController::class);
+Route::get('showMovies', [MovieController::class, 'showMovies'])->name('movies.showMovies');
+Route::delete('movies/{movie}/photo', [MovieController::class, 'destroyPhoto'])->name('movies.photo.destroy')->can('update', 'movie'); //Não sei se esta rota está a fazer alguma coisa
 Route::resource("genres", GenreController::class);
 Route::resource("theaters",TheaterController::class);
 Route::resource("user", UserController::class);
