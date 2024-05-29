@@ -68,6 +68,7 @@
                                 </div>
                                 </x-slot>
                                 <hr>
+                                <x-menus.submenu-item content="Dashboard" selectable="0" href="{{route('dashboard')}}" />
                                 <x-menus.submenu-item content="Profile" selectable="0" href="#" />
                                 <x-menus.submenu-item content="Change Password" selectable="0" href="{{ route('profile.edit.password') }}" />
 
