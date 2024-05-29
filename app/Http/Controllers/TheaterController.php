@@ -11,7 +11,6 @@ use App\Http\Requests\TheaterFormRequest;
 
 class TheaterController extends Controller
 {
-    // Corrigir erro
     public function __construct()
     {
         $this->authorizeResource(Theater::class);
