@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Genre;
 use App\Models\Movie;
 use App\Models\Screening;
@@ -29,15 +30,18 @@ class MovieController extends Controller
         }
 
         if ($filterByTitle !== null) {
-            $moviesQuery->where('title', 'like', "%$filterByTitle%");
+            $moviesQuery->where(function ($query) use ($filterByTitle) {
+
+                $query->where('title', 'like', "%$filterByTitle%")->orWhere('synopsis', 'like', "%$filterByTitle%");
+            });
         }
 
-        if($filterByYear !== null){
+        if ($filterByYear !== null) {
             $moviesQuery->where('year', $filterByYear);
         }
 
         $movies = $moviesQuery->with('genre')->paginate(10)->withQueryString();
-        return view('movies.index',compact('movies', 'genres', 'filterByGenre', 'filterByTitle', 'filterByYear'));
+        return view('movies.index', compact('movies', 'genres', 'filterByGenre', 'filterByTitle', 'filterByYear'));
     }
 
     public function showMovies(Request $request): View
@@ -52,7 +56,7 @@ class MovieController extends Controller
 
         // Ver o between
         $movies_id = Screening::where('date', '>=', Carbon::today())
-        ->where('date', '<=', Carbon::today()->addWeeks(2))->pluck('movie_id')->unique();
+            ->where('date', '<=', Carbon::today()->addWeeks(2))->pluck('movie_id')->unique();
 
         $moviesQuery->whereIntegerInRaw('id', $movies_id);
 
@@ -61,15 +65,18 @@ class MovieController extends Controller
         }
 
         if ($filterByTitle !== null) {
-            $moviesQuery->where('title', 'like', "%$filterByTitle%");
+            $moviesQuery->where(function ($query) use ($filterByTitle) {
+
+                $query->where('title', 'like', "%$filterByTitle%")->orWhere('synopsis', 'like', "%$filterByTitle%");
+            });
         }
 
-        if($filterByYear !== null){
+        if ($filterByYear !== null) {
             $moviesQuery->where('year', $filterByYear);
         }
 
         $movies = $moviesQuery->with('genre')->paginate(10)->withQueryString();
-        return view('movies.showcase',compact('movies', 'genres', 'filterByGenre', 'filterByTitle', 'filterByYear'));
+        return view('movies.showcase', compact('movies', 'genres', 'filterByGenre', 'filterByTitle', 'filterByYear'));
     }
 
 
@@ -78,7 +85,6 @@ class MovieController extends Controller
         $movie = new Movie();
         $genres = Genre::orderBy("name")->pluck('name', 'code')->toArray();
         return view('movies.create', compact('movie', 'genres'));
-
     }
 
 
@@ -96,8 +102,8 @@ class MovieController extends Controller
         $url = route('movies.show', ['movie' => $newMovie]);
         $htmlMessage = "Movie <a href='$url'><u>{$newMovie->title}</u></a> ({$newMovie->id}) has been created successfully!";
         return redirect()->route('movies.index')
-        ->with('alert-type', 'success')
-        ->with('alert-msg', $htmlMessage);
+            ->with('alert-type', 'success')
+            ->with('alert-msg', $htmlMessage);
     }
 
 
@@ -105,7 +111,7 @@ class MovieController extends Controller
     public function show(Movie $movie): View
     {
         $genres = Genre::orderBy("name")->pluck('name', 'code')->toArray();
-        return view('movies.show', compact('movie','genres'));
+        return view('movies.show', compact('movie', 'genres'));
     }
 
 
@@ -122,8 +128,10 @@ class MovieController extends Controller
 
         if ($request->hasFile('photo_file')) {
             // Delete previous file (if any)
-            if ($movie->poster_filename &&
-                Storage::fileExists('public/posters/' . $movie->poster_filename)) {
+            if (
+                $movie->poster_filename &&
+                Storage::fileExists('public/posters/' . $movie->poster_filename)
+            ) {
                 Storage::delete('public/posters/' . $movie->poster_filename);
             }
             $path = $request->photo_file->store('public/posters');
@@ -184,9 +192,9 @@ class MovieController extends Controller
             }
             $movie->poster_filename = null;
             $movie->save();
-        return redirect()->back()
-            ->with('alert-type', 'success')
-            ->with('alert-msg', "Photo of movie $movie {$movie->title} has been deleted.");
+            return redirect()->back()
+                ->with('alert-type', 'success')
+                ->with('alert-msg', "Photo of movie $movie {$movie->title} has been deleted.");
         }
         return redirect()->back();
     }
