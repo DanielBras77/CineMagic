@@ -13,7 +13,7 @@ class Movie extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $fillable=['title','genre_code','year', 'poster_filename', 'synopsis', 'trailer_url'];
+    protected $fillable=['title','genre_code', 'year', 'poster_filename', 'synopsis', 'trailer_url'];
 
 
     public function getPosterFullUrlAttribute()

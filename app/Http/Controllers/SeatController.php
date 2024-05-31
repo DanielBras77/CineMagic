@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Seat;
 use App\Models\Theater;
 use Illuminate\View\View;
+use App\Http\Requests\SeatFormRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\RedirectResponse;
-use App\Http\Requests\SeatFormRequest;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class SeatController extends \Illuminate\Routing\Controller
@@ -20,15 +20,19 @@ class SeatController extends \Illuminate\Routing\Controller
         $this->authorizeResource(Seat::class);
     }
 
-    public function index(): View
+    public function index(Request $request): View
     {
         $theaters = Theater::orderBy('name')->pluck('name', 'id')->toArray();
         $theaters = array_merge([null => 'Any theater'], $theaters);
         $filterByTheater = $request->query('theater');
 
+        $seatsQuery = Seat::query();
+        if ($filterByTheater !== null) {
+            $seatsQuery->where('theater', $filterByTheater);
+        }
 
-        return view('seats.index')
-            ->with('theater', Seat::orderBy('name')->paginate(20)->withQueryString());
+        $movies = $seatsQuery->with('genre')->paginate(10)->withQueryString();
+        return view('seats.index')->with('theater', Seat::orderBy('name')->paginate(20)->withQueryString());
     }
 
     public function create(): View
@@ -42,7 +46,7 @@ class SeatController extends \Illuminate\Routing\Controller
     {
         $newSeat = Seat::create($request->validated());
         $url = route('seats.show', ['seat' => $newSeat]);
-        $htmlMessage = "Seat <a href='$url'><u>{$newSeat->name}</u></a> ({$newSeat->code}) has been created successfully!";
+        $htmlMessage = "Seat <a href='$url'><u>{$newSeat->row}</u></a> ({$newSeat->id}) has been created successfully!";
         return redirect()->route('seats.index')
             ->with('alert-type', 'success')
             ->with('alert-msg', $htmlMessage);
@@ -58,7 +62,7 @@ class SeatController extends \Illuminate\Routing\Controller
     {
         $seat->update($request->validated());
         $url = route('seats.show', ['seat' => $seat]);
-        $htmlMessage = "Seat <a href='$url'><u>{$seat->name}</u></a> ({$seat->code}) has been updated successfully!";
+        $htmlMessage = "Seat <a href='$url'><u>{$seat->row}</u></a> ({$seat->id}) has been updated successfully!";
         return redirect()->route('seats.index')
             ->with('alert-type', 'success')
             ->with('alert-msg', $htmlMessage);
@@ -66,29 +70,11 @@ class SeatController extends \Illuminate\Routing\Controller
 
     public function destroy(Seat $seat): RedirectResponse
     {
-        try {
-            $url = route('seats.show', ['seat' => $seat]);
+        $seat->delete();
+        $alertType = 'success';
+        $alertMsg = "Seat {$seat->row}{$seat->id} has been deleted successfully!";
 
-            $totalMovies = $seat->movies()->count();
-            if ($totalMovies == 0) {
-                $seat->delete();
-                $alertType = 'success';
-                $alertMsg = "Seat {$seat->name} ({$seat->code}) has been deleted successfully!";
-            } else {
-                $alertType = 'warning';
-                $justification = match (true) {
-                    $totalMovies <= 0 => "",
-                    $totalMovies == 1 => "there is 1 movie in the seat",
-                    $totalMovies > 1 => "there are $totalMovies movies in the seat",
-                };
-                $alertMsg = "Seat <a href='$url'><u>{$seat->name}</u></a> ({$seat->code}) cannot be deleted because $justification.";
-            }
-        } catch (\Exception $error) {
-            $alertType = 'danger';
-            $alertMsg = "It was not possible to delete the seat
-                            <a href='$url'><u>{$seat->name}</u></a> ({$seat->code})
-                            because there was an error with the operation!";
-        }
+
         return redirect()->route('seats.index')
             ->with('alert-type', $alertType)
             ->with('alert-msg', $alertMsg);

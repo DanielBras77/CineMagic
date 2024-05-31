@@ -2,7 +2,7 @@
     <form method="GET" action="{{ $filterAction }}">
         <div class="flex justify-between space-x-3">
             <div class="grow flex flex-row space-y-2">
-                <x-field.select name="genre" label="Genre" value="{{ $genre }}" :options="$genres" width="1/3" />
+                <x-field.select class="mt-2"  name="genre" label="Genre" value="{{ $genre }}" :options="$genres" width="1/3" />
                 <x-field.input name="title" label="Title" class="grow" value="{{ $title }}" width="1/3" />
                 <x-field.input name="year" label="Year" class="grow" value="{{ $year }}" width="1/3" />
             </div>
