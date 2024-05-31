@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.admin')
 
 @section('header-title', $movie->title)
 
@@ -16,7 +16,8 @@
                     </p>
                 </header>
 
-                <form method="POST" action="{{ route('courses.update', ['movie' => $movie]) }}">
+                <form method="POST" action="{{ route('movies.update', ['movie' => $movie]) }}" enctype = "multipart/form-data">
+
                     @csrf
                     @method('PUT')
                     <div class="mt-6 space-y-4">
