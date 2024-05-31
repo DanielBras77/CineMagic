@@ -85,6 +85,7 @@
 
                     </x-menus.admin-group-menu-items>
                     @endcan
+                    
 
                     <!-- Only one option -->
                     <x-menus.admin-group-menu-items class="mt-2" title="Voltar ao site" :options="['Home' => route('home')]">
