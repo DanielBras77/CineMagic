@@ -61,6 +61,10 @@ class GenreController extends \Illuminate\Routing\Controller
 
     public function destroy(Genre $genre): RedirectResponse
     {
+
+        // Só fazer isto $genre->delete();
+        //$alertType = 'success';
+        //$alertMsg = "Genre {$genre->name} ({$genre->code}) has been deleted successfully!";
         try {
             $url = route('genres.show', ['genre' => $genre]);
 

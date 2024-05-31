@@ -8,16 +8,17 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\TheaterFormRequest;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class TheaterController extends Controller
+
+class TheaterController extends \Illuminate\Routing\Controller
 {
-    /* A STORA DISSE PARA PÔR, NÃO FAÇO PUT DE IDEIA PORQUÊ,
-    RESOLVER NO FUTURO, DÁ ERRO SE DESCOMENTARES PORTANTO CUIDADO COM O QUE FAZES
+    use AuthorizesRequests;
 
     public function __construct()
     {
         $this->authorizeResource(Theater::class);
-    }*/
+    }
 
     public function index(Request $request): View
     {
