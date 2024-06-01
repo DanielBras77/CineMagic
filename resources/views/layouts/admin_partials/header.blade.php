@@ -25,7 +25,6 @@
             <!-- Header: Right side -->
             <div class="flex items-center space-x-3">
 
-
                 <!-- Dark mode toggle -->
                 <div>
                     <input type="checkbox" name="light-switch" id="light-switch" class="light-switch sr-only" />

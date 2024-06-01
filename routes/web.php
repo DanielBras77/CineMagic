@@ -29,17 +29,12 @@ Route::view('/dashboard', 'dashboard')->name('dashboard');
 
 require __DIR__ . '/auth.php';
 
-Route::view('/', 'home')->name('home');
-//Route::get('/', [HomeController::class, 'index'])->name('home');
+//Route::view('/', 'home')->name('home');
 
 
-
-
-
-
-//Movie resource routes are protected by MoviePolicy on the controller
-Route::resource('movies', MovieController::class);
+Route::get('/', [MovieController::class, 'showMovies'])->name('home');
 Route::get('showMovies', [MovieController::class, 'showMovies'])->name('movies.showMovies');
+Route::resource('movies', MovieController::class);
 Route::delete('movies/{movie}/photo', [MovieController::class, 'destroyPhoto'])->name('movies.photo.destroy')->can('update', 'movie'); //Não sei se esta rota está a fazer alguma coisa
 Route::resource("genres", GenreController::class);
 Route::resource("theaters",TheaterController::class);

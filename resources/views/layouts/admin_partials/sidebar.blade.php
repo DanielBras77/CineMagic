@@ -51,8 +51,11 @@
                     @endphp
                     @endcan
                     <x-menus.admin-group-menu-items title="Genres" :options="$options">
-                        <svg class="w-6 h-6 text-gray-400 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" d="M8 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4H6Zm7.25-2.095c.478-.86.75-1.85.75-2.905a5.973 5.973 0 0 0-.75-2.906 4 4 0 1 1 0 5.811ZM15.466 20c.34-.588.535-1.271.535-2v-1a5.978 5.978 0 0 0-1.528-4H18a4 4 0 0 1 4 4v1a2 2 0 0 1-2 2h-4.535Z" clip-rule="evenodd" />
+                        <svg class="w-6 h-6 text-gray-400 dark:text-white" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" />
+                            <rect x="4" y="4" width="16" height="16" rx="2" />
+                            <line x1="4" y1="12" x2="20" y2="12" />
+                            <line x1="12" y1="4" x2="12" y2="20" />
                         </svg>
 
 
@@ -85,7 +88,32 @@
 
                     </x-menus.admin-group-menu-items>
                     @endcan
-                    
+
+
+                    @can('viewAny', App\Models\Movie::class)
+                    @php
+                    $options = [];
+                    $options['All Movies'] = route('movies.index');
+                    @endphp
+
+                    @can('create', App\Models\Movie::class)
+                    @php
+                    $options['Add Movie'] = route('movies.create');
+                    @endphp
+                    @endcan
+                    <x-menus.admin-group-menu-items class="mt-2" title="Movies" :options="$options">
+                        <svg class="w-6 h-6 text-gray-400 dark:text-white" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18" />
+                            <line x1="7" y1="2" x2="7" y2="22" />
+                            <line x1="17" y1="2" x2="17" y2="22" />
+                            <line x1="2" y1="12" x2="22" y2="12" />
+                            <line x1="2" y1="7" x2="7" y2="7" />
+                            <line x1="2" y1="17" x2="7" y2="17" />      
+                            <line x1="17" y1="17" x2="22" y2="17" />
+                            <line x1="17" y1="7" x2="22" y2="7" />
+                        </svg>
+                    </x-menus.admin-group-menu-items>
+                    @endcan
 
                     <!-- Only one option -->
                     <x-menus.admin-group-menu-items class="mt-2" title="Voltar ao site" :options="['Home' => route('home')]">
