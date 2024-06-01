@@ -37,8 +37,8 @@
                     <!-- Menu Items -->
                     <div id="menu-container" class="grow flex flex-col sm:flex-row items-stretch
                     invisible h-0 sm:visible sm:h-auto ms-14">
-                        <!-- Menu Item: Home -->
-                        <x-menus.menu-item content="Home" href="#" selected="#" />
+                        <!-- Menu Item: Home
+                        <x-menus.menu-item content="Home" href="#" selected="#" />-->
                         <!-- Menu Item: Movies
                         <x-menus.menu-item content="Movies" selectable="1" href="{{ route('movies.index') }}" selected="{{ Route::currentRouteName() == 'movies.index'}}" />
                         -->
