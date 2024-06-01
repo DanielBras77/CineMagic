@@ -3,8 +3,8 @@
 @section('header-title', 'Forgot Password')
 
 @section('main')
-    <div class="min-h-screen flex flex-col justify-start items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">
-        <div class="w-full sm:max-w-xl mt-6 px-6 py-4 bg-white dark:bg-gray-800 shadow-md overflow-hidden sm:rounded-lg">
+    <div class="flex flex-col items-center justify-start min-h-screen pt-6 bg-gray-100 sm:pt-0 dark:bg-gray-900">
+        <div class="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-xl dark:bg-gray-800 sm:rounded-lg">
             <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
                 {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
             </div>
@@ -18,7 +18,7 @@
                 <!-- Email Address -->
                 <div>
                     <x-input-label for="email" :value="__('Email')" />
-                    <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+                    <x-text-input id="email" class="block w-full mt-1" type="email" name="email" :value="old('email')" required autofocus />
                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                 </div>
 
