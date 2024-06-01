@@ -20,7 +20,7 @@ class MovieFormRequest extends FormRequest
             'title' => 'required|string|min:2|max:255',
             'year' => 'required|integer|digits:4',
             'synopsis' => 'required|string',
-            'trailer url' => 'string|max:255',
+            'trailer_url' => 'nullable|url:http,https|max:255',
             'photo_file' => 'sometimes|image|max:4096', // maxsize = 4Mb
         ];
     }

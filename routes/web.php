@@ -27,12 +27,14 @@ Route::middleware('auth')->group(function () {
 
 Route::view('/dashboard', 'dashboard')->name('dashboard');
 
-
 require __DIR__ . '/auth.php';
 
-Route::view('/', 'home')->name('home');
-Route::resource('movies', MovieController::class);
+//Route::view('/', 'home')->name('home');
+
+
+Route::get('/', [MovieController::class, 'showMovies'])->name('home');
 Route::get('showMovies', [MovieController::class, 'showMovies'])->name('movies.showMovies');
+Route::resource('movies', MovieController::class);
 Route::delete('movies/{movie}/photo', [MovieController::class, 'destroyPhoto'])->name('movies.photo.destroy')->can('update', 'movie'); //Não sei se esta rota está a fazer alguma coisa
 Route::resource("genres", GenreController::class);
 Route::resource("theaters",TheaterController::class);
