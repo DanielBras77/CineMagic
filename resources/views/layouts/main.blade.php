@@ -68,7 +68,6 @@
                                 <div class="pe-1">
                                     <img src="{{ Auth::user()->photoFullUrl}}" class="rounded-full w-11 h-11 min-w-11 min-h-11">
                                 </div>
-                                {{-- ATENÇÃO - ALTERAR FORMULA DE CALCULO DAS LARGURAS MÁXIMAS QUANDO O MENU FOR ALTERADO --}}
                                 <div class="ps-1 sm:max-w-[calc(100vw-39rem)] md:max-w-[calc(100vw-41rem)] lg:max-w-[calc(100vw-46rem)] xl:max-w-[34rem] truncate">
                                     {{ Auth::user()->name }}
                                 </div>
@@ -81,8 +80,19 @@
                                 <form id="form_to_logout_from_menu" method="POST" action="{{ route('logout') }}" class="hidden">
                                     @csrf
                                 </form>
-                                <x-menus.submenu-item content="Log Out" selectable="0" form="form_to_logout_from_menu" />
+                                <a class="px-3 py-4 border-b-2 border-transparent
+                                        text-sm font-medium leading-5 inline-flex h-auto
+                                        text-gray-500 dark:text-gray-400
+                                        hover:text-gray-700 dark:hover:text-gray-300
+                                        hover:bg-gray-100 dark:hover:bg-gray-800
+                                        focus:outline-none
+                                        focus:text-gray-700 dark:focus:text-gray-300
+                                        focus:bg-gray-100 dark:focus:bg-gray-800" href="#" onclick="event.preventDefault();
+                                    document.getElementById('form_to_logout_from_menu').submit();">
+                                    Log Out
+                                </a>
                         </x-menus.submenu>
+
                         @else
                         <!-- Menu Item: Login -->
                         <x-menus.menu-item content="Login" selectable="1" href="{{ route('login') }}" selected="{{ Route::currentRouteName() == 'login'}}" />

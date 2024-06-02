@@ -18,7 +18,7 @@
 
         <div class="grid-cols-1 sm:grid md:grid-cols-4">
             @foreach($movies as $movie)
-            <div class="mx-3 mt-6 flex flex-col rounded-lg bg-white text-surface shadow-secondary-1 sm:shrink-0 sm:grow sm:basis-0 dark:bg-black dark:text-white">
+            <div class="mx-3 mt-6 flex flex-col rounded-lg bg-white text-surface shadow-secondary-1 sm:shrink-0 sm:grow sm:basis-0 transition-transform duration-500 transform hover:-translate-y-2 dark:bg-black dark:text-white">
                 <a href="#Neste href deve de ir para a rota dos detalhes do movie!">
                     <img class="rounded-t-lg" src="{{$movie->posterFullUrl}}" alt="Movie Poster" />
                 </a>

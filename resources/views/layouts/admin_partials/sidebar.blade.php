@@ -17,12 +17,10 @@
             <!-- Logo -->
             <div class="hidden lg:sidebar-expanded:block text-xl pt-1 text-white">Dashboard</div>
             <a class="block" href="#">
-
-                <svg class="w-[40px] h-[40px] text-white" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <svg class="w-[35px] h-[35px] text-white" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
                     <path stroke="none" d="M0 0h24v24H0z" />
-                    <circle cx="12" cy="13" r="2" />
-                    <line x1="13.45" y1="11.55" x2="15.5" y2="9.5" />
-                    <path d="M6.4 20a9 9 0 1 1 11.2 0Z" />
+                    <line x1="4" y1="19" x2="20" y2="19" />
+                    <polyline points="4 15 8 9 12 11 16 6 20 10" />
                 </svg>
             </a>
         </div>
@@ -108,7 +106,7 @@
                             <line x1="17" y1="2" x2="17" y2="22" />
                             <line x1="2" y1="12" x2="22" y2="12" />
                             <line x1="2" y1="7" x2="7" y2="7" />
-                            <line x1="2" y1="17" x2="7" y2="17" />      
+                            <line x1="2" y1="17" x2="7" y2="17" />
                             <line x1="17" y1="17" x2="22" y2="17" />
                             <line x1="17" y1="7" x2="22" y2="7" />
                         </svg>
