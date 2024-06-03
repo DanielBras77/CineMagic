@@ -1,6 +1,6 @@
 @extends('layouts.main')
 
-@section('header-title', 'Password')
+@section('header-title', 'Profile')
 
 @section('main')
 <div class="min-h-screen flex flex-col justify-start items-center pt-6 sm:pt-0 bg-gray-100 dark:bg-gray-900">

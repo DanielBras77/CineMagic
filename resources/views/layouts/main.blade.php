@@ -21,11 +21,11 @@
 <body class="font-sans antialiased">
     <div class="min-h-screen bg-gray-100 dark:bg-gray-800">
         <!-- Navigation Menu -->
-        <nav class="bg-white dark:bg-gray-900 border-b border-gray-100 dark:border-gray-800">
+        <nav class="bg-white border-b border-gray-100 dark:bg-gray-900 dark:border-gray-800">
             <!-- Navigation Menu Full Container -->
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <!-- Logo + Menu Items + Hamburger -->
-                <div class="relative flex flex-col sm:flex-row px-6 sm:px-0 grow justify-between">
+                <div class="relative flex flex-col justify-between px-6 sm:flex-row sm:px-0 grow">
                     <!-- Logo -->
                     <div class="shrink-0 -ms-4">
                         <a href="{{ route('home')}}">
@@ -35,14 +35,14 @@
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">CineMagic</span>
 
                     <!-- Menu Items -->
-                    <div id="menu-container" class="grow flex flex-col sm:flex-row items-stretch
-                    invisible h-0 sm:visible sm:h-auto ms-14">
+                    <div id="menu-container" class="flex flex-col items-stretch invisible h-0 grow sm:flex-row sm:visible sm:h-auto ms-14">
 
                         <!-- Menu Item: Home
                         <x-menus.menu-item content="Home" href="#" selected="#" />-->
                         <!-- Menu Item: Movies
                         <x-menus.menu-item content="Movies" selectable="1" href="{{ route('movies.index') }}" selected="{{ Route::currentRouteName() == 'movies.index'}}" />
                         -->
+
 
                         <form class="mt-3 mx-auto flex justify-center w-full">
                             <div class="relative w-full max-w-lg">
@@ -67,7 +67,7 @@
                         <x-menus.submenu selectable="0" uniqueName="submenu_user">
                             <x-slot:content>
                                 <div class="pe-1">
-                                    <img src="{{ Auth::user()->photoFullUrl}}" class="w-11 h-11 min-w-11 min-h-11 rounded-full">
+                                    <img src="{{ Auth::user()->photoFullUrl}}" class="rounded-full w-11 h-11 min-w-11 min-h-11">
                                 </div>
                                 <div class="ps-1 sm:max-w-[calc(100vw-39rem)] md:max-w-[calc(100vw-41rem)] lg:max-w-[calc(100vw-46rem)] xl:max-w-[34rem] truncate">
                                     {{ Auth::user()->name }}
@@ -100,9 +100,9 @@
                         @endauth
                     </div>
                     <!-- Hamburger -->
-                    <div class="absolute right-0 top-0 flex sm:hidden pt-3 pe-3 text-black dark:text-gray-50">
+                    <div class="absolute top-0 right-0 flex pt-3 text-black sm:hidden pe-3 dark:text-gray-50">
                         <button id="hamburger_btn">
-                            <svg class="h-8 w-8" stroke="currentColor" fill="none" viewBox="0 0 24 24">
+                            <svg class="w-8 h-8" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                                 <path id="hamburger_btn_open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                                 <path class="invisible" id="hamburger_btn_close" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                             </svg>
@@ -113,16 +113,16 @@
         </nav>
 
         <!-- Page Heading -->
-        <!--<header class="bg-white dark:bg-gray-900 shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <!--<header class="bg-white shadow dark:bg-gray-900">
+            <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+                <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
                     @yield('header-title')
                 </h2>
             </div>
         </header>-->
 
         <main>
-            <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            <div class="py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
                 @if (session('alert-msg'))
                 <x-alert type="{{ session('alert-type') ?? 'info' }}">
                     {!! session('alert-msg') !!}
