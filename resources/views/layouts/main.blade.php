@@ -43,20 +43,21 @@
                         <x-menus.menu-item content="Movies" selectable="1" href="{{ route('movies.index') }}" selected="{{ Route::currentRouteName() == 'movies.index'}}" />
                         -->
 
-                        <form class="mx-auto mt-3">
-                            <div class="absolute">
-                                <div class="absolute inset-y-0 flex items-center pointer-events-none start-0 ps-3">
-                                    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+
+                        <form class="mt-3 mx-auto flex justify-center w-full">
+                            <div class="relative w-full max-w-lg">
+                                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                                    <svg class="w-4 h-4 mb-2 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                                         <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
                                     </svg>
                                 </div>
                                 <input type="search" id="default-search" class="block w-full p-2.5 ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Movies" required />
-                                <x-button element="submit" class="text-white absolute end-2.5 bottom-0.5" type="dark" text="Search" />
+                                <x-button element="submit" class="text-white absolute end-2.5 top-1/2 transform -translate-y-1/2 " type="dark" text="Search" />
                             </div>
                         </form>
 
 
-                        <!-- <div class="grow"></div> -->
+                        <!-- <div class="grow"></div>-->
 
 
                         <!-- Menu Item: Cart -->
