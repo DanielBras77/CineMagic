@@ -12,7 +12,6 @@ class GenreFormRequest extends FormRequest
         return true;
     }
 
-
     public function rules(): array
     {
         $rules = [
