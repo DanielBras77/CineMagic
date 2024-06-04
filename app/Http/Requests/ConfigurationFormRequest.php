@@ -3,10 +3,11 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class TicketFormRequest extends FormRequest
+class ConfigurationFormRequest extends FormRequest
 {
-    
+
     public function authorize(): bool
     {
         return true;
@@ -15,7 +16,8 @@ class TicketFormRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'ticket_price' => 'required|numeric|min:0',
+            'registered_customer_ticket_discount' => 'required|numeric|min:1|max:100',
         ];
     }
 }

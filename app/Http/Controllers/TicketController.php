@@ -4,48 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Ticket;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class TicketController extends Controller
 {
-
-    public function index()
+    public function show(Ticket $ticket): View
     {
-        //
-    }
-
-
-    public function create()
-    {
-        //
-    }
-
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-
-    public function show(Ticket $ticket)
-    {
-        //
-    }
-
-
-    public function edit(Ticket $ticket)
-    {
-        //
-    }
-
-
-    public function update(Request $request, Ticket $ticket)
-    {
-        //
-    }
-
-
-    public function destroy(Ticket $ticket)
-    {
-        //
+        return view('tickets.show')->with('ticket', $ticket);
     }
 }

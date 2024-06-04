@@ -13,11 +13,12 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class UserController extends Controller
 {
-      /*  use AuthorizesRequests;
+    use AuthorizesRequests;
+
     public function __construct()
     {
         $this->authorizeResource(User::class);
-    }*/
+    }
 
 
     public function index()

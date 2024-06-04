@@ -59,7 +59,7 @@ class CustomerController extends Controller
 
         return view(
             'customers.index',
-            compact('customers', 'courseOptions', 'filterByCourse', 'filterByName') //Courseeeeeeeeeeeeeeeeeeeeeee
+            compact('customers', 'courseOptions', 'filterByCourse', 'filterByName') //Não é Courseeeeeeeeeeeeeeeeeeeeeee
         );
     }
 

@@ -12,7 +12,6 @@ class CustomerFormRequest extends FormRequest
         return true;
     }
 
-
     public function rules(): array
     {
         return [
