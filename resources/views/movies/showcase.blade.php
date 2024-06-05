@@ -7,14 +7,7 @@
     <div class="my-4 p-6 bg-white dark:bg-gray-900 overflow-hidden
                     shadow-sm sm:rounded-lg text-gray-900 dark:text-gray-50">
 
-        <x-movies.filter-card
-        :filterAction="route('movies.showMovies')"
-        :resetUrl="route('movies.showMovies')"
-        :genres="$genres"
-        :genre="old('genre', $filterByGenre)"
-        :title="old('title', $filterByTitle)"
-        :year="old('year', $filterByYear)"
-        class="mb-6" />
+        <x-movies.filter-card :filterAction="route('movies.showMovies')" :resetUrl="route('movies.showMovies')" :genres="$genres" :genre="old('genre', $filterByGenre)" :title="old('title', $filterByTitle)" :year="old('year', $filterByYear)" class="mb-6" />
 
         <div class="grid-cols-1 sm:grid md:grid-cols-4">
             @foreach($movies as $movie)
@@ -24,16 +17,26 @@
                 </a>
                 <div class="p-6">
                     <h5 class="mt-2 mb-2 text-l font-medium leading-tight">{{$movie->title}}</h5>
-                    <p class="mb-4 text-base">{{$movie->year}}</p>
+                    <p class="text-base">{{$movie->year}}</p>
                 </div>
+
+                <div class="px-6">
+                    <h5 class="text-sm font-medium leading-tight">Sessões:</h5>
+
+                    @foreach($movie->nextScreenings as $screening)
+                    <div class="mb-2"> <a href="{{ route('screenings.showcase', ['screening'=>$screening]) }}"> {{$screening->date.' '.$screening->start_time}}</a>
+                    </div>
+                    @endforeach
+
+
+                </div>
+
             </div>
             @endforeach
-        </div>
 
-
-        <div class="mt-4">
-            {{ $movies->links() }}
+            <div class=" mt-4">
+                {{ $movies->links() }}
+            </div>
         </div>
     </div>
-</div>
-@endsection
+    @endsection

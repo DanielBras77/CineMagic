@@ -35,4 +35,12 @@ class Theater extends Model
     {
         return $this->hasMany(Screening::class);
     }
+
+    public function getRowsAttribute(){
+        return $this->seats()->orderBy("row")->pluck('row')->unique();
+    }
+
+    public function seatsRow($row){
+        return $this->seats()->where('row', $row)->orderBy('seat_number')->get();
+    }
 }
