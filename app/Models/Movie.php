@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -37,6 +38,12 @@ class Movie extends Model
     public function screenings():HasMany
     {
         return $this->hasMany(Screening::class);
+    }
+
+    public function getNextScreeningsAttribute()
+    {
+        return $this->screenings()->where('date', '>=', Carbon::today())
+        ->where('date', '<=', Carbon::today()->addWeek(2))->orderBy('date')->orderBy('start_time')->get();
     }
 
 }

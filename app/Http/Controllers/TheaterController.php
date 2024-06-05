@@ -36,7 +36,7 @@ class TheaterController extends \Illuminate\Routing\Controller
     }
 
 
-    public function  store(TheaterFormRequest $request): RedirectResponse
+    public function store(TheaterFormRequest $request): RedirectResponse
     {
         $newTheater = Theater::create($request->validated());
 
@@ -92,9 +92,6 @@ class TheaterController extends \Illuminate\Routing\Controller
     }
 
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Theater $theater): RedirectResponse
     {
         try {
@@ -134,8 +131,8 @@ class TheaterController extends \Illuminate\Routing\Controller
             ->with('alert-msg', $alertMsg);
     }
 
+    
     // Onde a foto pode ser nula é necessário colocar este método
-
     public function destroyPhoto(Theater $theater): RedirectResponse
     {
         if ($theater->user->photo_url) {

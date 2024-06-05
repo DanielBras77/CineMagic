@@ -41,6 +41,7 @@ require __DIR__ . '/auth.php';
 
 Route::get('/', [MovieController::class, 'showMovies'])->name('home');
 Route::get('showMovies', [MovieController::class, 'showMovies'])->name('movies.showMovies');
+Route::get("screenings\{screening}\showcase", [ScreeningController::class, 'showScreening']) -> name('screenings.showcase');
 Route::resource("genres", GenreController::class);
 Route::resource('movies', MovieController::class);
 Route::delete('movies/{movie}/photo', [MovieController::class, 'destroyPhoto'])->name('movies.photo.destroy')->can('update', 'movie');
