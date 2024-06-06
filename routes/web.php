@@ -1,17 +1,18 @@
 <?php
 
-use App\Http\Controllers\CustomerController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SeatController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\GenreController;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\TicketController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TheaterController;
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\ScreeningController;
-use App\Http\Controllers\SeatController;
-use App\Http\Controllers\TheaterController;
-use App\Http\Controllers\TicketController;
-use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\HomeController;
 
 
 
@@ -49,3 +50,15 @@ Route::resource("theaters",TheaterController::class);
 Route::delete('movies/{theater}/photo', [MovieController::class, 'destroyPhoto'])->name('theaters.photo.destroy')->can('update', 'theater');
 Route::resource("user", UserController::class);
 Route::resource("costumers", CustomerController::class);
+
+
+// Add a screening to the cart:
+Route::post('cart/{screening}', [CartController::class, 'addToCart'])->name('cart.add');
+// Remove a screening from the cart:
+Route::delete('cart/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
+// Show the cart:
+Route::get('cart', [CartController::class, 'show'])->name('cart.show');
+// Confirm (store) the cart and save screenings registration on the database:
+Route::post('cart', [CartController::class, 'confirm'])->name('cart.confirm');
+// Clear the cart:
+Route::delete('cart', [CartController::class, 'destroy'])->name('cart.destroy');
