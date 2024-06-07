@@ -25,7 +25,6 @@ Route::middleware('auth')->group(function () {
 
 Route::view('/dashboard', 'dashboard')->name('dashboard');
 
-
 /*
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -44,7 +43,7 @@ Route::resource('movies', MovieController::class);
 Route::delete('movies/{movie}/photo', [MovieController::class, 'destroyPhoto'])->name('movies.photo.destroy')->can('update', 'movie');
 Route::resource("theaters",TheaterController::class);
 Route::delete('movies/{theater}/photo', [MovieController::class, 'destroyPhoto'])->name('theaters.photo.destroy')->can('update', 'theater');
-Route::resource("user", UserController::class);
+Route::resource("users", UserController::class);
 Route::resource("costumers", CustomerController::class);
 
 
@@ -59,4 +58,4 @@ Route::post('cart', [CartController::class, 'confirm'])->name('cart.confirm');
 // Clear the cart:
 Route::delete('cart', [CartController::class, 'destroy'])->name('cart.destroy');
 
-Route::get('statistics', [StatisticsController::class, 'show'])->name('statistics.show');
+//Route::get('statistics', [StatisticsController::class, 'show'])->name('statistics.show');

@@ -24,11 +24,9 @@
                     <h5 class="text-sm font-medium leading-tight">Sessões:</h5>
 
                     @foreach($movie->nextScreenings as $screening)
-                    <div class="mb-2"> <a href="{{ route('screenings.showcase', ['screening'=>$screening]) }}"> {{$screening->date.' '.$screening->start_time}}</a>
+                    <div class="mb-2 bg-gray dark:bg-gray-700 rounded-md"> <a href="{{ route('screenings.showcase', ['screening'=>$screening]) }}"> {{$screening->date.' '.$screening->start_time}}</a>
                     </div>
                     @endforeach
-
-
                 </div>
 
             </div>

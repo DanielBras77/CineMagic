@@ -23,11 +23,12 @@ class UserFormRequest extends FormRequest
             'trailer_url' => 'nullable|url:http,https|max:255',
             'photo_file' => 'sometimes|image|max:4096', // maxsize = 4Mb
             'password'  => 'required|string|min:8|confirmed',
-            'password_configuration' =>
+            //'password_configuration' =>
 
-            /*		password opcional:
-		password			sometimes|string|min:8|confirmed
-		password_configuration		sometimes*/
+            /*	password opcional:
+		        password			        sometimes|string|min:8|confirmed
+		        password_configuration		sometimes
+            */
         ];
     }
 }
