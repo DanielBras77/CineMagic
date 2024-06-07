@@ -25,7 +25,7 @@
 
         @include('layouts.admin_partials.sidebar')
 
-        <!-- Content area -->
+        <!-- Content area-->
         <div class="relative flex flex-col flex-1 overflow-y-auto overflow-x-hidden" x-ref="contentarea">
 
             @include('layouts.admin_partials.header')

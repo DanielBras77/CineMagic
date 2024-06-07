@@ -23,17 +23,14 @@ Route::middleware('auth')->group(function () {
 });
 
 
-//Route::view('/dashboard', 'dashboard')->name('dashboard');
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::view('/dashboard', 'dashboard')->name('dashboard');
 
 /*
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 */
+
 
 require __DIR__ . '/auth.php';
 
@@ -48,7 +45,7 @@ Route::resource('movies', MovieController::class);
 Route::delete('movies/{movie}/photo', [MovieController::class, 'destroyPhoto'])->name('movies.photo.destroy')->can('update', 'movie');
 Route::resource("theaters",TheaterController::class);
 Route::delete('movies/{theater}/photo', [MovieController::class, 'destroyPhoto'])->name('theaters.photo.destroy')->can('update', 'theater');
-Route::resource("user", UserController::class);
+Route::resource("users", UserController::class);
 Route::resource("costumers", CustomerController::class);
 
 
