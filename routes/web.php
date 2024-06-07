@@ -34,8 +34,6 @@ Route::get('/dashboard', function () {
 
 require __DIR__ . '/auth.php';
 
-//Route::view('/', 'home')->name('home');
-
 
 Route::get('/', [MovieController::class, 'showMovies'])->name('home');
 Route::get('showMovies', [MovieController::class, 'showMovies'])->name('movies.showMovies');
@@ -59,3 +57,4 @@ Route::get('cart', [CartController::class, 'show'])->name('cart.show');
 Route::post('cart', [CartController::class, 'confirm'])->name('cart.confirm');
 // Clear the cart:
 Route::delete('cart', [CartController::class, 'destroy'])->name('cart.destroy');
+//Route::get('statistics', [StatisticsController::class, 'show'])->name('statistics.show');
