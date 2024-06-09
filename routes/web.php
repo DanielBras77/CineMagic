@@ -57,4 +57,5 @@ Route::get('cart', [CartController::class, 'show'])->name('cart.show');
 Route::post('cart', [CartController::class, 'confirm'])->name('cart.confirm');
 // Clear the cart:
 Route::delete('cart', [CartController::class, 'destroy'])->name('cart.destroy');
+
 //Route::get('statistics', [StatisticsController::class, 'show'])->name('statistics.show');
