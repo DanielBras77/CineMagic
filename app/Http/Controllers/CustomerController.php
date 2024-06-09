@@ -26,12 +26,8 @@ class CustomerController extends Controller
         $filterByName = $request->query('name');
         $customersQuery = Customer::query();
 
-        $customersQuery
-            ->join('users', 'users.id', '=', 'customers.user_id')
-            ->select('customers.*')
-            ->orderBy('users.name');
+        $customersQuery->join('users', 'users.id', '=', 'customers.user_id')->select('customers.*')->orderBy('users.name');
 
-        // Since we are joining customers and users, we can simplify the code to search by name
         if ($filterByName !== null) {
             $customersQuery
                 ->where('users.type', 'C')
@@ -40,10 +36,7 @@ class CustomerController extends Controller
 
         $customers = $customersQuery->with('user')->paginate(20)->withQueryString();
 
-        return view(
-            'customers.index',
-            compact('customers', 'filterByName')
-        );
+        return view('customers.index',compact('customers', 'filterByName'));
     }
 
     public function show(Customer $customer): View
@@ -62,7 +55,6 @@ class CustomerController extends Controller
     {
         $validatedData = $request->validated();
         $customer = DB::transaction(function () use ($validatedData, $customer, $request) {
-            //$customer->course = $validatedData['course'];
             $customer->number = $validatedData['nif'];
             $customer->number = $validatedData['payment_type'];
             $customer->number = $validatedData['payment_ref'];
@@ -73,13 +65,11 @@ class CustomerController extends Controller
 
             $customer->user->save();
             if ($request->hasFile('photo_file')) {
-                // Delete previous file (if any)
-                if (
-                    $customer->user->photo_filename &&
-                    Storage::fileExists('public/photos/' . $customer->user->photo_filename)
-                ) {
+
+                if ($customer->user->photo_filename && Storage::fileExists('public/photos/' . $customer->user->photo_filename)) {
                     Storage::delete('public/photos/' . $customer->user->photo_filename);
                 }
+
                 $path = $request->photo_file->store('public/photos');
                 $customer->user->photo_filename = basename($path);
                 $customer->user->save();
