@@ -4,10 +4,15 @@
 
 @section('main')
 <div class="justify-center">
-    <div class="my-4 p-6 bg-white dark:bg-gray-900 overflow-hidden
+    <div class="flex my-4 p-6 bg-white dark:bg-gray-900 overflow-hidden
                     shadow-sm sm:rounded-lg text-gray-900 dark:text-gray-50">
         @empty($cart)
-        <h3 class="text-xl w-96 text-center">Cart is Empty</h3>
+        <svg class="h-8 w-8 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+            <line x1="9" y1="9" x2="15" y2="15" />
+            <line x1="15" y1="9" x2="9" y2="15" />
+        </svg>
+        <h3 class="text-xl w-96 pl-6 justify-center">Cart is Empty</h3>
         @else
         <div class="font-base text-sm text-gray-700 dark:text-gray-300">
             <table class="table w-full">
@@ -29,7 +34,7 @@
                     <td>{{$item['screening']->theater->name}}</td>
                     <td>{{$item['seat']->row.$item['seat']->seat_number}}</td>
                     <td>
-                        <x-table.icon-minus class="px-0.5" method="delete" action="{{route('cart.remove', ['id' => $id])}}"/>
+                        <x-table.icon-minus class="px-0.5" method="delete" action="{{route('cart.remove', ['id' => $id])}}" />
                     </td>
                 </tr>
                 @endforeach
@@ -39,7 +44,7 @@
             <div class="flex justify-between space-x-12 items-end">
                 <div>
                     <h3 class="mb-4 text-xl">Shopping Cart Confirmation </h3>
-<!-- <form action="{{ route('cart.confirm') }}" method="post">
+                    <!-- <form action="{{ route('cart.confirm') }}" method="post">
                         @csrf
                         <x-field.input name="student_number" label="Student Number" width="lg" :readonly="false" value="{{ old('student_number') }}" />
                         <x-button element="submit" type="dark" text="Confirm" class="mt-4" />

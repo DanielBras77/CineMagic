@@ -113,7 +113,7 @@
                     </x-menus.admin-group-menu-items>
                     @endcan
 
-                    <!-- Users (Não está acabado)-->
+                    <!-- Users-->
                     @can('viewAny', App\Models\User::class)
                     @php
                     $options = [];
