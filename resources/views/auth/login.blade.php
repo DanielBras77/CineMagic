@@ -38,19 +38,24 @@
                         <span class="text-sm text-gray-600 ms-2 dark:text-gray-400">{{ __('Remember me') }}</span>
                     </label>
                 </div>
-                <div class="flex items-center justify-end mt-4">
-                    <a class="text-sm text-gray-600 underline rounded-md dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('register') }}">
-                        {{ __('Not signet yet?') }}
-                    </a>
-                    @if (Route::has('password.request'))
-                        <a class="text-sm text-gray-600 underline rounded-md dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
-                            {{ __('Forgot your password?') }}
+                <div class="flex items-center mt-4 justify-between">
+                    <div class="flex-grow-0">
+                        <a class="text-sm text-gray-600 underline rounded-md dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('register') }}">
+                            {{ __('Not signed up yet?') }}
                         </a>
-                    @endif
-
-                    <x-primary-button class="ms-3">
-                        {{ __('Log in') }}
-                    </x-primary-button>
+                    </div>
+                    <div class="flex-grow">
+                        <div class="flex justify-end items-center">
+                            @if (Route::has('password.request'))
+                                <a class="text-sm text-gray-600 underline rounded-md dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
+                                    {{ __('Forgot your password?') }}
+                                </a>
+                            @endif
+                            <x-primary-button class="ml-3">
+                                {{ __('Log in') }}
+                            </x-primary-button>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>
