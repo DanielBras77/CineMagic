@@ -3,7 +3,7 @@
 @section('header-title', 'Login')
 
 @section('main')
-    <div class="flex flex-col items-center justify-start min-h-screen pt-6 bg-gray-100 sm:pt-0 dark:bg-gray-900">
+    <div class="flex flex-col items-center justify-start min-h-screen pt-6 bg-gray-100 sm:pt-0 dark:text-white dark:bg-gray-900">
         <div class="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-xl dark:bg-gray-800 sm:rounded-lg">
             <h2 class="my-6 text-xl">Login</h2>
             <!-- Session Status -->
@@ -38,8 +38,10 @@
                         <span class="text-sm text-gray-600 ms-2 dark:text-gray-400">{{ __('Remember me') }}</span>
                     </label>
                 </div>
-
                 <div class="flex items-center justify-end mt-4">
+                    <a class="text-sm text-gray-600 underline rounded-md dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('register') }}">
+                        {{ __('Not signet yet?') }}
+                    </a>
                     @if (Route::has('password.request'))
                         <a class="text-sm text-gray-600 underline rounded-md dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800" href="{{ route('password.request') }}">
                             {{ __('Forgot your password?') }}

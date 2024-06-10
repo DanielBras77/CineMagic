@@ -90,6 +90,9 @@
                         @else
                         <!-- Menu Item: Login -->
                         <x-menus.menu-item content="Login" selectable="1" href="{{ route('login') }}" selected="{{ Route::currentRouteName() == 'login'}}" />
+
+                        <!--Menu Item: Registo -->
+                        <x-menus.menu-item content="Register" selectable="1" href="{{ route('register') }}" selected="{{ Route::currentRouteName() == 'register'}}" />
                         @endauth
                     </div>
                     <!-- Hamburger -->
