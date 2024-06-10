@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class CustomerController extends Controller
+class CustomerController extends \Illuminate\Routing\Controller
 {
     use AuthorizesRequests;
 
@@ -26,7 +26,7 @@ class CustomerController extends Controller
         $filterByName = $request->query('name');
         $customersQuery = Customer::query();
 
-        $customersQuery->join('users', 'users.id', '=', 'customers.user_id')->select('customers.*')->orderBy('users.name');
+        $customersQuery->join('users', 'users.id', '=', 'customers.id')->select('customers.*')->orderBy('users.name');
 
         if ($filterByName !== null) {
             $customersQuery

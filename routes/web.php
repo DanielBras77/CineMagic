@@ -44,7 +44,7 @@ Route::delete('movies/{movie}/photo', [MovieController::class, 'destroyPhoto'])-
 Route::resource("theaters",TheaterController::class);
 Route::delete('movies/{theater}/photo', [MovieController::class, 'destroyPhoto'])->name('theaters.photo.destroy')->can('update', 'theater');
 Route::resource("users", UserController::class);
-Route::resource("costumers", CustomerController::class);
+Route::resource("customers", CustomerController::class);
 
 
 // Add a screening to the cart:

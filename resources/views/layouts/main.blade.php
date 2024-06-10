@@ -36,14 +36,6 @@
 
                     <!-- Menu Items -->
                     <div id="menu-container" class="flex flex-col items-stretch invisible h-0 grow sm:flex-row sm:visible sm:h-auto ms-14">
-
-                        <!-- Menu Item: Home
-                        <x-menus.menu-item content="Home" href="#" selected="#" />-->
-                        <!-- Menu Item: Movies
-                        <x-menus.menu-item content="Movies" selectable="1" href="{{ route('movies.index') }}" selected="{{ Route::currentRouteName() == 'movies.index'}}" />
-                        -->
-
-
                         <form class="mt-3 mx-auto flex justify-center w-full">
                             <div class="relative w-full max-w-lg">
                                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -61,7 +53,7 @@
 
 
                         <!-- Menu Item: Cart -->
-                        <x-menus.cart href="#" selectable="0" selected="1" total="2" />
+                        <x-menus.cart href="{{ route('cart.show') }}" selectable="0" selected="1" total="2" />
 
                         @auth
                         <x-menus.submenu selectable="0" uniqueName="submenu_user">
@@ -74,6 +66,7 @@
                                 </div>
                                 </x-slot>
                                 <hr>
+                                <!-- Só se for Admin é que mostra o botão Dashboard-->
                                 <x-menus.submenu-item content="Dashboard" selectable="0" href="{{route('dashboard')}}" />
                                 <x-menus.submenu-item content="Profile" selectable="0" href="{{ route('profile.edit') }}" />
 
