@@ -6,12 +6,13 @@
 <div class="flex justify-center">
     <div class="my-4 p-6 bg-white dark:bg-gray-900 overflow-hidden
                     shadow-sm sm:rounded-lg text-gray-900 dark:text-gray-50">
+        <h1 class="pl-3 pt-3 pb-8 font-semibold text-5xl text-gray-800 dark:text-gray-200 leading-tight">Movies On Show</h1>
 
         <x-movies.filter-card :filterAction="route('movies.showMovies')" :resetUrl="route('movies.showMovies')" :genres="$genres" :genre="old('genre', $filterByGenre)" :title="old('title', $filterByTitle)" :year="old('year', $filterByYear)" class="mb-6" />
 
         <div class="grid-cols-1 sm:grid md:grid-cols-4">
             @foreach($movies as $movie)
-            <div class="mx-3 mt-6 flex flex-col rounded-lg bg-white text-surface shadow-secondary-1 sm:shrink-0 sm:grow sm:basis-0 transition-transform duration-500 transform hover:-translate-y-2 dark:bg-black dark:text-white">
+            <div class="mx-3 mt-6 flex flex-col rounded-lg bg-gray-100 text-surface shadow-secondary-1 sm:shrink-0 sm:grow sm:basis-0 transition-transform duration-500 transform hover:-translate-y-2 dark:bg-black dark:text-white">
                 <a href="#Neste href deve de ir para a rota dos detalhes do movie!">
                     <img class="rounded-t-lg" src="{{$movie->posterFullUrl}}" alt="Movie Poster" />
                 </a>
@@ -24,7 +25,8 @@
                     <h5 class="text-sm font-medium leading-tight">Sessões:</h5>
 
                     @foreach($movie->nextScreenings as $screening)
-                    <div class="mb-2 bg-gray dark:bg-gray-700 rounded-md"> <a href="{{ route('screenings.showcase', ['screening'=>$screening]) }}"> {{$screening->date.' '.$screening->start_time}}</a>
+                    <div class="mt-2 mb-2 bg-gray-300 dark:bg-gray-700 rounded-md">
+                        <a class="flex justify-center font-medium" href="{{ route('screenings.showcase', ['screening'=>$screening]) }}"> {{$screening->date.' '.$screening->start_time}}</a>
                     </div>
                     @endforeach
                 </div>
