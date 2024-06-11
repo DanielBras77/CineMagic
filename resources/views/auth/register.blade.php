@@ -3,7 +3,7 @@
 @section('header-title', 'Register')
 
 @section('main')
-    <div class="flex flex-col items-center justify-start min-h-screen pt-6 bg-gray-100 sm:pt-0 dark:bg-gray-900">
+    <div class="flex flex-col items-center justify-start min-h-screen pt-6 bg-gray-100 sm:pt-0 dark:text-white dark:bg-gray-900">
         <div class="w-full px-6 py-4 mt-6 overflow-hidden bg-white shadow-md sm:max-w-xl dark:bg-gray-800 sm:rounded-lg">
             <h2 class="my-6 text-xl">Register a new user</h2>
         <form method="POST" action="{{ route('register') }}">
