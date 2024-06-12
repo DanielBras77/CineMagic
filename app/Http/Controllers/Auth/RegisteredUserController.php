@@ -42,6 +42,7 @@ class RegisteredUserController extends Controller
                 ['id'=> $user->id]
             );
 
+            
             return $user;
         });
 
