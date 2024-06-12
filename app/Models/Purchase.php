@@ -12,7 +12,7 @@ class Purchase extends Model
 {
     use HasFactory;
     protected $fillable = [
-        'customer_id', 'date', 'total_price', 'customer_name', 'cutomer_email',
+        'customer_id', 'date', 'total_price', 'customer_name', 'customer_email',
         'nif', 'payment_type', 'payment_ref', 'receipt_pdf_filename'
     ];
 

@@ -33,7 +33,7 @@
 
                                 @else
                                 <div class="relative mt-3 ml-2 ">
-                                    <input class="sr-only peer" type="checkbox" value="{{ $seat->seat_number }}" name="seats[]" id="row{{ $row}}seat{{ $seat->seat_number }}">
+                                    <input class="sr-only peer" type="checkbox" value="{{ $seat->id }}" name="seats[]" id="row{{ $row}}seat{{ $seat->seat_number }}">
                                     <label class=" w-10 h-10 bg-white border border-gray-300 rounded-lg cursor-pointer focus:outline-none hover:bg-gray-50 peer-checked:ring-green-500 peer-checked:ring-2 peer-checked:border-transparent inline-block text-center pt-2" for="row{{ $row}}seat{{ $seat->seat_number }}">{{ $seat->seat_number }}</label>
 
                                     <div class="absolute hidden w-5 h-5 peer-checked:blocked  top-5 right-10">

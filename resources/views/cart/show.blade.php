@@ -44,10 +44,21 @@
                 @endforeach
             </table>
         </div>
-        <div class="mt-8 flex justify-end space-x-4">
+        <div class="mt-8 flex space-x-4">
             <div>
-                <form action="{{ route('cart.confirm') }}" method="post">
+                <form class="flex flex-wrap" action="{{ route('cart.confirm') }}" method="post">
                     @csrf
+                    <x-field.input name="customer_name" label="Customer Name" width="lg" :readonly="false" value="{{ old('customer_name', Auth::user()?->name) }}" />
+                    <x-field.input name="customer_email" label="Customer Email" width="lg" :readonly="false" value="{{ old('customer_email', Auth::user()?->email) }}" />
+                    <x-field.input name="nif" label="NIF" width="lg" :readonly="false" value="{{ old('nif', Auth::user()?->customer?->nif) }}" />
+                    <x-field.radio-group name="payment_type" label="Type of payment" :readonly="false"
+                        value="{{ old('payment_type', Auth::user()?->customer?->payment_type) }}"
+                        :options="[
+                            'MBWAY' => 'MBWAY',
+                            'VISA' => 'VISA',
+                            'PAYPAL' => 'PAYPAL'
+                        ]"/>
+                    <x-field.input name="payment_ref" label="Payment Ref" width="lg" :readonly="false" value="{{ old('payment_ref', Auth::user()?->customer?->payment_ref) }}" />
                     <x-button element="submit" type="dark" text="Confirm" class="mt-4" />
                 </form>
             </div>
