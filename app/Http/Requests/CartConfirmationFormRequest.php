@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CustomerFormRequest extends FormRequest
+class CartConfirmationFormRequest extends FormRequest
 {
 
     public function authorize(): bool
@@ -23,12 +23,11 @@ class CustomerFormRequest extends FormRequest
         }
 
         return [
-            'name' => 'required|string|min:3|max:255',
-            'email' => 'required|email|unique:users,email,' . ($this->user ? $this->user->id : null),
-            'photo_filename' => 'sometimes|image|max:4096',
-            'nif' => 'nullable|string|digits:9',
-            'payment_type' => 'nullable|in:MBWAY,VISA,PAYPAL',
-            'payment_ref' => 'required_with:payment_type' . $rules,
+            'customer_name' => 'required|string|min:3|max:255',
+            'customer_email' => 'required|email',
+            'nif' => 'required|string|digits:9',
+            'payment_type' => 'required|in:MBWAY,VISA,PAYPAL',
+            'payment_ref' => 'required:payment_type' . $rules,
         ];
     }
 }
