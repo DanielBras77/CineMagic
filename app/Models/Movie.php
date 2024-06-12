@@ -45,5 +45,11 @@ class Movie extends Model
         return $this->screenings()->where('date', '>=', Carbon::today())
         ->where('date', '<=', Carbon::today()->addWeek(2))->orderBy('date')->orderBy('start_time')->get();
     }
+    public function getPosterEncode64Attribute(){
+        $path = $this->posterFullUrl;
+        $type = pathinfo($path, PATHINFO_EXTENSION);
+        $data = file_get_contents($path);
+        return 'data:image/' . $type . ';base64,' . base64_encode($data);
+    }
 
 }

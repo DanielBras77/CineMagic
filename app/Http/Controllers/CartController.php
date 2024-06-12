@@ -140,7 +140,7 @@ class CartController extends Controller
                     ->with('alert-type', 'danger')
                     ->with('alert-msg', "No tickets bought!");
             } else {
-              // DB::transaction(function () use ($purchase, $insertTickets, $total_price) {
+               DB::transaction(function () use ($purchase, $insertTickets, $total_price) {
 
                     $purchase->total_price = $total_price;
                     $purchase->save();
@@ -152,7 +152,10 @@ class CartController extends Controller
                         //$ticket->qrcorde_url=route('tickets.showcase', ['ticket'=>$ticket])
                         $ticket->save();
                     }
-                //});
+                    
+                    $purchase->receipt_pdf_filename = PDFController::generatePDF($purchase);
+                    $purchase->save();
+                });
 
                 $request->session()->forget('cart');
             }
