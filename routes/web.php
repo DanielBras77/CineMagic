@@ -13,6 +13,7 @@ use App\Http\Controllers\TheaterController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\ScreeningController;
+use App\Http\Controllers\StatisticsController;
 
 
 
@@ -58,4 +59,6 @@ Route::post('cart', [CartController::class, 'confirm'])->name('cart.confirm');
 // Clear the cart:
 Route::delete('cart', [CartController::class, 'destroy'])->name('cart.destroy');
 
-//Route::get('statistics', [StatisticsController::class, 'show'])->name('statistics.show');
+Route::get('/statistics', [StatisticsController::class, 'index'])->name('statistics.index');
+Route::post('/statistics/filter', [StatisticsController::class, 'filter'])->name('statistics.filter');
+//Route::post('statistics/filter', [StatisticsController::class, 'filter'])->name('statistics.filter');
