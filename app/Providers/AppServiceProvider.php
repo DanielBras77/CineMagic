@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\Auth\User;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\ServiceProvider;
 
 
 class AppServiceProvider extends ServiceProvider
@@ -23,5 +25,11 @@ class AppServiceProvider extends ServiceProvider
             return $user->admin;
         });
         */
+        
+        Gate::define('use-cart', function (?User $user) {
+
+            return $user==null || $user->type == 'C';
+        });
+
     }
 }

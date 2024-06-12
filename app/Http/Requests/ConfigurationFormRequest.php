@@ -17,7 +17,7 @@ class ConfigurationFormRequest extends FormRequest
     {
         return [
             'ticket_price' => 'required|numeric|min:0',
-            'registered_customer_ticket_discount' => 'required|numeric|min:1|max:100',
+            'registered_customer_ticket_discount' => 'required|numeric|min:1|lt:ticket_price',
         ];
     }
 }

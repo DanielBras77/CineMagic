@@ -47,17 +47,18 @@ Route::delete('movies/{theater}/photo', [MovieController::class, 'destroyPhoto']
 Route::resource("users", UserController::class);
 Route::resource("customers", CustomerController::class);
 
-
-// Add a screening to the cart:
-Route::post('cart/{screening}', [CartController::class, 'addToCart'])->name('cart.add');
-// Remove a screening from the cart:
-Route::delete('cart/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
-// Show the cart:
-Route::get('cart', [CartController::class, 'show'])->name('cart.show');
-// Confirm (store) the cart and save screenings registration on the database:
-Route::post('cart', [CartController::class, 'confirm'])->name('cart.confirm');
-// Clear the cart:
-Route::delete('cart', [CartController::class, 'destroy'])->name('cart.destroy');
+Route::middleware('can:use-cart')->group(function () {
+    // Add a screening to the cart:
+    Route::post('cart/{screening}', [CartController::class, 'addToCart'])->name('cart.add');
+    // Remove a screening from the cart:
+    Route::delete('cart/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
+    // Show the cart:
+    Route::get('cart', [CartController::class, 'show'])->name('cart.show');
+    // Confirm (store) the cart and save screenings registration on the database:
+    Route::post('cart', [CartController::class, 'confirm'])->name('cart.confirm');
+    // Clear the cart:
+    Route::delete('cart', [CartController::class, 'destroy'])->name('cart.destroy');
+});
 
 Route::get('/statistics', [StatisticsController::class, 'index'])->name('statistics.index');
 Route::post('/statistics/filter', [StatisticsController::class, 'filter'])->name('statistics.filter');
