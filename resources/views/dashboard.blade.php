@@ -1,3 +1,5 @@
+@if(Auth::user()->type == 'A')
+
 @extends('layouts.admin')
 
 @section('header-title', 'Dashboard')
@@ -24,3 +26,11 @@
     </div>
 </div>
 @endsection
+@else
+    <div class="min-h-screen flex flex-col justify-center items-center bg-gray-100 dark:bg-gray-900">
+        <div class="text-gray-900 dark:text-gray-100 text-xl">
+            {{ __('You do not have access to this page.') }}
+        </div>
+    </div>
+@endif
+

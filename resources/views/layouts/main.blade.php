@@ -67,8 +67,12 @@
                                 </x-slot>
                                 <hr>
                                 <!-- Só se for Admin é que mostra o botão Dashboard-->
+                                @if(Auth::user()->type == 'A')
                                 <x-menus.submenu-item content="Dashboard" selectable="0" href="{{route('dashboard')}}" />
+                                @endif
                                 <x-menus.submenu-item content="Profile" selectable="0" href="{{ route('profile.edit') }}" />
+                                <!-- Botão que irá para o histórico de tickets -->
+                                <x-menus.submenu-item content="History" selectable="0" href="#" />
 
                                 <hr>
                                 <form id="form_to_logout_from_menu" method="POST" action="{{ route('logout') }}" class="hidden">
