@@ -1,6 +1,8 @@
 <?php
 
+use App\Models\Purchase;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PDFController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SeatController;
@@ -46,6 +48,11 @@ Route::delete('movies/{theater}/photo', [MovieController::class, 'destroyPhoto']
 Route::resource("users", UserController::class);
 Route::resource("customers", CustomerController::class);
 
+
+Route::get('/generate-pdf', [PDFController::class, 'generatePDF']);
+
+
+
 Route::middleware('can:use-cart')->group(function () {
     // Add a screening to the cart:
     Route::post('cart/{screening}', [CartController::class, 'addToCart'])->name('cart.add');
@@ -59,6 +66,14 @@ Route::middleware('can:use-cart')->group(function () {
     Route::delete('cart', [CartController::class, 'destroy'])->name('cart.destroy');
 });
 
+
+Route::get('teste/{purchase}',function(Purchase $purchase){
+    return view('purchases.receipt',compact('purchase'));
+});
+
+
+
+//Route::get("tickets\{ticket}\showcase", [ticketController::class, 'showcase'])->name('Tickets'.showcase);
 //Route::get('statistics', [StatisticsController::class, 'show'])->name('statistics.show');
 
 
