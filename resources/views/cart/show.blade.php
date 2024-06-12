@@ -16,7 +16,7 @@
         </div>
         @else
         <div class="mb-6">
-            <h3 class="text-xl font-medium w-96 pl-6">Shopping Cart Confirmation</h3>
+            <h3 class="text-xl font-medium w-96 pl-2">Shopping Cart Confirmation</h3>
         </div>
         <div class="font-base text-sm text-gray-700 dark:text-gray-300">
             <table class="table w-full">
@@ -29,8 +29,9 @@
                 </tr>
                 @foreach($cart as $id=>$item)
                 <tr>
-                    <td><img src="{{$item['screening']->movie->posterFullUrl}}" alt="" class="h-12">
-                        <p class="my-1">
+                    <td class="flex mt-4 align-middle">
+                        <img src="{{$item['screening']->movie->posterFullUrl}}" alt="" class="h-12">
+                        <p class="ml-9">
                             {{$item['screening']->movie->title}}
                         </p>
                     </td>
@@ -48,21 +49,23 @@
             <div>
                 <form class="flex flex-wrap" action="{{ route('cart.confirm') }}" method="post">
                     @csrf
-                    <x-field.input name="customer_name" label="Customer Name" width="lg" :readonly="false" value="{{ old('customer_name', Auth::user()?->name) }}" />
-                    <x-field.input name="customer_email" label="Customer Email" width="lg" :readonly="false" value="{{ old('customer_email', Auth::user()?->email) }}" />
-                    <x-field.input name="nif" label="NIF" width="lg" :readonly="false" value="{{ old('nif', Auth::user()?->customer?->nif) }}" />
-                    <x-field.radio-group name="payment_type" label="Type of payment" :readonly="false"
-                        value="{{ old('payment_type', Auth::user()?->customer?->payment_type) }}"
-                        :options="[
+                    <div class="flex w-3/4 grow">
+                        <x-field.input name="customer_name" label="Customer Name" width="lg" :readonly="false" value="{{ old('customer_name', Auth::user()?->name) }}" />
+                        <x-field.input name="customer_email" label="Customer Email" width="lg" :readonly="false" value="{{ old('customer_email', Auth::user()?->email) }}" />
+                    </div>
+                    <div class="flex">
+                        <x-field.input name="nif" label="NIF" width="lg" :readonly="false" value="{{ old('nif', Auth::user()?->customer?->nif) }}" />
+                        <x-field.radio-group name="payment_type" label="Type of payment" :readonly="false" value="{{ old('payment_type', Auth::user()?->customer?->payment_type) }}" :options="[
                             'MBWAY' => 'MBWAY',
                             'VISA' => 'VISA',
                             'PAYPAL' => 'PAYPAL'
-                        ]"/>
-                    <x-field.input name="payment_ref" label="Payment Ref" width="lg" :readonly="false" value="{{ old('payment_ref', Auth::user()?->customer?->payment_ref) }}" />
-                    <x-button element="submit" type="dark" text="Confirm" class="mt-4" />
+                        ]" />
+                        <x-field.input name="payment_ref" label="Payment Ref" width="lg" :readonly="false" value="{{ old('payment_ref', Auth::user()?->customer?->payment_ref) }}" />
+                    </div>
+                    <div class="flex justify-end mt-6">
+                        <x-button element="submit" type="dark" text="Confirm" class="mt-4" />
+                    </div>
                 </form>
-            </div>
-            <div>
                 <form action="{{ route('cart.destroy') }}" method="post">
                     @csrf
                     @method('DELETE')

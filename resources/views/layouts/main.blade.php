@@ -63,7 +63,6 @@
                                 </div>
                                 </x-slot>
                                 <hr>
-                                <!-- Só se for Admin é que mostra o botão Dashboard-->
                                 @if(Auth::user()->type == 'A')
                                 <x-menus.submenu-item content="Dashboard" selectable="0" href="{{route('dashboard')}}" />
                                 @endif

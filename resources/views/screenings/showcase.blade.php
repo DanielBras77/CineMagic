@@ -6,23 +6,31 @@
 <main>
     <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
         <div class="my-4 p-6 bg-white dark:bg-gray-900 overflow-hidden shadow-sm sm:rounded-lg text-gray-900 dark:text-gray-50">
-            <h3 class="pb-3 font-semibold text-lg text-gray-800 dark:text-gray-300">
+            <h3 class="text-2xl pb-3 font-semibold text-gray-800 dark:text-gray-300">
                 Screening: {{$screening->date.' '.$screening->start_time}}
             </h3>
-            <div class="flex">
-                <div>
-                    <img src="{{$screening->movie->posterFullUrl}}" alt="Img do Movie">
+            <div class="flex flex-wrap">
+                <div class="w-full md:w-1/3">
+                    <img class="pt-3 w-5/6" src="{{$screening->movie->posterFullUrl}}" alt="Img do Movie">
                 </div>
-                <div class="grow">
+                <div class="w-full md:w-2/3 pl-6">
+                    <h3 class="text-4xl pt-8 font-semibold text-gray-800 dark:text-gray-300">{{$screening->movie->title}}</h3>
+                    <p class="text-xl text-gray-800 dark:text-gray-300"><strong>Year:</strong> {{$screening->movie->year}}</p>
+                    <h3 class="mt-6 text-2xl pt-2 text-gray-800 dark:text-gray-300"><strong>Theater:</strong> {{$screening->theater->name}}</h3>
+                    <p class="mt-8 pt-2 text-gray-800 dark:text-gray-300">{{$screening->movie->synopsis}}</p>
+                    <!-- Ver se vale a pena colocar ou não
+                    <p class="mt-16 text-gray-800 dark:text-gray-300">
+                        <a href="{{$screening->movie->trailer_url}}"><strong>Trailer Url:</strong> {{$screening->movie->trailer_url}}</a>
+                    </p>-->
+                </div>
+                <div class="mt-8 w-3/4 grow">
                     <form action="{{ route('cart.add', ['screening'=>$screening])}}" method="POST">
                         @csrf
-                        <h3>{{$screening->movie->title}}</h3>
-                        <p>{{$screening->theater->name}}</p>
                         <p>Lugares:</p>
                         @foreach ($screening->theater->rows as $row)
                         <div class="flex">
                             <strong class="mr-10 mt-5">{{ $row }}</strong>
-                            <div class="flex ">
+                            <div class="flex justify-end">
                                 @foreach ($screening->theater->seatsRow($row) as $seat)
                                 @if ($screening->tickets()->where('seat_id', $seat->id)->count())
 
@@ -44,7 +52,10 @@
                             </div>
                         </div>
                         @endforeach
-                        <x-button element="submit" type="dark" text="Add to Cart" />
+                        <div class="flex justify-end mt-6">
+                            <x-button element="submit" type="dark" text="Add to Cart" />
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

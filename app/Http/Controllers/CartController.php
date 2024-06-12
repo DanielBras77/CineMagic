@@ -159,6 +159,7 @@ class CartController extends Controller
                 });
 
                 $request->session()->forget('cart');
+                session()->forget('total_seats');
             }
             if ($ignoredTickets == 0) {
                 return redirect()->route('home')
