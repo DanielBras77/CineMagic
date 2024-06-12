@@ -22,14 +22,25 @@ class StatisticsController extends \Illuminate\Routing\Controller
     {
         $genres = Genre::orderBy('name')->pluck('name', 'code')->toArray();
         $genres = array_merge([null => 'Any genre'], $genres);
-        $statistics = $this->getStatistics();
+        $filterByYear = $request->query('year');
+
+        $query = DB::table('tickets')
+        ->join('screenings', 'tickets.screening_id', '=', 'screenings.id')
+        ->join('movies', 'screenings.movie_id', '=', 'movies.id')
+        ->select(DB::raw('count(tickets.id) as total_tickets'), DB::raw('sum(tickets.price) as total_revenue'));
+        if ($filterByGenre !== null) {
+            $query->where('genre_code', $filterByGenre);
+        }
+
+
+        //$statistics = $this->getStatistics();
         return view('statistics.index', compact( 'genres', 'statistics'));
     }
 
     public function filter(Request $request)
     {
         // Obter dados filtrados
-        $statistics = $this->getStatistics($request->genre_code, $request->start_date, $request->end_date);
+        $statistics = $this->getStatistics($request->genre_code);
         $genres = Genre::orderBy('name')->pluck('name', 'code')->toArray();
         $genres = array_merge([null => 'Any genre'], $genres);
         $date = Carbon::now()->subMonths(6);
