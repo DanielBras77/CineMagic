@@ -38,10 +38,10 @@ class CartController extends Controller
                 $seats_adicionados[] = $seat->row . $seat->seat_number;
             }
         }
-        //dd($seats_adicionados);
         if (count($seats_adicionados)) {
 
             session(['cart' => $cart]);
+            session(['total_seats' => count($cart)]);
             $alertType = 'success';
             $htmlMessage = "Seat(s) <strong>" . implode(',', $seats_adicionados) . "</strong> was/were added to the cart.";
 
@@ -71,6 +71,7 @@ class CartController extends Controller
 
                 unset($cart[$id]);
                 session(['cart' => $cart]);
+                session(['total_seats' => count($cart)]);
             }
             return back()
                 ->with('alert-msg', $htmlMessage)
@@ -152,7 +153,7 @@ class CartController extends Controller
                         //$ticket->qrcorde_url=route('tickets.showcase', ['ticket'=>$ticket])
                         $ticket->save();
                     }
-                    
+
                     $purchase->receipt_pdf_filename = PDFController::generatePDF($purchase);
                     $purchase->save();
                 });

@@ -28,7 +28,7 @@
 @endsection
 @else
     <div class="min-h-screen flex flex-col justify-center items-center bg-gray-100 dark:bg-gray-900">
-        <div class="text-gray-900 dark:text-gray-100 text-xl">
+        <div class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('You do not have access to this page.') }}
         </div>
     </div>
