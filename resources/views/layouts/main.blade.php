@@ -49,11 +49,8 @@
                         </form>
 
 
-                        <!-- <div class="grow"></div>-->
-
-
                         <!-- Menu Item: Cart -->
-                        <x-menus.cart href="{{ route('cart.show') }}" selectable="0" selected="1" total="2" />
+                        <x-menus.cart href="{{ route('cart.show') }}" selectable="0" selected="1" total="{{ session('total_seats', 0) }}"/>
 
                         @auth
                         <x-menus.submenu selectable="0" uniqueName="submenu_user">
@@ -66,7 +63,6 @@
                                 </div>
                                 </x-slot>
                                 <hr>
-                                <!-- Só se for Admin é que mostra o botão Dashboard-->
                                 @if(Auth::user()->type == 'A')
                                 <x-menus.submenu-item content="Dashboard" selectable="0" href="{{route('dashboard')}}" />
                                 @endif
@@ -111,15 +107,6 @@
                 </div>
             </div>
         </nav>
-
-        <!-- Page Heading -->
-        <!--<header class="bg-white shadow dark:bg-gray-900">
-            <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
-                <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-                    @yield('header-title')
-                </h2>
-            </div>
-        </header>-->
 
         <main>
             <div class="py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
