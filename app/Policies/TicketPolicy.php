@@ -8,14 +8,10 @@ use Illuminate\Auth\Access\Response;
 
 class TicketPolicy
 {
-    public function viewAny(User $user): bool
-    {
-        return true;
-    }
 
     public function view(User $user, Ticket $ticket): bool
     {
-        return true;
+        return $user->type == 'A' || $user->type == 'E' || ($user->type == 'C' && $ticket->purchase->customer_id == $user->id);
     }
 
     public function create(User $user): bool
@@ -29,16 +25,6 @@ class TicketPolicy
     }
 
     public function delete(User $user, Ticket $ticket): bool
-    {
-        return true;
-    }
-
-    public function restore(User $user, Ticket $ticket): bool
-    {
-        return true;
-    }
-
-    public function forceDelete(User $user, Ticket $ticket): bool
     {
         return true;
     }

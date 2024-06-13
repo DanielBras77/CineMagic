@@ -152,7 +152,7 @@ class UserController extends \Illuminate\Routing\Controller
 
     public function updatedBlock(User $user){
 
-        if (Auth::user()->cannot('update', $user)){
+        if (Auth::user()->cannot('updateBlock', $user)){
             abort(403);
         }
 

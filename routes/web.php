@@ -26,14 +26,25 @@ Route::middleware('auth')->group(function () {
 });
 
 
-//Route::view('/dashboard', 'dashboard')->name('dashboard');
+/*Route::view('/dashboard', 'dashboard')->name('dashboard');
 
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');*/
 
 
+//Para rotas que exigem autenticação, adicionar ao carrinho não, por exemplo
+Route::middleware(['auth', 'verified', 'can:no-blocked'])->group(function () {
+
+    Route::view('/dashboard', 'dashboard')->name('dashboard');
+
+    // para rotas de admin
+    Route::middleware('can:admin')->group(function () {
+        //statistics fica aqui
+    });
+
+});
 
 require __DIR__ . '/auth.php';
 

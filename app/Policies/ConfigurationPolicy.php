@@ -2,13 +2,12 @@
 
 namespace App\Policies;
 
-use App\Models\Theater;
+use App\Models\Configuration;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
-class TheaterPolicy
+class ConfigurationPolicy
 {
-
     public function before(?User $user, string $ability): bool|null
     {
         if ($user?->admin) {
@@ -24,22 +23,37 @@ class TheaterPolicy
         return false;
     }
 
-    public function view(User $user, Theater $theater): bool
+
+    public function view(User $user, Configuration $configuration): bool
     {
         return false;
     }
+
 
     public function create(User $user): bool
     {
         return false;
     }
 
-    public function update(User $user, Theater $theater): bool
+
+    public function update(User $user, Configuration $configuration): bool
     {
         return false;
     }
 
-    public function delete(User $user, Theater $theater): bool
+    public function delete(User $user, Configuration $configuration): bool
+    {
+        return false;
+    }
+
+
+    public function restore(User $user, Configuration $configuration): bool
+    {
+        return false;
+    }
+
+
+    public function forceDelete(User $user, Configuration $configuration): bool
     {
         return false;
     }
