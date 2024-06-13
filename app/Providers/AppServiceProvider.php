@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
 
 
         Gate::define('no-blocked', function (?User $user) {
-            
+
             return !$user->blocked;
         });
 
@@ -35,9 +35,6 @@ class AppServiceProvider extends ServiceProvider
 
             return $user==null || $user->type == 'C';
         });
-
-
-
-
+        
     }
 }

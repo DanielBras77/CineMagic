@@ -23,6 +23,13 @@
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
 
+            <!-- NIF -->
+            <div class="mt-4">
+                <x-input-label for="NIF" :value="__('NIF')" />
+                <x-text-input id="NIF" class="block w-full mt-1" type="number" name="NIF" :value="old('NIF')" autocomplete="username" maxlength="9" />
+                <x-input-error :messages="$errors->get('NIF')" class="mt-2" />
+            </div>
+
             <!-- Password -->
             <div class="mt-4">
                 <x-input-label for="password" :value="__('Password')" />

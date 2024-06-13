@@ -14,18 +14,9 @@ class TicketPolicy
         return $user->type == 'A' || $user->type == 'E' || ($user->type == 'C' && $ticket->purchase->customer_id == $user->id);
     }
 
-    public function create(User $user): bool
+    // Não sei se é validate??
+    public function validate(User $user): bool
     {
-        return true;
-    }
-
-    public function update(User $user, Ticket $ticket): bool
-    {
-        return true;
-    }
-
-    public function delete(User $user, Ticket $ticket): bool
-    {
-        return true;
+        return $user->type == 'E';
     }
 }
