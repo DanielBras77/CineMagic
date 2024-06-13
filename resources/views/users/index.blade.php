@@ -6,6 +6,15 @@
     <div class="flex justify-center">
         <div class="my-4 p-6 bg-white dark:bg-gray-900 overflow-hidden
                     shadow-sm sm:rounded-lg text-gray-900 dark:text-gray-50">
+
+            <x-users.filter-card
+                :filterAction="route('users.index')"
+                :resetUrl="route('users.index')"
+                :name="old('name', $filterByName)"
+                :type="old('email', $filterByEmail)"
+                :type="old('type', $filterByType)"
+                class="mb-6"/>
+
             @can('create', App\Models\User::class)
                 <div class="flex items-center gap-4 mb-4">
                     <x-button
@@ -19,6 +28,7 @@
                     :showView="true"
                     :showEdit="true"
                     :showDelete="true"
+                    :showBlock="true"
                     />
             </div>
             <div class="mt-4">

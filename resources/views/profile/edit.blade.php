@@ -1,5 +1,4 @@
 @extends('layouts.main')
-
 @section('header-title', 'Profile')
 
 @section('main')

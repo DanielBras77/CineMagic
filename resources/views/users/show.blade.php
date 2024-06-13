@@ -30,6 +30,16 @@
                             type="danger"/>
                     </form>
                     @endcan
+                    @can('block', $user)
+                    <form method="POST" action="{{ route('users.updatedBlock', ['user' => $user]) }}">
+                        @csrf
+                        @method('PATCH')
+                        <x-button
+                            element="submit"
+                            text="Block"
+                            type="danger"/>
+                    </form>
+                    @endcan
                 </div>
                 <header>
                     <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">

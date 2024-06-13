@@ -8,22 +8,29 @@
 </head>
 
 <body>
+
     <img src="../../../img/logoCinemagic.png" alt="" width="28" height="28">
     <h1><strong>Cine Magic</strong></h1>
     <p>
         <strong>Id: </strong> {{$purchase->id}}
         <strong>Date: </strong> {{$purchase->date}}
     </p>
+    </p>
+    <p>
     <p>
         <strong>Customer E-mail: </strong> {!!$purchase->customer_email!!}
         <strong>Customer Name: </strong> {!!$purchase->customer_name!!}
     </p>
+    </p>
+    <p>
     <p>
         <strong>Nif: </strong> {{$purchase->nif}}
         <strong>Payment Type: </strong> {{$purchase->payment_type}}
         <strong>Payment Reference: </strong> {{$purchase->payment_ref}}
         <strong>Total Time: </strong> {{$purchase->total_price}}
     </p>
+    </p>
+
     <p><strong>Items:</strong></p>
     <table style="border-spacing: 10px">
         <th>Movie</th>
