@@ -18,15 +18,6 @@
                 @csrf
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                     <div>
-                        <label for="movie_id" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Filme</label>
-                        <select name="movie_id" id="movie_id" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-700 dark:text-gray-300">
-                            <option value="">Todos</option>
-                            @foreach($movies as $movie)
-                                <option value="{{ $movie->id }}" {{ isset($selectedMovie) && $selectedMovie->id == $movie->id ? 'selected' : '' }}>{{ $movie->title }}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div>
                         <label for="genre_code" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Gênero</label>
                         <select name="genre_code" id="genre_code" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-700 dark:text-gray-300">
                             <option value="">Todos</option>
@@ -34,14 +25,6 @@
                                 <option value="{{ $code }}" {{ isset($selectedGenre) && $selectedGenre->code == $code ? 'selected' : '' }}>{{ $name }}</option>
                             @endforeach
                         </select>
-                    </div>
-                    <div>
-                        <label for="start_date" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Data Início</label>
-                        <input type="date" name="start_date" id="start_date" value="{{ $startDate ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-700 dark:text-gray-300">
-                    </div>
-                    <div>
-                        <label for="end_date" class="block text-sm font-medium text-gray-700 dark:text-gray-300">Data Fim</label>
-                        <input type="date" name="end_date" id="end_date" value="{{ $endDate ?? '' }}" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:bg-gray-700 dark:text-gray-300">
                     </div>
                 </div>
                 <div class="mt-6">

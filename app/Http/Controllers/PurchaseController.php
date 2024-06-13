@@ -100,4 +100,3 @@ class PriceController extends Controller
         return $price->unit_price_catalog;
     }
 }
-*/
