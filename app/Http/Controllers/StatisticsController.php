@@ -22,7 +22,9 @@ class StatisticsController extends \Illuminate\Routing\Controller
     {
         $genres = Genre::orderBy('name')->pluck('name', 'code')->toArray();
         $genres = array_merge([null => 'Any genre'], $genres);
-        $filterByYear = $request->query('year');
+        $filterByYear =  Screening::where('date', '>=', Carbon::today())
+        ->where('date', '<=', Carbon::today()->addWeeks(2))->pluck('movie_id')->unique();
+        $filterByGenre = $request->query('genre');
 
         $query = DB::table('tickets')
         ->join('screenings', 'tickets.screening_id', '=', 'screenings.id')
