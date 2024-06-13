@@ -7,8 +7,11 @@ use App\Models\Ticket;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\UserFormRequest;
+use GrahamCampbell\ResultType\Success;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
@@ -23,16 +26,26 @@ class UserController extends \Illuminate\Routing\Controller
 
     public function index(Request $request): View
     {
-        $usersQuery = User::where('type', 'C')->orderBy('name');
+        $usersQuery = User::whereIn('type', ['A','E'])->orderBy('name');
         $filterByName = $request->query('name');
+        $filterByEmail = $request->query('email');
+        $filterByType = $request->query('type');
 
         if ($filterByName) {
             $usersQuery->where('name', 'like', "%$filterByName%");
         }
 
+        if ($filterByEmail) {
+            $usersQuery->where('email', 'like', "%$filterByEmail%");
+        }
+
+        if ($filterByType) {
+            $usersQuery->where('type', $filterByType);
+        }
+
         $users = $usersQuery->paginate(20)->withQueryString();
 
-        return view('users.index',compact('users', 'filterByName'));
+        return view('users.index',compact('users', 'filterByName', 'filterByEmail', 'filterByType'));
     }
 
 
@@ -46,7 +59,6 @@ class UserController extends \Illuminate\Routing\Controller
     public function create(): View
     {
         $newUser = new User();
-        $newUser->type = 'C';
         return view('users.create')->with('user', $newUser);
     }
 
@@ -54,14 +66,9 @@ class UserController extends \Illuminate\Routing\Controller
     {
         $validatedData = $request->validated();
         $newUser = new User();
-        $newUser->type = 'C';
-        $newUser->name = $validatedData['name'];
-        $newUser->email = $validatedData['email'];
-        $newUser->admin = $validatedData['admin'];
-        $newUser->gender = $validatedData['gender'];
+        $newUser->fill($validatedData);
 
-        // Initial password is always 123
-        $newUser->password = bcrypt('12345678');
+        $newUser->password = Hash::make($validatedData['password']);
         $newUser->save();
 
         if ($request->hasFile('photo_file')) {
@@ -86,13 +93,9 @@ class UserController extends \Illuminate\Routing\Controller
 
     public function update(UserFormRequest $request, User $user): RedirectResponse
     {
-        $validatedData = $request->validated();
-        $user->type = 'A';
-        $user->name = $validatedData['name'];
-        $user->email = $validatedData['email'];
-        $user->admin = $validatedData['admin'];
-        $user->gender = $validatedData['gender'];
+        $user->fill( $request->validated());
         $user->save();
+
         if ($request->hasFile('photo_file')) {
 
             // Delete previous file (if any)
@@ -114,8 +117,26 @@ class UserController extends \Illuminate\Routing\Controller
             ->with('alert-msg', $htmlMessage);
     }
 
+    public function destroy(User $user): RedirectResponse
+    {
+        $user->delete();
+
+        $alertType = 'success';
+        $alertMsg = "User {$user->user->name} has been deleted successfully!";
+
+        return redirect()->route('users.index')
+            ->with('alert-type', $alertType)
+            ->with('alert-msg', $alertMsg);
+
+    }
+
     public function destroyPhoto(User $user): RedirectResponse
     {
+        if (Auth::user()->cannot('delete', $user)){
+            abort(403);
+        }
+
+
         if ($user->photo_filename) {
             if (Storage::fileExists('public/users/' . $user->photo_filename)) {
                 Storage::delete('public/users/' . $user->photo_filename);
@@ -129,5 +150,17 @@ class UserController extends \Illuminate\Routing\Controller
         return redirect()->back();
     }
 
-    //updateBlocked
+    public function updatedBlock(User $user){
+
+        if (Auth::user()->cannot('update', $user)){
+            abort(403);
+        }
+
+        $user->blocked = !$user->blocked;
+        $user->save();
+        $msg = $user->blocked?"blocked":"active/unblocked";
+        $htmlMessage = "User <u>($user->name)</u> is {$msg} ";
+
+        return redirect()->back()->with('alert-type', 'success')->with('alert-msg', "$htmlMessage");
+    }
 }

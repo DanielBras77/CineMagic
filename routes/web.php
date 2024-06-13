@@ -49,7 +49,7 @@ Route::delete('movies/{theater}/photo', [MovieController::class, 'destroyPhoto']
 Route::resource("users", UserController::class);
 Route::resource("customers", CustomerController::class);
 
-
+Route::patch('users/{user}/block',[UserController::class, 'updatedBlock'])->name('users.updatedBlock');
 Route::get('/generate-pdf', [PDFController::class, 'generatePDF']);
 
 

@@ -104,6 +104,7 @@ class CartController extends Controller
             $ignoredTickets = 0;
             $configuration = Configuration::first();
             $ticket_price = $configuration->ticket_price;
+            $price = Auth::user() ? $ticket_price - $configuration->registered_customer_ticket_discount : $ticket_price;
             $total_price = 0;
 
             foreach ($cart as $item) {
@@ -112,7 +113,7 @@ class CartController extends Controller
                     ($item['screening']->date == Carbon::today() &&
                         $item['screening']->start_time >= Carbon::now()->subMinutes(5)->format("H:i:s"))
                 ) {
-                    $price = Auth::user() ? $ticket_price - $configuration->registered_customer_ticket_discount : $ticket_price;
+
                     $insertTickets[]= [
                         'screening_id' => $item['screening']->id,
                         'seat_id' => $item['seat']->id,
