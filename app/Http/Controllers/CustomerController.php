@@ -10,6 +10,7 @@ use App\Http\Requests\CustomerFormRequest;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Validation\Rule;
 
 class CustomerController extends \Illuminate\Routing\Controller
 {
@@ -109,5 +110,12 @@ class CustomerController extends \Illuminate\Routing\Controller
                 ->with('alert-msg', "Photo of customer {$customer->user->name} has been deleted.");
         }
         return redirect()->back();
+    }
+
+    public function rules(): array
+    {
+        return [
+            'photo_file' => 'sometimes|image|max:4096',
+        ];
     }
 }

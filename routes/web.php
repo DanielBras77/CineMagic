@@ -99,3 +99,8 @@ Route::get('teste/{purchase}', function (Purchase $purchase) {
 Route::get('/statistics', [StatisticsController::class, 'index'])->name('statistics.index');
 Route::post('/statistics/filter', [StatisticsController::class, 'filter'])->name('statistics.filter');
 //Route::post('statistics/filter', [StatisticsController::class, 'filter'])->name('statistics.filter');
+
+
+//para apagar foto de perfil do customer
+Route::delete('customers/{customer}/photo', [CustomerController::class, 'destroyPhoto'])
+    ->name('customers.photo.destroy');

@@ -17,9 +17,6 @@ $readonly = $mode == 'show';
 
     </div>
 
-
-@if ($mode=='create')
-
 <x-field.input name="password" label="Password" :readonly="false" />
 <x-field.input name="password_confirmation" label="Password Confirmation" :readonly="false"/>
 
