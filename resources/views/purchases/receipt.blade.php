@@ -12,7 +12,6 @@
     <img src="../img/logoCinemagic.png" alt="" width="28" height="28">
     <h1><strong>Cine Magic</strong></h1>
     <p>
-    <p>
         <strong>Id: </strong> {{$purchase->id}}
         <strong>Date: </strong> {{$purchase->date}}
     </p>
