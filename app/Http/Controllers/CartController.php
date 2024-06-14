@@ -4,17 +4,18 @@ namespace App\Http\Controllers;
 
 use Carbon\Carbon;
 use App\Models\Seat;
-use App\Models\User;
+use App\Models\Ticket;
 use App\Models\Purchase;
 use App\Models\Screening;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Models\Configuration;
 use Illuminate\Support\Facades\DB;
+use App\View\Components\menus\Cart;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
+use App\Http\Controllers\PDFController;
 use App\Http\Requests\CartConfirmationFormRequest;
-use App\Models\Ticket;
 
 class CartController extends Controller
 {

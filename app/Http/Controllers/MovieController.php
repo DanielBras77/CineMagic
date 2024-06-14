@@ -8,13 +8,19 @@ use App\Models\Screening;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\MovieFormRequest;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class MovieController extends Controller
+class MovieController extends \Illuminate\Routing\Controller
 {
+    use AuthorizesRequests;
+
+    public function __construct()
+    {
+        $this->authorizeResource(Movie::class);
+    }
 
     public function index(Request $request): View
     {

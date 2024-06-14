@@ -13,6 +13,4 @@ class Configuration extends Model
     protected $fillable=['ticket_price','registered_customer_ticket_discount'];
     protected $table="configuration";
 
-
-    // Não tem relacionamentos
 }

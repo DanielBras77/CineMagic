@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use App\Models\Theater;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\TheaterFormRequest;
@@ -131,7 +130,7 @@ class TheaterController extends \Illuminate\Routing\Controller
             ->with('alert-msg', $alertMsg);
     }
 
-    
+
     // Onde a foto pode ser nula é necessário colocar este método
     public function destroyPhoto(Theater $theater): RedirectResponse
     {

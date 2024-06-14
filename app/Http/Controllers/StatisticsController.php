@@ -14,10 +14,8 @@ use App\Http\Requests\SeatFormRequest;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Carbon\Carbon;
 
-class StatisticsController extends \Illuminate\Routing\Controller
+class StatisticsController extends Controller
 {
-
-
 
     //Saber quantos movies existem por ano
 
