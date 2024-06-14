@@ -19,7 +19,7 @@ use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\ConfigurationController;
 
 
-
+// Bloquear o acesso a isto do employee
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -64,6 +64,8 @@ Route::resource("customers", CustomerController::class);
 
 
 Route::patch('users/{user}/block', [UserController::class, 'updatedBlock'])->name('users.updatedBlock');
+Route::patch('customers/{user}/block', [UserController::class, 'updatedBlock'])->name('customers.updatedBlock');
+
 Route::get('/generate-pdf', [PDFController::class, 'generatePDF']);
 
 Route::get('configurations/edit', [ConfigurationController::class, 'edit'])->name('configurations.edit');

@@ -66,9 +66,13 @@
                                 @if(Auth::user()->type == 'A')
                                 <x-menus.submenu-item content="Dashboard" selectable="0" href="{{route('dashboard')}}" />
                                 @endif
+                                @if(Auth::user()->type != 'E')
                                 <x-menus.submenu-item content="Profile" selectable="0" href="{{ route('profile.edit') }}" />
+                                @endif
+                                @if(Auth::user()->type == 'C')
                                 <!-- Botão que irá para o histórico de tickets -->
                                 <x-menus.submenu-item content="History" selectable="0" href="#" />
+                                @endif
 
                                 <hr>
                                 <form id="form_to_logout_from_menu" method="POST" action="{{ route('logout') }}" class="hidden">

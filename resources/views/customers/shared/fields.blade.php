@@ -4,7 +4,7 @@
 @endphp
 <x-field.input name="email" label="Email" width="md"
                 :readonly="$readonly || ($mode == 'edit')"
-                value="{{ old('email', $customer->email) }}"/>
+                value="{{ old('email', $customer->user->email) }}"/>
 
 <x-field.input name="name" label="Name" :readonly="$readonly"
-                value="{{ old('name', $customer->name) }}"/>
+                value="{{ old('name', $customer->user->name) }}"/>
