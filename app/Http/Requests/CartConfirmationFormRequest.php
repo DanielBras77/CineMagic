@@ -14,7 +14,7 @@ class CartConfirmationFormRequest extends FormRequest
 
     public function rules(): array
     {
-        if ($this->payment_type == "MBWAY") {
+        if ($this->payment_type == "VISA") {
             $rules = "|max:20|regex:/^\d{16}-\d{3}$/";
         } elseif ($this->payment_type == "PAYPAL") {
             $rules = "|email";

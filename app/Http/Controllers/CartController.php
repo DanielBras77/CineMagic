@@ -7,6 +7,7 @@ use App\Models\Seat;
 use App\Models\Ticket;
 use App\Models\Purchase;
 use App\Models\Screening;
+use App\Services\Payment;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 use App\Models\Configuration;
@@ -19,11 +20,24 @@ use App\Http\Requests\CartConfirmationFormRequest;
 
 class CartController extends Controller
 {
+
     public function show(): View
     {
         $cart = session('cart', []);
-        return view('cart.show', compact('cart'));
+        $configuration = Configuration::first();
+        $ticket_price = $configuration->ticket_price;
+        $discount = $configuration->registered_customer_ticket_discount;
+
+        $price = Auth::user() ? $ticket_price - $configuration->registered_customer_ticket_discount : $ticket_price;
+        $total_price = 0;
+
+        foreach ($cart as $item) {
+            $total_price += $price;
+        }
+
+        return view('cart.show', compact('cart', 'total_price'));
     }
+
 
     public function addToCart(Request $request, Screening $screening): RedirectResponse
     {
@@ -45,14 +59,13 @@ class CartController extends Controller
             session(['total_seats' => count($cart)]);
             $alertType = 'success';
             $htmlMessage = "Seat(s) <strong>" . implode(',', $seats_adicionados) . "</strong> was/were added to the cart.";
-
         } else {
             $alertType = 'warning';
             $htmlMessage = "No seats were added to the cart.";
         }
         return back()
-                ->with('alert-msg', $htmlMessage)
-                ->with('alert-type', $alertType);
+            ->with('alert-msg', $htmlMessage)
+            ->with('alert-type', $alertType);
     }
 
     public function removeFromCart($id): RedirectResponse
@@ -98,6 +111,36 @@ class CartController extends Controller
                 ->with('alert-type', 'danger')
                 ->with('alert-msg', "Cart was not confirmed, because cart is empty!");
         } else {
+
+            $payment_type = $request->input('payment_type');
+            $payment_ref = $request->input('payment_ref');
+            $payment_success = false;
+
+            switch ($payment_type) {
+                case 'VISA':
+                    $card_details = explode(' ', $payment_ref);
+                    if (count($card_details) == 2) {
+                        list($card_number, $cvc_code) = $card_details;
+                        $payment_success = Payment::payWithVisa($card_number, $cvc_code);
+                    }
+                    break;
+                case 'PAYPAL':
+                    $payment_success = Payment::payWithPaypal($payment_ref);
+                    break;
+                case 'MBWAY':
+                    $payment_success = Payment::payWithMBway($payment_ref);
+                    break;
+                default:
+                    $payment_success = false;
+            }
+
+            if (!$payment_success) {
+                return back()
+                    ->with('alert-type', 'danger')
+                    ->with('alert-msg', "Payment failed! Please check your payment details and try again.");
+            }
+
+
             $purchase = new Purchase();
             $purchase->fill($request->validated());
             $purchase->customer_id = Auth::user() ? Auth::user()->id : null;
@@ -109,13 +152,14 @@ class CartController extends Controller
             $total_price = 0;
 
             foreach ($cart as $item) {
-                if ($item['screening']->tickets()->where('seat_id', $item['seat']->id)->count() == 0 &&
+                if (
+                    $item['screening']->tickets()->where('seat_id', $item['seat']->id)->count() == 0 &&
                     $item['screening']->date > Carbon::today() ||
                     ($item['screening']->date == Carbon::today() &&
                         $item['screening']->start_time >= Carbon::now()->subMinutes(5)->format("H:i:s"))
                 ) {
 
-                    $insertTickets[]= [
+                    $insertTickets[] = [
                         'screening_id' => $item['screening']->id,
                         'seat_id' => $item['seat']->id,
                         'price' => $price
@@ -143,7 +187,7 @@ class CartController extends Controller
                     ->with('alert-type', 'danger')
                     ->with('alert-msg', "No tickets bought!");
             } else {
-               DB::transaction(function () use ($purchase, $insertTickets, $total_price) {
+                DB::transaction(function () use ($purchase, $insertTickets, $total_price) {
 
                     $purchase->total_price = $total_price;
                     $purchase->save();
