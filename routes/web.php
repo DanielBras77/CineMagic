@@ -71,7 +71,7 @@ Route::get('/generate-pdf', [PDFController::class, 'generatePDF']);
 Route::get('configurations/edit', [ConfigurationController::class, 'edit'])->name('configurations.edit');
 Route::put('configurations', [ConfigurationController::class, 'update'])->name('configurations.update');
 
-
+Route::get('send-email-pdf', [PDFController::class, 'index']);
 
 Route::middleware('can:use-cart')->group(function () {
     // Add a screening to the cart:
