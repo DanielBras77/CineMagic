@@ -22,7 +22,7 @@
     <label class="block font-medium text-sm text-gray-700 dark:text-gray-300">
         {{ $label }}
     </label>
-    <div class="flex flex-wrap ps-2">
+    <div class="flex flex-wrap ps-2 mt-2">
         @foreach ($options as $key => $optionText)
             <div class="h-10 pe-12 inline-flex items-center">
                 <input id="id_{{ $name }}_{{$key}}" name="{{ $name }}" type="radio" value="{{ $key }}"

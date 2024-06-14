@@ -18,10 +18,9 @@
                     <p class="text-xl text-gray-800 dark:text-gray-300"><strong>Year:</strong> {{$screening->movie->year}}</p>
                     <h3 class="mt-6 text-2xl pt-2 text-gray-800 dark:text-gray-300"><strong>Theater:</strong> {{$screening->theater->name}}</h3>
                     <p class="mt-8 pt-2 text-gray-800 dark:text-gray-300">{{$screening->movie->synopsis}}</p>
-                    <!-- Ver se vale a pena colocar ou não
                     <p class="mt-16 text-gray-800 dark:text-gray-300">
                         <a href="{{$screening->movie->trailer_url}}"><strong>Trailer Url:</strong> {{$screening->movie->trailer_url}}</a>
-                    </p>-->
+                    </p>
                 </div>
                 <div class="mt-8 w-3/4 grow">
                     <form action="{{ route('cart.add', ['screening'=>$screening])}}" method="POST">

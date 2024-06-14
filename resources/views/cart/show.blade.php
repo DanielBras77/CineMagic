@@ -30,7 +30,7 @@
                 @foreach($cart as $id=>$item)
                 <tr>
                     <td class="flex mt-4 align-middle">
-                        <img src="{{$item['screening']->movie->posterFullUrl}}" alt="" class="h-12">
+                        <img src="{{$item['screening']->movie->posterFullUrl}}" alt="posterMovie" class="h-12 rounded-sm">
                         <p class="ml-9">
                             {{$item['screening']->movie->title}}
                         </p>
@@ -45,33 +45,47 @@
                 @endforeach
             </table>
         </div>
-        <div class="mt-8 flex space-x-4">
-            <div>
-                <form class="flex flex-wrap" action="{{ route('cart.confirm') }}" method="post">
-                    @csrf
-                    <div class="flex w-3/4 grow">
+
+        <div class="mt-8 flex justify-end">
+            <h3 class="text-lg font-semibold">Total Price: {{ number_format($total_price, 2) }} €</h3>
+        </div>
+
+        <div class="mt-8 space-x-4">
+            <form action="{{ route('cart.confirm') }}" method="post">
+                @csrf
+                <div class="mt-12 flex flex-wrap">
+                    <div class="flex grow">
                         <x-field.input name="customer_name" label="Customer Name" width="lg" :readonly="false" value="{{ old('customer_name', Auth::user()?->name) }}" />
+                    </div>
+                    <div class="flex grow -ml-40">
                         <x-field.input name="customer_email" label="Customer Email" width="lg" :readonly="false" value="{{ old('customer_email', Auth::user()?->email) }}" />
                     </div>
-                    <div class="flex">
+                </div>
+                <div class="mt-6 flex flex-wrap">
+                    <div class="flex grow">
                         <x-field.input name="nif" label="NIF" width="lg" :readonly="false" value="{{ old('nif', Auth::user()?->customer?->nif) }}" />
+                    </div>
+                    <div class="flex grow -ml-36">
                         <x-field.radio-group name="payment_type" label="Type of payment" :readonly="false" value="{{ old('payment_type', Auth::user()?->customer?->payment_type) }}" :options="[
                             'MBWAY' => 'MBWAY',
                             'VISA' => 'VISA',
                             'PAYPAL' => 'PAYPAL'
                         ]" />
-                        <x-field.input name="payment_ref" label="Payment Ref" width="lg" :readonly="false" value="{{ old('payment_ref', Auth::user()?->customer?->payment_ref) }}" />
                     </div>
-                    <div class="flex justify-end mt-6">
-                        <x-button element="submit" type="dark" text="Confirm" class="mt-4" />
-                    </div>
-                </form>
-                <form action="{{ route('cart.destroy') }}" method="post">
-                    @csrf
-                    @method('DELETE')
-                    <x-button element="submit" type="danger" text="Clear Cart" class="mt-4" />
-                </form>
-            </div>
+                </div>
+                <div class="mt-6 flex">
+                    <x-field.input name="payment_ref" label="Payment Ref" width="lg" :readonly="false" value="{{ old('payment_ref', Auth::user()?->customer?->payment_ref) }}" />
+                </div>
+                <div class="flex grow justify-end">
+                    <x-button element="submit" type="dark" text="Confirm" class="mt-6 mr-4" />
+                </div>
+            </form>
+
+            <form action="{{ route('cart.destroy') }}" method="post">
+                @csrf
+                @method('DELETE')
+                <x-button element="submit" type="danger" text="Clear Cart" class="mt-6" />
+            </form>
         </div>
         @endempty
     </div>

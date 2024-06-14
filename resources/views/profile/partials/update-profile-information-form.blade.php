@@ -45,10 +45,10 @@
             @endif
         </div>
 
-        <div class="mt-4">
+        <div>
             <x-input-label for="NIF" :value="__('NIF')" />
-            <x-text-input id="NIF" class="block w-full mt-1" type="number" name="NIF" :value="old('NIF')" autocomplete="username" maxlength="9" />
-            <x-input-error :messages="$errors->get('NIF')" class="mt-2" />
+            <x-text-input id="NIF" name="NIF" type="number" class="block w-full mt-1" :value="old('NIF', $user->customer->nif)" required autofocus autocomplete="username" oninput="validity.valid||(value='');" min="000000000" max="999999999" />
+            <x-input-error class="mt-2" :messages="$errors->get('NIF')" />
         </div>
 
         <div class="flex items-center gap-4">
