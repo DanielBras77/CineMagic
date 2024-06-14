@@ -2,24 +2,49 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Configuration;
 use Illuminate\Http\Request;
+use App\Models\Configuration;
+use App\Http\Requests\ConfigurationFormRequest;
 
 class ConfigurationController extends Controller
 {
-    /**
-     * Show the form for editing the specified resource.
-     */
+
+    public function edit()
+    {
+        $configuration = Configuration::first();
+        //$this->authorize('view', $configuration);
+
+        if (!$configuration) {
+            return redirect()->route('dashboard')->with('error', 'Configuration not found');
+        }
+
+        return view('configurations.edit', compact('configuration'));
+    }
+
+    public function update(ConfigurationFormRequest $request)
+    {
+        $configuration = Configuration::first();
+
+        if (!$configuration) {
+            return redirect()->route('dashboard')->with('error', 'Configuration not found');
+        }
+
+        $configuration->update($request->validated());
+        return redirect()->route('configurations.edit')->with('success', 'Configuration updated successfully');
+    }
+
+
+
+/*
     public function edit()
     {
         $configuration=Configuration::first();
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(Request $request)
     {
         $configuration=Configuration::first();
     }
+        */
 }

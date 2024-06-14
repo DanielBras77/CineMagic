@@ -13,9 +13,8 @@ use Illuminate\Http\RedirectResponse;
 use App\Http\Requests\SeatFormRequest;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class StatisticsController extends \Illuminate\Routing\Controller
+class StatisticsController extends Controller
 {
-
 
     //Saber quantos movies existem por ano
 

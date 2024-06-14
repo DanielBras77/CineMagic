@@ -9,7 +9,7 @@
 
 <body>
 
-    <img src="../../../img/logoCinemagic.png" alt="" width="28" height="28">
+    <img src="../img/logoCinemagic.png" alt="" width="28" height="28">
     <h1><strong>Cine Magic</strong></h1>
     <p>
     <p>

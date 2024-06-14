@@ -31,10 +31,11 @@ class AppServiceProvider extends ServiceProvider
             return !$user->blocked;
         });
 
+        
         Gate::define('use-cart', function (?User $user) {
 
             return $user==null || $user->type == 'C';
         });
-        
+
     }
 }

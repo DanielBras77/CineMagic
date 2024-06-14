@@ -22,30 +22,30 @@ class GenrePolicy
 
     public function viewAny(User $user): bool
     {
-        return false;
+        return $user->type == 'A';
     }
 
 
     public function view(User $user, Genre $genre): bool
     {
-        return false;
+        return $user->type == 'A';
     }
 
 
     public function create(User $user): bool
     {
-        return false;
+        return $user->type == 'A';
     }
 
 
     public function update(User $user, Genre $genre): bool
     {
-        return false;
+        return $user->type == 'A';
     }
 
 
     public function delete(User $user, Genre $genre): bool
     {
-        return false;
+        return $user->type == 'A';
     }
 }

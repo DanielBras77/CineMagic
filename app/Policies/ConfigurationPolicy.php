@@ -20,41 +20,29 @@ class ConfigurationPolicy
 
     public function viewAny(User $user): bool
     {
-        return false;
+        return true;
     }
 
 
     public function view(User $user, Configuration $configuration): bool
     {
-        return false;
+        return true;
     }
 
 
     public function create(User $user): bool
     {
-        return false;
+        return true;
     }
 
 
     public function update(User $user, Configuration $configuration): bool
     {
-        return false;
+        return true;
     }
 
     public function delete(User $user, Configuration $configuration): bool
     {
-        return false;
-    }
-
-
-    public function restore(User $user, Configuration $configuration): bool
-    {
-        return false;
-    }
-
-
-    public function forceDelete(User $user, Configuration $configuration): bool
-    {
-        return false;
+        return true;
     }
 }

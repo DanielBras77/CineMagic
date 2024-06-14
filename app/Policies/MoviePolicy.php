@@ -21,26 +21,26 @@ class MoviePolicy
 
     public function viewAny(User $user): bool
     {
-        return false;
+       return $user->type == 'A';
     }
 
     public function view(User $user, Movie $movie): bool
     {
-        return false;
+       return $user->type == 'A';
     }
 
     public function create(User $user): bool
     {
-        return false;
+       return $user->type == 'A';
     }
 
     public function update(User $user, Movie $movie): bool
     {
-        return false;
+       return $user->type == 'A';
     }
 
     public function delete(User $user, Movie $movie): bool
     {
-        return false;
+       return $user->type == 'A';
     }
 }
