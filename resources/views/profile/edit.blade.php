@@ -33,6 +33,17 @@
                         class="rounded-lg"/>
                 </div>
             </div>
+            <div class="flex items-center gap-4">
+                @if (session('status') === 'profile-updated')
+                    <p
+                        x-data="{ show: true }"
+                        x-show="show"
+                        x-transition
+                        x-init="setTimeout(() => show = false, 2000)"
+                        class="text-sm text-gray-600 dark:text-gray-400"
+                    >{{ __('Saved.') }}</p>
+                @endif
+            </div>
         </div>
         <div class="justify-start p-4 bg-white shadow md:col-span-2 sm:p-8 dark:bg-gray-800 sm:rounded-lg">
             <div class="max-w-xl">

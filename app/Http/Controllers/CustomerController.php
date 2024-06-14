@@ -112,10 +112,4 @@ class CustomerController extends \Illuminate\Routing\Controller
         return redirect()->back();
     }
 
-    public function rules(): array
-    {
-        return [
-            'photo_file' => 'sometimes|image|max:4096',
-        ];
-    }
 }
