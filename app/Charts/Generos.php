@@ -5,7 +5,7 @@ namespace App\Charts;
 use ConsoleTVs\Charts\Classes\Chartjs\Chart;
 
 
-class Categorias extends Chart
+class Generos extends Chart
 {
     /**
      * Initializes the chart.

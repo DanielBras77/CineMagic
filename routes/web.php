@@ -94,8 +94,8 @@ Route::get('teste/{purchase}', function (Purchase $purchase) {
 
 //Route::get("tickets\{ticket}\showcase", [ticketController::class, 'showcase'])->name('Tickets'.showcase);
 //Route::get('statistics', [StatisticsController::class, 'show'])->name('statistics.show');
-Route::get('/statistics', [StatisticsController::class, 'index'])->name('statistics.index');
-Route::post('/statistics/filter', [StatisticsController::class, 'filter'])->name('statistics.filter');
+Route::get('statistics', [StatisticsController::class, 'totaisGerais'])->name('statistics.index');
+
 //Route::post('statistics/filter', [StatisticsController::class, 'filter'])->name('statistics.filter');
 
 

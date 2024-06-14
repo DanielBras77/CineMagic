@@ -1,8 +1,11 @@
 <?php
 
+namespace App\Http\Controllers;
 //use App\Models\Movie;
 
 use App\Models\Genre;
+use App\Charts\Generos;
+use App\Models\User;
 use App\Models\Theater;
 use App\Models\Purchase;
 use Illuminate\View\View;
@@ -19,23 +22,31 @@ class StatisticsController extends Controller
 
     //Saber quantos movies existem por ano
 
-    public function totaisGerais(){
+    public function totaisGerais(Request $request): View{
         $total_genres = Genre::count();
-        /**/
-        return view('statistics.totais', compact('total_genres'));
-    }
+
+        $numAdminsAtivos = User::where('type','A')
+        ->where('blocked',0)
+        ->whereNull('deleted_at')
+        ->count();
+
+        $numEmployeesAtivos = User::where('type','E')
+        ->where('blocked',0)
+        ->whereNull('deleted_at')
+        ->count();
+
+        $numCustomersAtivos = User::where('type','C')
+        ->where('blocked',0)
+        ->whereNull('deleted_at')
+        ->count();
+
+        $numDeUserBloqueados = User::where('blocked','1')
+        ->count();
 
 
-    public function PurchasesTotaisFilter(Request $request){
-
-        $filterByMonth = $request->month??"";
         $filterByYear = $request->year??"";
 
         $purchasesQuery = Purchase::query();
-
-        if($filterByMonth){
-            $purchasesQuery->whereMonth('date', $filterByMonth);
-        }
 
         if($filterByYear){
             $purchasesQuery->whereYear('date', $filterByYear);
@@ -45,11 +56,28 @@ class StatisticsController extends Controller
         $totalPurchases = $purchasesQuery->count();
         $totalPrices = $purchases->sum('total_price');
 
-        // Chamar vista return view('statistics.totais', compact('total_genres'));
+        $genres = Genre::all();
+        $colors = [];
+        $genresChart = new Generos;
 
+        foreach ($genres as $genre) {
+            $red = mt_rand(0, 255);
+            $green = mt_rand(0, 255);
+            $blue = mt_rand(0, 255);
+
+            $colors[] = "rgb($red, $green, $blue)";
+        }
+
+        $genresChart->labels($genres->pluck('name'))
+            ->dataset('Gêneros', 'pie', $genres->pluck('count'))
+            ->backgroundColor($colors);
+
+
+        /**/
+        return view('statistics.index', compact('total_genres','numAdminsAtivos','numEmployeesAtivos','numCustomersAtivos','numDeUserBloqueados','totalPurchases','totalPrices','genresChart'));
     }
 
-    public function TotalMoviesByGenre(){
+   /*<--- public function TotalMoviesByGenre(){
 
        $genres = Genre::withCount('movies')->all();
 
@@ -63,11 +91,11 @@ class StatisticsController extends Controller
 
             @endforeach
         */
-    }
+    //} <---
 }
 
 
-/*<?php
+/*<?php ------------------------------- Minhas cenas antigas (antes da prof fazer na aula) -------------------------------
 namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Category;
@@ -150,13 +178,13 @@ class DashboardController extends Controller
         return view('statistics.index', compact( 'genres', 'statistics', 'selectedGenreByUser', 'startDateByUser', 'endDateByUser'));
     }
 
-    private function getStatistics($genre_code = null, $start_date = null, $end_date = null)
+    public function getStatistics($genre_code = null, $start_date = null, $end_date = null)
     {
        /* $query = DB::table('purchases')
             ->join('screenings', 'tickets.screening_id', '=', 'screenings.id')
             ->select(DB::raw('count(purchases.id) as total_tickets'), DB::raw('sum(purchases.price) as total_revenue'));*/
 
-            $query = DB::table('tickets')
+            /*$query = DB::table('tickets')
             ->join('screenings', 'tickets.screening_id', '=', 'screenings.id')
             ->join('movies', 'screenings.movie_id', '=', 'movies.id')
             ->select(DB::raw('count(tickets.id) as total_tickets'), DB::raw('sum(tickets.price) as total_revenue'));
@@ -167,9 +195,9 @@ class DashboardController extends Controller
 
         return $query->first();
     }
-}
+}*/
 
-/*<?php
+/*<?php --------------------------------------------------- Cenas do rodrigo ---------------------------------------------------
 
 namespace App\Http\Controllers;
 
