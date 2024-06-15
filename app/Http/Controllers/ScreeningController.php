@@ -42,17 +42,19 @@ class ScreeningController extends \Illuminate\Routing\Controller
     }
 
 
+    public function show(Screening $screening): View
+    {
+        return view('screenings.show')->with('screening', $screening);
+    }
+
+
     public function showScreening(Screening $screening): View
     {
         $totalSeats = $screening->theater->seats->count();
         $occupiedSeats = $screening->tickets->count();
         $isSoldOut = $totalSeats == $occupiedSeats;
 
-        return view('screenings.showcase')
-            ->with('screening', $screening)
-            ->with('totalSeats', $totalSeats)
-            ->with('occupiedSeats', $occupiedSeats)
-            ->with('isSoldOut', $isSoldOut);
+        return view('screenings.showcase')->with('screening', $screening)->with('isSoldOut', $isSoldOut);
     }
 
 
