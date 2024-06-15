@@ -24,3 +24,9 @@ $readonly = $mode == 'show';
 <x-field.input name="password_confirmation" label="Password Confirmation" :readonly="false"/>
 
 @endif
+</div>
+
+<div class="pb-6">
+
+
+</div>

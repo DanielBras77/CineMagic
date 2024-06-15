@@ -1,4 +1,3 @@
-@if(Auth::user()->type != 'E')
 <section>
     <header>
         <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
@@ -46,5 +45,4 @@
             @endif
         </div>
     </form>
-</section>
-@endif
+</section> 

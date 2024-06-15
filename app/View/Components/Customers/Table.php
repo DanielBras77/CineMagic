@@ -13,7 +13,6 @@ class Table extends Component
         public bool $showView = true,
         public bool $showEdit = true,
         public bool $showDelete = true,
-        public bool $showBlock = true,
     )
     {
         //

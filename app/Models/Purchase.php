@@ -11,23 +11,25 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Purchase extends Model
 {
     use HasFactory;
-    protected $fillable = ['customer_id', 'date', 'total_price', 'customer_name', 'customer_email',
-                           'nif', 'payment_type', 'payment_ref', 'receipt_pdf_filename'];
+    protected $fillable = [
+        'customer_id', 'date', 'total_price', 'customer_name', 'customer_email',
+        'nif', 'payment_type', 'payment_ref', 'receipt_pdf_filename'
+    ];
 
-
-    public function getReceiptPdfFilenameFullUrlAttribute(){
-        if($this->receipt_pdf_filename && Storage::exists("pdf_purchases/$this->receipt_pdf_filename}")){
-            return route('purchases.receipt');
+    public function getReceiptPdfFilenameAttribute()
+    {
+        if ($this->receipt_pdf_filename && Storage::exists("pdf_purchases/{$this->receipt_pdf_filename}")){
+            return "pdf_purchases/".$this->receipt_pdf_filename;
         }
         else{
-            return null;
+            return "";
         }
     }
 
     public function customer():HasOne
     {
         // Se a chave puder ser apagada temos que conseguir ver o cliente à mesma
-        return $this->hasOne(Customer::class, 'id', 'customer_id')->withTrashed();
+        return $this->hasOne(Customer::class)->withTrashed();
     }
     public function tickets():HasMany
     {

@@ -6,15 +6,15 @@
                 <th class="px-2 py-2 text-left">Title</th>
                 <th class="px-2 py-2 text-left">Genre</th>
                 <th class="px-2 py-2 text-left">Year</th>
-                @if($showView)
+            @if($showView)
                 <th></th>
-                @endif
-                @if($showEdit)
-                    <th></th>
-                @endif
-                @if($showDelete)
-                    <th></th>
-                @endif
+            @endif
+            @if($showEdit)
+                <th></th>
+            @endif
+            @if($showDelete)
+                <th></th>
+            @endif
         </tr>
         </thead>
         <tbody>

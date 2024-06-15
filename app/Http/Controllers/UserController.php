@@ -119,7 +119,7 @@ class UserController extends \Illuminate\Routing\Controller
         $user->delete();
 
         $alertType = 'success';
-        $alertMsg = "User {$user->name} has been deleted successfully!";
+        $alertMsg = "User {$user->user->name} has been deleted successfully!";
 
         return redirect()->route('users.index')
             ->with('alert-type', $alertType)

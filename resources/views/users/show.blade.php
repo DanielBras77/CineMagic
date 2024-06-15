@@ -9,23 +9,35 @@
             <section>
                 <div class="flex flex-wrap justify-end items-center gap-4 mb-4">
                     @can('create', App\Models\User::class)
-                    <x-button href="{{ route('users.create') }}" text="New" type="success" />
+                    <x-button
+                        href="{{ route('users.create') }}"
+                        text="New"
+                        type="success"/>
                     @endcan
                     @can('update', $user)
-                    <x-button href="{{ route('users.edit', ['user' => $user]) }}" text="Edit" type="primary" />
+                    <x-button
+                        href="{{ route('users.edit', ['user' => $user]) }}"
+                        text="Edit"
+                        type="primary"/>
                     @endcan
                     @can('delete', $user)
                     <form method="POST" action="{{ route('users.destroy', ['user' => $user]) }}">
                         @csrf
                         @method('DELETE')
-                        <x-button element="submit" text="Delete" type="danger" />
+                        <x-button
+                            element="submit"
+                            text="Delete"
+                            type="danger"/>
                     </form>
                     @endcan
                     @can('block', $user)
                     <form method="POST" action="{{ route('users.updatedBlock', ['user' => $user]) }}">
                         @csrf
                         @method('PATCH')
-                        <x-button element="submit" text="Block" type="danger" />
+                        <x-button
+                            element="submit"
+                            text="Block"
+                            type="danger"/>
                     </form>
                     @endcan
                 </div>

@@ -96,8 +96,6 @@ class CartController extends Controller
     public function destroy(Request $request): RedirectResponse
     {
         $request->session()->forget('cart');
-        $request->session()->put('total_seats', 0);
-        
         return back()
             ->with('alert-type', 'success')
             ->with('alert-msg', 'Shopping Cart has been cleared');

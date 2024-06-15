@@ -49,17 +49,10 @@ class PurchaseController extends \Illuminate\Routing\Controller
         return view('purchases.show')->with('purchase', $purchase);
     }
 
-    public function history(): View
-    {
-        $user = Auth::user();
-        $purchases = Purchase::where('customer_id', $user->id)->orderBy('date', 'desc')->get();
-
-        return view('purchases.showHistory', compact('purchases'));
-    }
 
     public function getReceipt(Purchase $purchase){
         if($purchase->receipt_pdf_filename){
-            return Storage::response('pdf_purchases/'.$purchase->receipt_pdf_filename);
+            return Storage::response('pdf_purchase/'.$purchase->receipt_pdf_filename);
 
         }
         return null;
