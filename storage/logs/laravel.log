@@ -10085,3 +10085,1164 @@
 #14 C:\\laragon\\www\\projeto-ainet\\public\\index.php(17): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
 #15 {main}
 "} 
+[2024-06-15 15:13:34] local.ERROR: Attempt to read property "type" on null {"view":{"view":"C:\\laragon\\www\\projeto-ainet\\resources\\views\\layouts\\main.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-1755589428 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#1474</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1755589428\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","movies":"<pre class=sf-dump id=sf-dump-672702286 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Pagination\\LengthAwarePaginator</span> {<a class=sf-dump-ref>#1557</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note title=\"Illuminate\\Database\\Eloquent\\Collection
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Database\\Eloquent</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Collection</span> {<a class=sf-dump-ref>#1559</a><samp data-depth=2 class=sf-dump-compact>
+    #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:9</span> [<samp data-depth=3 class=sf-dump-compact>
+      <span class=sf-dump-index>0</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1564</a> &#8230;31}
+      <span class=sf-dump-index>1</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1560</a> &#8230;31}
+      <span class=sf-dump-index>2</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1566</a> &#8230;31}
+      <span class=sf-dump-index>3</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1576</a> &#8230;31}
+      <span class=sf-dump-index>4</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1592</a> &#8230;31}
+      <span class=sf-dump-index>5</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1572</a> &#8230;31}
+      <span class=sf-dump-index>6</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1548</a> &#8230;31}
+      <span class=sf-dump-index>7</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1571</a> &#8230;31}
+      <span class=sf-dump-index>8</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1579</a> &#8230;31}
+    </samp>]
+    #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  </samp>}
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>10</span>
+  #<span class=sf-dump-protected title=\"Protected property\">currentPage</span>: <span class=sf-dump-num>1</span>
+  #<span class=sf-dump-protected title=\"Protected property\">path</span>: \"<span class=sf-dump-str title=\"25 characters\">http://projeto-ainet.test</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">query</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fragment</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">pageName</span>: \"<span class=sf-dump-str title=\"4 characters\">page</span>\"
+  +<span class=sf-dump-public title=\"Public property\">onEachSide</span>: <span class=sf-dump-num>3</span>
+  #<span class=sf-dump-protected title=\"Protected property\">options</span>: <span class=sf-dump-note>array:2</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>path</span>\" => \"<span class=sf-dump-str title=\"25 characters\">http://projeto-ainet.test</span>\"
+    \"<span class=sf-dump-key>pageName</span>\" => \"<span class=sf-dump-str title=\"4 characters\">page</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">total</span>: <span class=sf-dump-num>9</span>
+  #<span class=sf-dump-protected title=\"Protected property\">lastPage</span>: <span class=sf-dump-num>1</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-672702286\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","genres":"<pre class=sf-dump id=sf-dump-1409467811 data-indent-pad=\"  \"><span class=sf-dump-note>array:23</span> [<samp data-depth=1 class=sf-dump-expanded>
+  \"\" => \"<span class=sf-dump-str title=\"9 characters\">Any genre</span>\"
+  \"<span class=sf-dump-key>ACTION</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Action</span>\"
+  \"<span class=sf-dump-key>ADVENTURE</span>\" => \"<span class=sf-dump-str title=\"9 characters\">Adventure</span>\"
+  \"<span class=sf-dump-key>ANIMATION</span>\" => \"<span class=sf-dump-str title=\"9 characters\">Animation</span>\"
+  \"<span class=sf-dump-key>BIBLOGRAPHY</span>\" => \"<span class=sf-dump-str title=\"12 characters\">Bibliography</span>\"
+  \"<span class=sf-dump-key>COMEDY</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Comedy</span>\"
+  \"<span class=sf-dump-key>COMEDY-ACTION</span>\" => \"<span class=sf-dump-str title=\"17 characters\">Comedy and action</span>\"
+  \"<span class=sf-dump-key>CRIME</span>\" => \"<span class=sf-dump-str title=\"5 characters\">Crime</span>\"
+  \"<span class=sf-dump-key>CULT</span>\" => \"<span class=sf-dump-str title=\"10 characters\">Cult movie</span>\"
+  \"<span class=sf-dump-key>DRAMA</span>\" => \"<span class=sf-dump-str title=\"5 characters\">Drama</span>\"
+  \"<span class=sf-dump-key>FAMILY</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Family</span>\"
+  \"<span class=sf-dump-key>FANTASY</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Fantasy</span>\"
+  \"<span class=sf-dump-key>HISTORY</span>\" => \"<span class=sf-dump-str title=\"10 characters\">Historical</span>\"
+  \"<span class=sf-dump-key>HORROR</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Horror</span>\"
+  \"<span class=sf-dump-key>MUSICAL</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Musical</span>\"
+  \"<span class=sf-dump-key>MISTERY</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Mystery</span>\"
+  \"<span class=sf-dump-key>ROMANCE</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Romance</span>\"
+  \"<span class=sf-dump-key>COMEDY-ROMANCE</span>\" => \"<span class=sf-dump-str title=\"15 characters\">Romantic comedy</span>\"
+  \"<span class=sf-dump-key>SCI-FI</span>\" => \"<span class=sf-dump-str title=\"15 characters\">Science fiction</span>\"
+  \"<span class=sf-dump-key>SUPERHERO</span>\" => \"<span class=sf-dump-str title=\"12 characters\">Super heroes</span>\"
+  \"<span class=sf-dump-key>THRILLER</span>\" => \"<span class=sf-dump-str title=\"8 characters\">Suspense</span>\"
+  \"<span class=sf-dump-key>WAR</span>\" => \"<span class=sf-dump-str title=\"3 characters\">War</span>\"
+  \"<span class=sf-dump-key>WESTERN</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Western</span>\"
+</samp>]
+</pre><script>Sfdump(\"sf-dump-1409467811\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","filterByGenre":"<pre class=sf-dump id=sf-dump-130811343 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-130811343\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","filterByTitle":"<pre class=sf-dump id=sf-dump-365944943 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-365944943\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","filterByYear":"<pre class=sf-dump id=sf-dump-929131450 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-929131450\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","component":"<pre class=sf-dump id=sf-dump-425828849 data-indent-pad=\"  \"><span class=sf-dump-note>App\\View\\Components\\Movies\\FilterCard</span> {<a class=sf-dump-ref>#1556</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">except</span>: []
+  +<span class=sf-dump-public title=\"Public property\">componentName</span>: \"<span class=sf-dump-str title=\"18 characters\">movies.filter-card</span>\"
+  +<span class=sf-dump-public title=\"Public property\">attributes</span>: <span class=sf-dump-note title=\"Illuminate\\View\\ComponentAttributeBag
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\View</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>ComponentAttributeBag</span> {<a class=sf-dump-ref>#1570</a><samp data-depth=2 class=sf-dump-compact>
+    #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>class</span>\" => \"<span class=sf-dump-str title=\"4 characters\">mb-6</span>\"
+    </samp>]
+  </samp>}
+  +<span class=sf-dump-public title=\"Public property\">genres</span>: <span class=sf-dump-note>array:23</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"\" => \"<span class=sf-dump-str title=\"9 characters\">Any genre</span>\"
+    \"<span class=sf-dump-key>ACTION</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Action</span>\"
+    \"<span class=sf-dump-key>ADVENTURE</span>\" => \"<span class=sf-dump-str title=\"9 characters\">Adventure</span>\"
+    \"<span class=sf-dump-key>ANIMATION</span>\" => \"<span class=sf-dump-str title=\"9 characters\">Animation</span>\"
+    \"<span class=sf-dump-key>BIBLOGRAPHY</span>\" => \"<span class=sf-dump-str title=\"12 characters\">Bibliography</span>\"
+    \"<span class=sf-dump-key>COMEDY</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Comedy</span>\"
+    \"<span class=sf-dump-key>COMEDY-ACTION</span>\" => \"<span class=sf-dump-str title=\"17 characters\">Comedy and action</span>\"
+    \"<span class=sf-dump-key>CRIME</span>\" => \"<span class=sf-dump-str title=\"5 characters\">Crime</span>\"
+    \"<span class=sf-dump-key>CULT</span>\" => \"<span class=sf-dump-str title=\"10 characters\">Cult movie</span>\"
+    \"<span class=sf-dump-key>DRAMA</span>\" => \"<span class=sf-dump-str title=\"5 characters\">Drama</span>\"
+    \"<span class=sf-dump-key>FAMILY</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Family</span>\"
+    \"<span class=sf-dump-key>FANTASY</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Fantasy</span>\"
+    \"<span class=sf-dump-key>HISTORY</span>\" => \"<span class=sf-dump-str title=\"10 characters\">Historical</span>\"
+    \"<span class=sf-dump-key>HORROR</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Horror</span>\"
+    \"<span class=sf-dump-key>MUSICAL</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Musical</span>\"
+    \"<span class=sf-dump-key>MISTERY</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Mystery</span>\"
+    \"<span class=sf-dump-key>ROMANCE</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Romance</span>\"
+    \"<span class=sf-dump-key>COMEDY-ROMANCE</span>\" => \"<span class=sf-dump-str title=\"15 characters\">Romantic comedy</span>\"
+    \"<span class=sf-dump-key>SCI-FI</span>\" => \"<span class=sf-dump-str title=\"15 characters\">Science fiction</span>\"
+    \"<span class=sf-dump-key>SUPERHERO</span>\" => \"<span class=sf-dump-str title=\"12 characters\">Super heroes</span>\"
+    \"<span class=sf-dump-key>THRILLER</span>\" => \"<span class=sf-dump-str title=\"8 characters\">Suspense</span>\"
+    \"<span class=sf-dump-key>WAR</span>\" => \"<span class=sf-dump-str title=\"3 characters\">War</span>\"
+    \"<span class=sf-dump-key>WESTERN</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Western</span>\"
+  </samp>]
+  +<span class=sf-dump-public title=\"Public property\">filterAction</span>: \"<span class=sf-dump-str title=\"36 characters\">http://projeto-ainet.test/showMovies</span>\"
+  +<span class=sf-dump-public title=\"Public property\">resetUrl</span>: \"<span class=sf-dump-str title=\"36 characters\">http://projeto-ainet.test/showMovies</span>\"
+  +<span class=sf-dump-public title=\"Public property\">genre</span>: <span class=sf-dump-const>null</span>
+  +<span class=sf-dump-public title=\"Public property\">title</span>: <span class=sf-dump-const>null</span>
+  +<span class=sf-dump-public title=\"Public property\">year</span>: <span class=sf-dump-const>null</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-425828849\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","__currentLoopData":"<pre class=sf-dump id=sf-dump-1006341047 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Database\\Eloquent\\Collection</span> {<a class=sf-dump-ref>#1704</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:2</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => <span class=sf-dump-note title=\"App\\Models\\Screening
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Screening</span> {<a class=sf-dump-ref>#1698</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"10 characters\">screenings</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:8</span> [ &#8230;8]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:8</span> [ &#8230;8]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:4</span> [ &#8230;4]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>1</span> => <span class=sf-dump-note title=\"App\\Models\\Screening
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Screening</span> {<a class=sf-dump-ref>#1684</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"10 characters\">screenings</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:8</span> [ &#8230;8]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:8</span> [ &#8230;8]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:4</span> [ &#8230;4]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1006341047\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","movie":"<pre class=sf-dump id=sf-dump-1413566921 data-indent-pad=\"  \"><span class=sf-dump-note>App\\Models\\Movie</span> {<a class=sf-dump-ref>#1579</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"6 characters\">movies</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+  +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+  +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+  +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:11</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>341</span>
+    \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"24 characters\">Festival Rocky de Terror</span>\"
+    \"<span class=sf-dump-key>genre_code</span>\" => \"<span class=sf-dump-str title=\"4 characters\">CULT</span>\"
+    \"<span class=sf-dump-key>year</span>\" => <span class=sf-dump-num>1975</span>
+    \"<span class=sf-dump-key>poster_filename</span>\" => \"<span class=sf-dump-str title=\"21 characters\">341_663e2f1fcbd01.jpg</span>\"
+    \"<span class=sf-dump-key>synopsis</span>\" => \"<span class=sf-dump-str title=\"129 characters\">A newly-engaged couple have a breakdown in an isolated area and must seek shelter at the bizarre residence of Dr. Frank-n-Furter.</span>\"
+    \"<span class=sf-dump-key>trailer_url</span>\" => \"<span class=sf-dump-str title=\"43 characters\">https://www.youtube.com/watch?v=fxqEwVhPw6U</span>\"
+    \"<span class=sf-dump-key>custom</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2021-10-20 18:37:58</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-08-23 23:23:36</span>\"
+    \"<span class=sf-dump-key>deleted_at</span>\" => <span class=sf-dump-const>null</span>
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:11</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>341</span>
+    \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"24 characters\">Festival Rocky de Terror</span>\"
+    \"<span class=sf-dump-key>genre_code</span>\" => \"<span class=sf-dump-str title=\"4 characters\">CULT</span>\"
+    \"<span class=sf-dump-key>year</span>\" => <span class=sf-dump-num>1975</span>
+    \"<span class=sf-dump-key>poster_filename</span>\" => \"<span class=sf-dump-str title=\"21 characters\">341_663e2f1fcbd01.jpg</span>\"
+    \"<span class=sf-dump-key>synopsis</span>\" => \"<span class=sf-dump-str title=\"129 characters\">A newly-engaged couple have a breakdown in an isolated area and must seek shelter at the bizarre residence of Dr. Frank-n-Furter.</span>\"
+    \"<span class=sf-dump-key>trailer_url</span>\" => \"<span class=sf-dump-str title=\"43 characters\">https://www.youtube.com/watch?v=fxqEwVhPw6U</span>\"
+    \"<span class=sf-dump-key>custom</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2021-10-20 18:37:58</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-08-23 23:23:36</span>\"
+    \"<span class=sf-dump-key>deleted_at</span>\" => <span class=sf-dump-const>null</span>
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>deleted_at</span>\" => \"<span class=sf-dump-str title=\"8 characters\">datetime</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>genre</span>\" => <span class=sf-dump-note title=\"App\\Models\\Genre
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Genre</span> {<a class=sf-dump-ref>#1599</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"6 characters\">genres</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"4 characters\">code</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"6 characters\">string</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:4</span> [ &#8230;4]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:4</span> [ &#8230;4]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>false</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">forceDeleting</span>: <span class=sf-dump-const>false</span>
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+  +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"5 characters\">title</span>\"
+    <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"10 characters\">genre_code</span>\"
+    <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"4 characters\">year</span>\"
+    <span class=sf-dump-index>3</span> => \"<span class=sf-dump-str title=\"15 characters\">poster_filename</span>\"
+    <span class=sf-dump-index>4</span> => \"<span class=sf-dump-str title=\"8 characters\">synopsis</span>\"
+    <span class=sf-dump-index>5</span> => \"<span class=sf-dump-str title=\"11 characters\">trailer_url</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str>*</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">forceDeleting</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1413566921\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","loop":"<pre class=sf-dump id=sf-dump-1188952840 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-1188952840\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","screening":"<pre class=sf-dump id=sf-dump-1557106156 data-indent-pad=\"  \"><span class=sf-dump-note>App\\Models\\Screening</span> {<a class=sf-dump-ref>#1684</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"10 characters\">screenings</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+  +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+  +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+  +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:8</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>983</span>
+    \"<span class=sf-dump-key>movie_id</span>\" => <span class=sf-dump-num>341</span>
+    \"<span class=sf-dump-key>theater_id</span>\" => <span class=sf-dump-num>7</span>
+    \"<span class=sf-dump-key>date</span>\" => \"<span class=sf-dump-str title=\"10 characters\">2024-06-20</span>\"
+    \"<span class=sf-dump-key>start_time</span>\" => \"<span class=sf-dump-str title=\"8 characters\">19:00:00</span>\"
+    \"<span class=sf-dump-key>custom</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2022-03-04 18:17:28</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2022-02-28 06:30:05</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:8</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>983</span>
+    \"<span class=sf-dump-key>movie_id</span>\" => <span class=sf-dump-num>341</span>
+    \"<span class=sf-dump-key>theater_id</span>\" => <span class=sf-dump-num>7</span>
+    \"<span class=sf-dump-key>date</span>\" => \"<span class=sf-dump-str title=\"10 characters\">2024-06-20</span>\"
+    \"<span class=sf-dump-key>start_time</span>\" => \"<span class=sf-dump-str title=\"8 characters\">19:00:00</span>\"
+    \"<span class=sf-dump-key>custom</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2022-03-04 18:17:28</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2022-02-28 06:30:05</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+  +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:4</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"8 characters\">movie_id</span>\"
+    <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"10 characters\">theater_id</span>\"
+    <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"4 characters\">date</span>\"
+    <span class=sf-dump-index>3</span> => \"<span class=sf-dump-str title=\"10 characters\">start_time</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str>*</span>\"
+  </samp>]
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1557106156\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): Attempt to read property \"type\" on null at C:\\laragon\\www\\projeto-ainet\\resources\\views\\layouts\\main.blade.php:55)
+[stacktrace]
+#0 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\laragon\\\\www\\\\...')
+#1 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#2 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#3 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(73): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#4 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#5 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(191): Illuminate\\View\\View->getContents()
+#6 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Illuminate\\View\\View->renderContents()
+#7 C:\\laragon\\www\\projeto-ainet\\resources\\views\\movies\\showcase.blade.php(42): Illuminate\\View\\View->render()
+#8 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\laragon\\\\www\\\\...')
+#9 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#10 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#11 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(73): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#12 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#13 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(191): Illuminate\\View\\View->getContents()
+#14 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Illuminate\\View\\View->renderContents()
+#15 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(70): Illuminate\\View\\View->render()
+#16 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#17 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(918): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#18 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(885): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#19 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#20 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(88): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#29 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#36 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#37 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#38 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#39 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#40 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#52 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#54 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#55 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#56 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#57 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#58 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1172): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#59 C:\\laragon\\www\\projeto-ainet\\public\\index.php(17): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#60 {main}
+
+[previous exception] [object] (ErrorException(code: 0): Attempt to read property \"type\" on null at C:\\laragon\\www\\projeto-ainet\\storage\\framework\\views\\f288df94d7e092b8af5a2eeb914fcc93.php:74)
+[stacktrace]
+#0 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(256): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Attempt to read...', 'C:\\\\laragon\\\\www\\\\...', 74)
+#1 C:\\laragon\\www\\projeto-ainet\\storage\\framework\\views\\f288df94d7e092b8af5a2eeb914fcc93.php(74): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Attempt to read...', 'C:\\\\laragon\\\\www\\\\...', 74)
+#2 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\laragon\\\\www\\\\...')
+#3 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#5 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(73): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#6 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#7 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(191): Illuminate\\View\\View->getContents()
+#8 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Illuminate\\View\\View->renderContents()
+#9 C:\\laragon\\www\\projeto-ainet\\storage\\framework\\views\\6cb0509c1b5a73b1e0cbc59017457f53.php(62): Illuminate\\View\\View->render()
+#10 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\laragon\\\\www\\\\...')
+#11 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#12 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#13 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(73): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#14 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#15 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(191): Illuminate\\View\\View->getContents()
+#16 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Illuminate\\View\\View->renderContents()
+#17 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(70): Illuminate\\View\\View->render()
+#18 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#19 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(918): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#20 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(885): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#21 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#22 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(88): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#31 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#38 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#39 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#40 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#41 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#42 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#52 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#54 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#55 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#56 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#57 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#58 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#59 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#60 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1172): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#61 C:\\laragon\\www\\projeto-ainet\\public\\index.php(17): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#62 {main}
+"} 
+[2024-06-15 15:13:44] local.ERROR: Attempt to read property "type" on null {"view":{"view":"C:\\laragon\\www\\projeto-ainet\\resources\\views\\layouts\\main.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-763398877 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#1474</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-763398877\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","movies":"<pre class=sf-dump id=sf-dump-311751380 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Pagination\\LengthAwarePaginator</span> {<a class=sf-dump-ref>#1557</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note title=\"Illuminate\\Database\\Eloquent\\Collection
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Database\\Eloquent</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Collection</span> {<a class=sf-dump-ref>#1559</a><samp data-depth=2 class=sf-dump-compact>
+    #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:9</span> [<samp data-depth=3 class=sf-dump-compact>
+      <span class=sf-dump-index>0</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1564</a> &#8230;31}
+      <span class=sf-dump-index>1</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1560</a> &#8230;31}
+      <span class=sf-dump-index>2</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1566</a> &#8230;31}
+      <span class=sf-dump-index>3</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1576</a> &#8230;31}
+      <span class=sf-dump-index>4</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1592</a> &#8230;31}
+      <span class=sf-dump-index>5</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1572</a> &#8230;31}
+      <span class=sf-dump-index>6</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1548</a> &#8230;31}
+      <span class=sf-dump-index>7</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1571</a> &#8230;31}
+      <span class=sf-dump-index>8</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1579</a> &#8230;31}
+    </samp>]
+    #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  </samp>}
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>10</span>
+  #<span class=sf-dump-protected title=\"Protected property\">currentPage</span>: <span class=sf-dump-num>1</span>
+  #<span class=sf-dump-protected title=\"Protected property\">path</span>: \"<span class=sf-dump-str title=\"25 characters\">http://projeto-ainet.test</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">query</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fragment</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">pageName</span>: \"<span class=sf-dump-str title=\"4 characters\">page</span>\"
+  +<span class=sf-dump-public title=\"Public property\">onEachSide</span>: <span class=sf-dump-num>3</span>
+  #<span class=sf-dump-protected title=\"Protected property\">options</span>: <span class=sf-dump-note>array:2</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>path</span>\" => \"<span class=sf-dump-str title=\"25 characters\">http://projeto-ainet.test</span>\"
+    \"<span class=sf-dump-key>pageName</span>\" => \"<span class=sf-dump-str title=\"4 characters\">page</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">total</span>: <span class=sf-dump-num>9</span>
+  #<span class=sf-dump-protected title=\"Protected property\">lastPage</span>: <span class=sf-dump-num>1</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-311751380\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","genres":"<pre class=sf-dump id=sf-dump-546503090 data-indent-pad=\"  \"><span class=sf-dump-note>array:23</span> [<samp data-depth=1 class=sf-dump-expanded>
+  \"\" => \"<span class=sf-dump-str title=\"9 characters\">Any genre</span>\"
+  \"<span class=sf-dump-key>ACTION</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Action</span>\"
+  \"<span class=sf-dump-key>ADVENTURE</span>\" => \"<span class=sf-dump-str title=\"9 characters\">Adventure</span>\"
+  \"<span class=sf-dump-key>ANIMATION</span>\" => \"<span class=sf-dump-str title=\"9 characters\">Animation</span>\"
+  \"<span class=sf-dump-key>BIBLOGRAPHY</span>\" => \"<span class=sf-dump-str title=\"12 characters\">Bibliography</span>\"
+  \"<span class=sf-dump-key>COMEDY</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Comedy</span>\"
+  \"<span class=sf-dump-key>COMEDY-ACTION</span>\" => \"<span class=sf-dump-str title=\"17 characters\">Comedy and action</span>\"
+  \"<span class=sf-dump-key>CRIME</span>\" => \"<span class=sf-dump-str title=\"5 characters\">Crime</span>\"
+  \"<span class=sf-dump-key>CULT</span>\" => \"<span class=sf-dump-str title=\"10 characters\">Cult movie</span>\"
+  \"<span class=sf-dump-key>DRAMA</span>\" => \"<span class=sf-dump-str title=\"5 characters\">Drama</span>\"
+  \"<span class=sf-dump-key>FAMILY</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Family</span>\"
+  \"<span class=sf-dump-key>FANTASY</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Fantasy</span>\"
+  \"<span class=sf-dump-key>HISTORY</span>\" => \"<span class=sf-dump-str title=\"10 characters\">Historical</span>\"
+  \"<span class=sf-dump-key>HORROR</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Horror</span>\"
+  \"<span class=sf-dump-key>MUSICAL</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Musical</span>\"
+  \"<span class=sf-dump-key>MISTERY</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Mystery</span>\"
+  \"<span class=sf-dump-key>ROMANCE</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Romance</span>\"
+  \"<span class=sf-dump-key>COMEDY-ROMANCE</span>\" => \"<span class=sf-dump-str title=\"15 characters\">Romantic comedy</span>\"
+  \"<span class=sf-dump-key>SCI-FI</span>\" => \"<span class=sf-dump-str title=\"15 characters\">Science fiction</span>\"
+  \"<span class=sf-dump-key>SUPERHERO</span>\" => \"<span class=sf-dump-str title=\"12 characters\">Super heroes</span>\"
+  \"<span class=sf-dump-key>THRILLER</span>\" => \"<span class=sf-dump-str title=\"8 characters\">Suspense</span>\"
+  \"<span class=sf-dump-key>WAR</span>\" => \"<span class=sf-dump-str title=\"3 characters\">War</span>\"
+  \"<span class=sf-dump-key>WESTERN</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Western</span>\"
+</samp>]
+</pre><script>Sfdump(\"sf-dump-546503090\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","filterByGenre":"<pre class=sf-dump id=sf-dump-1158056869 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-1158056869\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","filterByTitle":"<pre class=sf-dump id=sf-dump-2016274133 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-2016274133\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","filterByYear":"<pre class=sf-dump id=sf-dump-1672306644 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-1672306644\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","component":"<pre class=sf-dump id=sf-dump-1696729859 data-indent-pad=\"  \"><span class=sf-dump-note>App\\View\\Components\\Movies\\FilterCard</span> {<a class=sf-dump-ref>#1556</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">except</span>: []
+  +<span class=sf-dump-public title=\"Public property\">componentName</span>: \"<span class=sf-dump-str title=\"18 characters\">movies.filter-card</span>\"
+  +<span class=sf-dump-public title=\"Public property\">attributes</span>: <span class=sf-dump-note title=\"Illuminate\\View\\ComponentAttributeBag
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\View</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>ComponentAttributeBag</span> {<a class=sf-dump-ref>#1570</a><samp data-depth=2 class=sf-dump-compact>
+    #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=3 class=sf-dump-compact>
+      \"<span class=sf-dump-key>class</span>\" => \"<span class=sf-dump-str title=\"4 characters\">mb-6</span>\"
+    </samp>]
+  </samp>}
+  +<span class=sf-dump-public title=\"Public property\">genres</span>: <span class=sf-dump-note>array:23</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"\" => \"<span class=sf-dump-str title=\"9 characters\">Any genre</span>\"
+    \"<span class=sf-dump-key>ACTION</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Action</span>\"
+    \"<span class=sf-dump-key>ADVENTURE</span>\" => \"<span class=sf-dump-str title=\"9 characters\">Adventure</span>\"
+    \"<span class=sf-dump-key>ANIMATION</span>\" => \"<span class=sf-dump-str title=\"9 characters\">Animation</span>\"
+    \"<span class=sf-dump-key>BIBLOGRAPHY</span>\" => \"<span class=sf-dump-str title=\"12 characters\">Bibliography</span>\"
+    \"<span class=sf-dump-key>COMEDY</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Comedy</span>\"
+    \"<span class=sf-dump-key>COMEDY-ACTION</span>\" => \"<span class=sf-dump-str title=\"17 characters\">Comedy and action</span>\"
+    \"<span class=sf-dump-key>CRIME</span>\" => \"<span class=sf-dump-str title=\"5 characters\">Crime</span>\"
+    \"<span class=sf-dump-key>CULT</span>\" => \"<span class=sf-dump-str title=\"10 characters\">Cult movie</span>\"
+    \"<span class=sf-dump-key>DRAMA</span>\" => \"<span class=sf-dump-str title=\"5 characters\">Drama</span>\"
+    \"<span class=sf-dump-key>FAMILY</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Family</span>\"
+    \"<span class=sf-dump-key>FANTASY</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Fantasy</span>\"
+    \"<span class=sf-dump-key>HISTORY</span>\" => \"<span class=sf-dump-str title=\"10 characters\">Historical</span>\"
+    \"<span class=sf-dump-key>HORROR</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Horror</span>\"
+    \"<span class=sf-dump-key>MUSICAL</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Musical</span>\"
+    \"<span class=sf-dump-key>MISTERY</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Mystery</span>\"
+    \"<span class=sf-dump-key>ROMANCE</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Romance</span>\"
+    \"<span class=sf-dump-key>COMEDY-ROMANCE</span>\" => \"<span class=sf-dump-str title=\"15 characters\">Romantic comedy</span>\"
+    \"<span class=sf-dump-key>SCI-FI</span>\" => \"<span class=sf-dump-str title=\"15 characters\">Science fiction</span>\"
+    \"<span class=sf-dump-key>SUPERHERO</span>\" => \"<span class=sf-dump-str title=\"12 characters\">Super heroes</span>\"
+    \"<span class=sf-dump-key>THRILLER</span>\" => \"<span class=sf-dump-str title=\"8 characters\">Suspense</span>\"
+    \"<span class=sf-dump-key>WAR</span>\" => \"<span class=sf-dump-str title=\"3 characters\">War</span>\"
+    \"<span class=sf-dump-key>WESTERN</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Western</span>\"
+  </samp>]
+  +<span class=sf-dump-public title=\"Public property\">filterAction</span>: \"<span class=sf-dump-str title=\"36 characters\">http://projeto-ainet.test/showMovies</span>\"
+  +<span class=sf-dump-public title=\"Public property\">resetUrl</span>: \"<span class=sf-dump-str title=\"36 characters\">http://projeto-ainet.test/showMovies</span>\"
+  +<span class=sf-dump-public title=\"Public property\">genre</span>: <span class=sf-dump-const>null</span>
+  +<span class=sf-dump-public title=\"Public property\">title</span>: <span class=sf-dump-const>null</span>
+  +<span class=sf-dump-public title=\"Public property\">year</span>: <span class=sf-dump-const>null</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1696729859\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","__currentLoopData":"<pre class=sf-dump id=sf-dump-1761968085 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Database\\Eloquent\\Collection</span> {<a class=sf-dump-ref>#1704</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:2</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => <span class=sf-dump-note title=\"App\\Models\\Screening
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Screening</span> {<a class=sf-dump-ref>#1698</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"10 characters\">screenings</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:8</span> [ &#8230;8]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:8</span> [ &#8230;8]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:4</span> [ &#8230;4]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+    <span class=sf-dump-index>1</span> => <span class=sf-dump-note title=\"App\\Models\\Screening
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Screening</span> {<a class=sf-dump-ref>#1684</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"10 characters\">screenings</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:8</span> [ &#8230;8]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:8</span> [ &#8230;8]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:4</span> [ &#8230;4]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1761968085\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","movie":"<pre class=sf-dump id=sf-dump-544434545 data-indent-pad=\"  \"><span class=sf-dump-note>App\\Models\\Movie</span> {<a class=sf-dump-ref>#1579</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"6 characters\">movies</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+  +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+  +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+  +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:11</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>341</span>
+    \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"24 characters\">Festival Rocky de Terror</span>\"
+    \"<span class=sf-dump-key>genre_code</span>\" => \"<span class=sf-dump-str title=\"4 characters\">CULT</span>\"
+    \"<span class=sf-dump-key>year</span>\" => <span class=sf-dump-num>1975</span>
+    \"<span class=sf-dump-key>poster_filename</span>\" => \"<span class=sf-dump-str title=\"21 characters\">341_663e2f1fcbd01.jpg</span>\"
+    \"<span class=sf-dump-key>synopsis</span>\" => \"<span class=sf-dump-str title=\"129 characters\">A newly-engaged couple have a breakdown in an isolated area and must seek shelter at the bizarre residence of Dr. Frank-n-Furter.</span>\"
+    \"<span class=sf-dump-key>trailer_url</span>\" => \"<span class=sf-dump-str title=\"43 characters\">https://www.youtube.com/watch?v=fxqEwVhPw6U</span>\"
+    \"<span class=sf-dump-key>custom</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2021-10-20 18:37:58</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-08-23 23:23:36</span>\"
+    \"<span class=sf-dump-key>deleted_at</span>\" => <span class=sf-dump-const>null</span>
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:11</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>341</span>
+    \"<span class=sf-dump-key>title</span>\" => \"<span class=sf-dump-str title=\"24 characters\">Festival Rocky de Terror</span>\"
+    \"<span class=sf-dump-key>genre_code</span>\" => \"<span class=sf-dump-str title=\"4 characters\">CULT</span>\"
+    \"<span class=sf-dump-key>year</span>\" => <span class=sf-dump-num>1975</span>
+    \"<span class=sf-dump-key>poster_filename</span>\" => \"<span class=sf-dump-str title=\"21 characters\">341_663e2f1fcbd01.jpg</span>\"
+    \"<span class=sf-dump-key>synopsis</span>\" => \"<span class=sf-dump-str title=\"129 characters\">A newly-engaged couple have a breakdown in an isolated area and must seek shelter at the bizarre residence of Dr. Frank-n-Furter.</span>\"
+    \"<span class=sf-dump-key>trailer_url</span>\" => \"<span class=sf-dump-str title=\"43 characters\">https://www.youtube.com/watch?v=fxqEwVhPw6U</span>\"
+    \"<span class=sf-dump-key>custom</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2021-10-20 18:37:58</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2023-08-23 23:23:36</span>\"
+    \"<span class=sf-dump-key>deleted_at</span>\" => <span class=sf-dump-const>null</span>
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>deleted_at</span>\" => \"<span class=sf-dump-str title=\"8 characters\">datetime</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">relations</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>genre</span>\" => <span class=sf-dump-note title=\"App\\Models\\Genre
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Genre</span> {<a class=sf-dump-ref>#1599</a><samp data-depth=3 class=sf-dump-compact>
+      #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"6 characters\">genres</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"4 characters\">code</span>\"
+      #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"6 characters\">string</span>\"
+      +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+      +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+      +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+      +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:4</span> [ &#8230;4]
+      #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:4</span> [ &#8230;4]
+      #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">casts</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+      #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+      +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>false</span>
+      +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+      #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+      #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:2</span> [ &#8230;2]
+      #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [ &#8230;1]
+      #<span class=sf-dump-protected title=\"Protected property\">forceDeleting</span>: <span class=sf-dump-const>false</span>
+    </samp>}
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+  +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:6</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"5 characters\">title</span>\"
+    <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"10 characters\">genre_code</span>\"
+    <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"4 characters\">year</span>\"
+    <span class=sf-dump-index>3</span> => \"<span class=sf-dump-str title=\"15 characters\">poster_filename</span>\"
+    <span class=sf-dump-index>4</span> => \"<span class=sf-dump-str title=\"8 characters\">synopsis</span>\"
+    <span class=sf-dump-index>5</span> => \"<span class=sf-dump-str title=\"11 characters\">trailer_url</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str>*</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">forceDeleting</span>: <span class=sf-dump-const>false</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-544434545\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","loop":"<pre class=sf-dump id=sf-dump-1581750411 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-1581750411\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","screening":"<pre class=sf-dump id=sf-dump-983108678 data-indent-pad=\"  \"><span class=sf-dump-note>App\\Models\\Screening</span> {<a class=sf-dump-ref>#1684</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">connection</span>: \"<span class=sf-dump-str title=\"5 characters\">mysql</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">table</span>: \"<span class=sf-dump-str title=\"10 characters\">screenings</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">primaryKey</span>: \"<span class=sf-dump-str title=\"2 characters\">id</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">keyType</span>: \"<span class=sf-dump-str title=\"3 characters\">int</span>\"
+  +<span class=sf-dump-public title=\"Public property\">incrementing</span>: <span class=sf-dump-const>true</span>
+  #<span class=sf-dump-protected title=\"Protected property\">with</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">withCount</span>: []
+  +<span class=sf-dump-public title=\"Public property\">preventsLazyLoading</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>15</span>
+  +<span class=sf-dump-public title=\"Public property\">exists</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">wasRecentlyCreated</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">attributes</span>: <span class=sf-dump-note>array:8</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>983</span>
+    \"<span class=sf-dump-key>movie_id</span>\" => <span class=sf-dump-num>341</span>
+    \"<span class=sf-dump-key>theater_id</span>\" => <span class=sf-dump-num>7</span>
+    \"<span class=sf-dump-key>date</span>\" => \"<span class=sf-dump-str title=\"10 characters\">2024-06-20</span>\"
+    \"<span class=sf-dump-key>start_time</span>\" => \"<span class=sf-dump-str title=\"8 characters\">19:00:00</span>\"
+    \"<span class=sf-dump-key>custom</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2022-03-04 18:17:28</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2022-02-28 06:30:05</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">original</span>: <span class=sf-dump-note>array:8</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>id</span>\" => <span class=sf-dump-num>983</span>
+    \"<span class=sf-dump-key>movie_id</span>\" => <span class=sf-dump-num>341</span>
+    \"<span class=sf-dump-key>theater_id</span>\" => <span class=sf-dump-num>7</span>
+    \"<span class=sf-dump-key>date</span>\" => \"<span class=sf-dump-str title=\"10 characters\">2024-06-20</span>\"
+    \"<span class=sf-dump-key>start_time</span>\" => \"<span class=sf-dump-str title=\"8 characters\">19:00:00</span>\"
+    \"<span class=sf-dump-key>custom</span>\" => <span class=sf-dump-const>null</span>
+    \"<span class=sf-dump-key>created_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2022-03-04 18:17:28</span>\"
+    \"<span class=sf-dump-key>updated_at</span>\" => \"<span class=sf-dump-str title=\"19 characters\">2022-02-28 06:30:05</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">changes</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">casts</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">classCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">attributeCastCache</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dateFormat</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">appends</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">dispatchesEvents</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">observables</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">relations</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">touches</span>: []
+  +<span class=sf-dump-public title=\"Public property\">timestamps</span>: <span class=sf-dump-const>true</span>
+  +<span class=sf-dump-public title=\"Public property\">usesUniqueIds</span>: <span class=sf-dump-const>false</span>
+  #<span class=sf-dump-protected title=\"Protected property\">hidden</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">visible</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fillable</span>: <span class=sf-dump-note>array:4</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str title=\"8 characters\">movie_id</span>\"
+    <span class=sf-dump-index>1</span> => \"<span class=sf-dump-str title=\"10 characters\">theater_id</span>\"
+    <span class=sf-dump-index>2</span> => \"<span class=sf-dump-str title=\"4 characters\">date</span>\"
+    <span class=sf-dump-index>3</span> => \"<span class=sf-dump-str title=\"10 characters\">start_time</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">guarded</span>: <span class=sf-dump-note>array:1</span> [<samp data-depth=2 class=sf-dump-compact>
+    <span class=sf-dump-index>0</span> => \"<span class=sf-dump-str>*</span>\"
+  </samp>]
+</samp>}
+</pre><script>Sfdump(\"sf-dump-983108678\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): Attempt to read property \"type\" on null at C:\\laragon\\www\\projeto-ainet\\resources\\views\\layouts\\main.blade.php:55)
+[stacktrace]
+#0 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\laragon\\\\www\\\\...')
+#1 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#2 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#3 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(73): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#4 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#5 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(191): Illuminate\\View\\View->getContents()
+#6 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Illuminate\\View\\View->renderContents()
+#7 C:\\laragon\\www\\projeto-ainet\\resources\\views\\movies\\showcase.blade.php(42): Illuminate\\View\\View->render()
+#8 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\laragon\\\\www\\\\...')
+#9 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#10 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#11 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(73): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#12 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#13 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(191): Illuminate\\View\\View->getContents()
+#14 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Illuminate\\View\\View->renderContents()
+#15 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(70): Illuminate\\View\\View->render()
+#16 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#17 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(918): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#18 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(885): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#19 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#20 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#23 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(88): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#29 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#36 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#37 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#38 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#39 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#40 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#44 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#52 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#54 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#55 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#56 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#57 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#58 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1172): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#59 C:\\laragon\\www\\projeto-ainet\\public\\index.php(17): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#60 {main}
+
+[previous exception] [object] (ErrorException(code: 0): Attempt to read property \"type\" on null at C:\\laragon\\www\\projeto-ainet\\storage\\framework\\views\\f288df94d7e092b8af5a2eeb914fcc93.php:74)
+[stacktrace]
+#0 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Bootstrap\\HandleExceptions.php(256): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->handleError(2, 'Attempt to read...', 'C:\\\\laragon\\\\www\\\\...', 74)
+#1 C:\\laragon\\www\\projeto-ainet\\storage\\framework\\views\\f288df94d7e092b8af5a2eeb914fcc93.php(74): Illuminate\\Foundation\\Bootstrap\\HandleExceptions->Illuminate\\Foundation\\Bootstrap\\{closure}(2, 'Attempt to read...', 'C:\\\\laragon\\\\www\\\\...', 74)
+#2 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\laragon\\\\www\\\\...')
+#3 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#4 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#5 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(73): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#6 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#7 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(191): Illuminate\\View\\View->getContents()
+#8 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Illuminate\\View\\View->renderContents()
+#9 C:\\laragon\\www\\projeto-ainet\\storage\\framework\\views\\6cb0509c1b5a73b1e0cbc59017457f53.php(62): Illuminate\\View\\View->render()
+#10 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\laragon\\\\www\\\\...')
+#11 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#12 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#13 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(73): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#14 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#15 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(191): Illuminate\\View\\View->getContents()
+#16 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Illuminate\\View\\View->renderContents()
+#17 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(70): Illuminate\\View\\View->render()
+#18 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#19 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(918): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#20 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(885): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#21 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#22 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(88): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#31 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#32 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#38 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#39 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#40 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#41 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#42 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#43 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#51 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#52 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#53 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#54 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#55 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#56 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#57 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#58 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#59 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#60 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1172): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#61 C:\\laragon\\www\\projeto-ainet\\public\\index.php(17): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#62 {main}
+"} 
+[2024-06-15 15:14:25] local.ERROR: syntax error, unexpected token "else", expecting end of file {"view":{"view":"C:\\laragon\\www\\projeto-ainet\\resources\\views\\layouts\\main.blade.php","data":{"errors":"<pre class=sf-dump id=sf-dump-1306594465 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Support\\ViewErrorBag</span> {<a class=sf-dump-ref>#1474</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">bags</span>: []
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1306594465\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","movies":"<pre class=sf-dump id=sf-dump-1350298765 data-indent-pad=\"  \"><span class=sf-dump-note>Illuminate\\Pagination\\LengthAwarePaginator</span> {<a class=sf-dump-ref>#1557</a><samp data-depth=1 class=sf-dump-expanded>
+  #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note title=\"Illuminate\\Database\\Eloquent\\Collection
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">Illuminate\\Database\\Eloquent</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Collection</span> {<a class=sf-dump-ref>#1559</a><samp data-depth=2 class=sf-dump-compact>
+    #<span class=sf-dump-protected title=\"Protected property\">items</span>: <span class=sf-dump-note>array:9</span> [<samp data-depth=3 class=sf-dump-compact>
+      <span class=sf-dump-index>0</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1564</a> &#8230;31}
+      <span class=sf-dump-index>1</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1560</a> &#8230;31}
+      <span class=sf-dump-index>2</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1566</a> &#8230;31}
+      <span class=sf-dump-index>3</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1576</a> &#8230;31}
+      <span class=sf-dump-index>4</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1592</a> &#8230;31}
+      <span class=sf-dump-index>5</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1572</a> &#8230;31}
+      <span class=sf-dump-index>6</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1548</a> &#8230;31}
+      <span class=sf-dump-index>7</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1571</a> &#8230;31}
+      <span class=sf-dump-index>8</span> => <span class=sf-dump-note title=\"App\\Models\\Movie
+\"><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">App\\Models</span><span class=\"sf-dump-ellipsis sf-dump-ellipsis-note\">\\</span>Movie</span> {<a class=sf-dump-ref>#1579</a> &#8230;31}
+    </samp>]
+    #<span class=sf-dump-protected title=\"Protected property\">escapeWhenCastingToString</span>: <span class=sf-dump-const>false</span>
+  </samp>}
+  #<span class=sf-dump-protected title=\"Protected property\">perPage</span>: <span class=sf-dump-num>10</span>
+  #<span class=sf-dump-protected title=\"Protected property\">currentPage</span>: <span class=sf-dump-num>1</span>
+  #<span class=sf-dump-protected title=\"Protected property\">path</span>: \"<span class=sf-dump-str title=\"25 characters\">http://projeto-ainet.test</span>\"
+  #<span class=sf-dump-protected title=\"Protected property\">query</span>: []
+  #<span class=sf-dump-protected title=\"Protected property\">fragment</span>: <span class=sf-dump-const>null</span>
+  #<span class=sf-dump-protected title=\"Protected property\">pageName</span>: \"<span class=sf-dump-str title=\"4 characters\">page</span>\"
+  +<span class=sf-dump-public title=\"Public property\">onEachSide</span>: <span class=sf-dump-num>3</span>
+  #<span class=sf-dump-protected title=\"Protected property\">options</span>: <span class=sf-dump-note>array:2</span> [<samp data-depth=2 class=sf-dump-compact>
+    \"<span class=sf-dump-key>path</span>\" => \"<span class=sf-dump-str title=\"25 characters\">http://projeto-ainet.test</span>\"
+    \"<span class=sf-dump-key>pageName</span>\" => \"<span class=sf-dump-str title=\"4 characters\">page</span>\"
+  </samp>]
+  #<span class=sf-dump-protected title=\"Protected property\">total</span>: <span class=sf-dump-num>9</span>
+  #<span class=sf-dump-protected title=\"Protected property\">lastPage</span>: <span class=sf-dump-num>1</span>
+</samp>}
+</pre><script>Sfdump(\"sf-dump-1350298765\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","genres":"<pre class=sf-dump id=sf-dump-394586925 data-indent-pad=\"  \"><span class=sf-dump-note>array:23</span> [<samp data-depth=1 class=sf-dump-expanded>
+  \"\" => \"<span class=sf-dump-str title=\"9 characters\">Any genre</span>\"
+  \"<span class=sf-dump-key>ACTION</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Action</span>\"
+  \"<span class=sf-dump-key>ADVENTURE</span>\" => \"<span class=sf-dump-str title=\"9 characters\">Adventure</span>\"
+  \"<span class=sf-dump-key>ANIMATION</span>\" => \"<span class=sf-dump-str title=\"9 characters\">Animation</span>\"
+  \"<span class=sf-dump-key>BIBLOGRAPHY</span>\" => \"<span class=sf-dump-str title=\"12 characters\">Bibliography</span>\"
+  \"<span class=sf-dump-key>COMEDY</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Comedy</span>\"
+  \"<span class=sf-dump-key>COMEDY-ACTION</span>\" => \"<span class=sf-dump-str title=\"17 characters\">Comedy and action</span>\"
+  \"<span class=sf-dump-key>CRIME</span>\" => \"<span class=sf-dump-str title=\"5 characters\">Crime</span>\"
+  \"<span class=sf-dump-key>CULT</span>\" => \"<span class=sf-dump-str title=\"10 characters\">Cult movie</span>\"
+  \"<span class=sf-dump-key>DRAMA</span>\" => \"<span class=sf-dump-str title=\"5 characters\">Drama</span>\"
+  \"<span class=sf-dump-key>FAMILY</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Family</span>\"
+  \"<span class=sf-dump-key>FANTASY</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Fantasy</span>\"
+  \"<span class=sf-dump-key>HISTORY</span>\" => \"<span class=sf-dump-str title=\"10 characters\">Historical</span>\"
+  \"<span class=sf-dump-key>HORROR</span>\" => \"<span class=sf-dump-str title=\"6 characters\">Horror</span>\"
+  \"<span class=sf-dump-key>MUSICAL</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Musical</span>\"
+  \"<span class=sf-dump-key>MISTERY</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Mystery</span>\"
+  \"<span class=sf-dump-key>ROMANCE</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Romance</span>\"
+  \"<span class=sf-dump-key>COMEDY-ROMANCE</span>\" => \"<span class=sf-dump-str title=\"15 characters\">Romantic comedy</span>\"
+  \"<span class=sf-dump-key>SCI-FI</span>\" => \"<span class=sf-dump-str title=\"15 characters\">Science fiction</span>\"
+  \"<span class=sf-dump-key>SUPERHERO</span>\" => \"<span class=sf-dump-str title=\"12 characters\">Super heroes</span>\"
+  \"<span class=sf-dump-key>THRILLER</span>\" => \"<span class=sf-dump-str title=\"8 characters\">Suspense</span>\"
+  \"<span class=sf-dump-key>WAR</span>\" => \"<span class=sf-dump-str title=\"3 characters\">War</span>\"
+  \"<span class=sf-dump-key>WESTERN</span>\" => \"<span class=sf-dump-str title=\"7 characters\">Western</span>\"
+</samp>]
+</pre><script>Sfdump(\"sf-dump-394586925\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","filterByGenre":"<pre class=sf-dump id=sf-dump-734205495 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-734205495\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","filterByTitle":"<pre class=sf-dump id=sf-dump-822682401 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-822682401\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+","filterByYear":"<pre class=sf-dump id=sf-dump-245364061 data-indent-pad=\"  \"><span class=sf-dump-const>null</span>
+</pre><script>Sfdump(\"sf-dump-245364061\", {\"maxDepth\":3,\"maxStringLength\":160})</script>
+"}},"exception":"[object] (Spatie\\LaravelIgnition\\Exceptions\\ViewException(code: 0): syntax error, unexpected token \"else\", expecting end of file at C:\\laragon\\www\\projeto-ainet\\resources\\views\\layouts\\main.blade.php:101)
+[stacktrace]
+#0 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\laragon\\\\www\\\\...')
+#1 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#2 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#3 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(73): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#4 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#5 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(191): Illuminate\\View\\View->getContents()
+#6 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Illuminate\\View\\View->renderContents()
+#7 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(70): Illuminate\\View\\View->render()
+#8 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#9 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(918): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#10 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(885): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#11 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#12 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(88): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#17 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#21 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#28 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#29 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#30 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#31 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#32 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#35 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#36 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#37 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#38 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#39 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#41 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#46 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#47 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#49 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#50 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1172): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#51 C:\\laragon\\www\\projeto-ainet\\public\\index.php(17): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#52 {main}
+
+[previous exception] [object] (ParseError(code: 0): syntax error, unexpected token \"else\", expecting end of file at C:\\laragon\\www\\projeto-ainet\\storage\\framework\\views\\f288df94d7e092b8af5a2eeb914fcc93.php:215)
+[stacktrace]
+#0 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#1 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#2 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(73): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#3 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#4 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(191): Illuminate\\View\\View->getContents()
+#5 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Illuminate\\View\\View->renderContents()
+#6 C:\\laragon\\www\\projeto-ainet\\storage\\framework\\views\\6cb0509c1b5a73b1e0cbc59017457f53.php(62): Illuminate\\View\\View->render()
+#7 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(123): require('C:\\\\laragon\\\\www\\\\...')
+#8 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Filesystem\\Filesystem.php(124): Illuminate\\Filesystem\\Filesystem::Illuminate\\Filesystem\\{closure}()
+#9 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\PhpEngine.php(58): Illuminate\\Filesystem\\Filesystem->getRequire('C:\\\\laragon\\\\www\\\\...', Array)
+#10 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Engines\\CompilerEngine.php(73): Illuminate\\View\\Engines\\PhpEngine->evaluatePath('C:\\\\laragon\\\\www\\\\...', Array)
+#11 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(208): Illuminate\\View\\Engines\\CompilerEngine->get('C:\\\\laragon\\\\www\\\\...', Array)
+#12 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(191): Illuminate\\View\\View->getContents()
+#13 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\View.php(160): Illuminate\\View\\View->renderContents()
+#14 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(70): Illuminate\\View\\View->render()
+#15 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Response.php(35): Illuminate\\Http\\Response->setContent(Object(Illuminate\\View\\View))
+#16 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(918): Illuminate\\Http\\Response->__construct(Object(Illuminate\\View\\View), 200, Array)
+#17 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(885): Illuminate\\Routing\\Router::toResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#18 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Routing\\Router->prepareResponse(Object(Illuminate\\Http\\Request), Object(Illuminate\\View\\View))
+#19 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(50): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(88): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#26 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(121): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(64): Illuminate\\Session\\Middleware\\StartSession->handleStatefulRequest(Object(Illuminate\\Http\\Request), Object(Illuminate\\Session\\Store), Object(Closure))
+#28 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#29 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(75): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#33 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#34 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(805): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#35 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(784): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#36 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(748): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#37 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(737): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#38 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(200): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#39 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(144): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#40 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull.php(31): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#42 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\ConvertEmptyStringsToNull->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(21): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TrimStrings.php(51): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#45 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\TrimStrings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#48 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php(110): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#49 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#50 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\HandleCors.php(49): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#51 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\HandleCors->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Http\\Middleware\\TrustProxies.php(57): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(183): Illuminate\\Http\\Middleware\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#54 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(119): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#55 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(175): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#56 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(144): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#57 C:\\laragon\\www\\projeto-ainet\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(1172): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#58 C:\\laragon\\www\\projeto-ainet\\public\\index.php(17): Illuminate\\Foundation\\Application->handleRequest(Object(Illuminate\\Http\\Request))
+#59 {main}
+"} 

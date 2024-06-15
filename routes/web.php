@@ -78,9 +78,6 @@ Route::patch('users/{user}/block', [UserController::class, 'updatedBlock'])->nam
 Route::patch('customers/{user}/block', [UserController::class, 'updatedBlock'])->name('customers.updatedBlock');
 
 Route::get('/generate-pdf', [PDFController::class, 'generatePDF']);
-
-
-
 Route::get('send-email-pdf', [PDFController::class, 'index']);
 
 Route::middleware('can:use-cart')->group(function () {
@@ -95,10 +92,3 @@ Route::middleware('can:use-cart')->group(function () {
     // Clear the cart:
     Route::delete('cart', [CartController::class, 'destroy'])->name('cart.destroy');
 });
-
-
-//Route::get("tickets\{ticket}\showcase", [ticketController::class, 'showcase'])->name('Tickets'.showcase);
-Route::get('statistics', [StatisticsController::class, 'totaisGerais'])->name('statistics.index');
-//Route::get('/statistics', [StatisticsController::class, 'index'])->name('statistics.index');
-//Route::post('/statistics/filter', [StatisticsController::class, 'filter'])->name('statistics.filter');
-//Route::post('statistics/filter', [StatisticsController::class, 'filter'])->name('statistics.filter');

@@ -51,13 +51,13 @@
                             </div>
                         </form>
 
+                        @auth
+
                         <!-- Menu Item: Cart -->
                         @if(Auth::user()->type == 'C')
                         <x-menus.cart href="{{ route('cart.show') }}" selectable="0" selected="1" total="{{ session('total_seats', 0) }}" />
                         @endif
 
-
-                        @auth
                         <x-menus.submenu selectable="0" uniqueName="submenu_user">
                             <x-slot:content>
                                 <div class="pe-1">
