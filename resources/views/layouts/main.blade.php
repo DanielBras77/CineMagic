@@ -50,7 +50,7 @@
 
 
                         <!-- Menu Item: Cart -->
-                        <x-menus.cart href="{{ route('cart.show') }}" selectable="0" selected="1" total="{{ session('total_seats', 0) }}"/>
+                        <x-menus.cart href="{{ route('cart.show') }}" selectable="0" selected="1" total="{{ session('total_seats', 0) }}" />
 
                         @auth
                         <x-menus.submenu selectable="0" uniqueName="submenu_user">
@@ -70,8 +70,7 @@
                                 <x-menus.submenu-item content="Profile" selectable="0" href="{{ route('profile.edit') }}" />
                                 @endif
                                 @if(Auth::user()->type == 'C')
-                                <!-- Botão que irá para o histórico de tickets -->
-                                <x-menus.submenu-item content="History" selectable="0" href="#" />
+                                <x-menus.submenu-item content="Histórico" selectable="0" href="{{ route('purchase.history') }}" />
                                 @endif
 
                                 <hr>

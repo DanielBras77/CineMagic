@@ -4,7 +4,6 @@ use App\Models\Purchase;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\CartController;
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SeatController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\GenreController;
@@ -34,7 +33,7 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-//Para rotas que exigem autenticação, adicionar ao carrinho não, por exemplo
+//Para rotas que exigem autenticação, pessoas que estejam verificadas e não estejam bloqueadas, adicionar ao carrinho não, por exemplo
 Route::middleware(['auth', 'verified', 'can:no-blocked'])->group(function () {
 
 
@@ -46,6 +45,14 @@ Route::middleware(['auth', 'verified', 'can:no-blocked'])->group(function () {
     });
 });
 */
+
+
+
+Route::get('/purchase/history', [PurchaseController::class, 'history'])->name('purchase.history');
+Route::get('/purchase/{purchase}', [PurchaseController::class, 'show'])->name('purchase.show');
+
+// Rota para fazer o download do recibo
+Route::get('/purchase/{purchase}/receipt', [PurchaseController::class, 'getReceipt'])->name('purchase.getReceipt');
 
 
 require __DIR__ . '/auth.php';
@@ -96,6 +103,6 @@ Route::get('teste/{purchase}', function (Purchase $purchase) {
 
 //Route::get("tickets\{ticket}\showcase", [ticketController::class, 'showcase'])->name('Tickets'.showcase);
 //Route::get('statistics', [StatisticsController::class, 'show'])->name('statistics.show');
-Route::get('/statistics', [StatisticsController::class, 'index'])->name('statistics.index');
-Route::post('/statistics/filter', [StatisticsController::class, 'filter'])->name('statistics.filter');
+//Route::get('/statistics', [StatisticsController::class, 'index'])->name('statistics.index');
+//Route::post('/statistics/filter', [StatisticsController::class, 'filter'])->name('statistics.filter');
 //Route::post('statistics/filter', [StatisticsController::class, 'filter'])->name('statistics.filter');

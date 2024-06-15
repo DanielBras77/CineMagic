@@ -5,9 +5,18 @@
             <th class="px-2 py-2 text-left">Name</th>
             <th class="px-2 py-2 text-left hidden lg:table-cell">Email</th>
             <th class="px-2 py-2 text-left">Type</th>
-            @if($showView || $showEdit || $showDelete || $showBlock)
-                    <th></th>
-                @endif
+            @if($showView)
+            <th></th>
+            @endif
+            @if($showEdit)
+                <th></th>
+            @endif
+            @if($showDelete)
+                <th></th>
+            @endif
+            @if($showBlock)
+                <th></th>
+            @endif
         </tr>
         </thead>
         <tbody>

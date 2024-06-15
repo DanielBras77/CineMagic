@@ -23,6 +23,11 @@
                     </p>
                 </div>
                 <div class="mt-8 w-3/4 grow">
+                    @if ($isSoldOut)
+                    <div class="p-4 text-xl font-semibold text-center text-white bg-red-500 rounded">
+                        Sold Out
+                    </div>
+                    @else
                     <form action="{{ route('cart.add', ['screening'=>$screening])}}" method="POST">
                         @csrf
                         <p>Lugares:</p>
@@ -55,6 +60,7 @@
                             <x-button element="submit" type="dark" text="Add to Cart" />
                         </div>
                     </form>
+                    @endif
                 </div>
             </div>
         </div>
