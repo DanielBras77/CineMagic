@@ -1,17 +1,16 @@
 <?php
 
+namespace App\Http\Controllers;
 //use App\Models\Movie;
 
 use App\Models\Genre;
-use App\Models\Theater;
+use App\Charts\Generos;
+use App\Charts\Purchase_graph;
+use App\Models\User;
 use App\Models\Purchase;
 use Illuminate\View\View;
-use App\Models\Statistics;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Http\RedirectResponse;
-use App\Http\Requests\SeatFormRequest;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Carbon\Carbon;
 
 class StatisticsController extends Controller
@@ -19,25 +18,34 @@ class StatisticsController extends Controller
 
     //Saber quantos movies existem por ano
 
-    public function totaisGerais(){
+    public function totaisGerais(Request $request): View
+    {
         $total_genres = Genre::count();
-        /**/
-        return view('statistics.totais', compact('total_genres'));
-    }
+
+        $numAdminsAtivos = User::where('type', 'A')
+            ->where('blocked', 0)
+            ->whereNull('deleted_at')
+            ->count();
+
+        $numEmployeesAtivos = User::where('type', 'E')
+            ->where('blocked', 0)
+            ->whereNull('deleted_at')
+            ->count();
+
+        $numCustomersAtivos = User::where('type', 'C')
+            ->where('blocked', 0)
+            ->whereNull('deleted_at')
+            ->count();
+
+        $numDeUserBloqueados = User::where('blocked', '1')
+            ->count();
 
 
-    public function PurchasesTotaisFilter(Request $request){
-
-        $filterByMonth = $request->month??"";
-        $filterByYear = $request->year??"";
+        $filterByYear = $request->year ?? "";
 
         $purchasesQuery = Purchase::query();
 
-        if($filterByMonth){
-            $purchasesQuery->whereMonth('date', $filterByMonth);
-        }
-
-        if($filterByYear){
+        if ($filterByYear) {
             $purchasesQuery->whereYear('date', $filterByYear);
         }
 
@@ -45,11 +53,76 @@ class StatisticsController extends Controller
         $totalPurchases = $purchasesQuery->count();
         $totalPrices = $purchases->sum('total_price');
 
-        // Chamar vista return view('statistics.totais', compact('total_genres'));
+        // pie chart ------------------------------------------------------
+        //query
+        $genreCounts = DB::table('genres')
+            ->join('movies', 'genres.code', '=', 'movies.genre_code')
+            ->select('genres.name', DB::raw('count(movies.id) as count'))
+            ->groupBy('genres.name')
+            ->get();
 
+        $colors = [];
+        $genresChart = new Generos; // criar a variavel pie chart
+
+        foreach ($genreCounts as $genre) {
+            $red = mt_rand(0, 255);
+            $green = mt_rand(0, 255);
+            $blue = mt_rand(0, 255);
+            $colors[] = "rgb($red, $green, $blue)";
+        }
+
+        if ($genreCounts->isNotEmpty()) {
+            $genresChart->labels($genreCounts->pluck('name')->toArray())
+                ->dataset('Gêneros', 'pie', $genreCounts->pluck('count')->toArray())
+                ->backgroundColor($colors);
+        } else {
+
+            $genresChart->labels(['Sem dados'])->dataset('Gêneros', 'pie', [1])->backgroundColor(['rgb(0, 0, 255)']);
+        }
+
+        // grafico de barras ------------------------------------------------------
+        //query
+        $vendasMensais = DB::table('purchases')
+            ->select(
+                DB::raw('YEAR(date) as year'),
+                DB::raw('MONTH(date) as month'),
+                DB::raw('SUM(total_price) as total_sales')
+            )
+            ->groupBy('year', 'month')
+            ->orderBy('year', 'asc')
+            ->orderBy('month', 'asc')
+            ->get();
+
+        $labels = [];
+        $vendas = [];
+
+        foreach ($vendasMensais as $vendasPorMes) {
+            $monthName = Carbon::create()->month($vendasPorMes->month)->format('F');
+            $labels[] = "{$monthName} {$vendasPorMes->year}";
+            $vendas[] = $vendasPorMes->total_sales;
+        }
+
+        $colors = [];
+        foreach ($vendas as $venda) {
+            $red = mt_rand(0, 255);
+            $green = mt_rand(0, 255);
+            $blue = mt_rand(0, 255);
+            $colors[] = "rgb($red, $green, $blue)";
+        }
+
+        $purchasesChart = new Purchase_graph;
+        $purchasesChart->labels($labels)
+            ->dataset('Total de Vendas', 'bar', $vendas)
+            ->backgroundColor($colors);
+
+
+
+
+        /**/
+        return view('statistics.index', compact('total_genres', 'numAdminsAtivos', 'numEmployeesAtivos', 'numCustomersAtivos', 'numDeUserBloqueados', 'totalPurchases', 'totalPrices', 'genresChart','purchasesChart'));
     }
 
-    public function TotalMoviesByGenre(){
+    /*<--- public function TotalMoviesByGenre(){
 
        $genres = Genre::withCount('movies')->all();
 
@@ -63,11 +136,11 @@ class StatisticsController extends Controller
 
             @endforeach
         */
-    }
+    //} <---
 }
 
 
-/*<?php
+/*<?php ------------------------------- Minhas cenas antigas (antes da prof fazer na aula) -------------------------------
 namespace App\Http\Controllers;
 use App\Models\Order;
 use App\Models\Category;
@@ -150,13 +223,13 @@ class DashboardController extends Controller
         return view('statistics.index', compact( 'genres', 'statistics', 'selectedGenreByUser', 'startDateByUser', 'endDateByUser'));
     }
 
-    private function getStatistics($genre_code = null, $start_date = null, $end_date = null)
+    public function getStatistics($genre_code = null, $start_date = null, $end_date = null)
     {
        /* $query = DB::table('purchases')
             ->join('screenings', 'tickets.screening_id', '=', 'screenings.id')
             ->select(DB::raw('count(purchases.id) as total_tickets'), DB::raw('sum(purchases.price) as total_revenue'));*/
 
-            $query = DB::table('tickets')
+            /*$query = DB::table('tickets')
             ->join('screenings', 'tickets.screening_id', '=', 'screenings.id')
             ->join('movies', 'screenings.movie_id', '=', 'movies.id')
             ->select(DB::raw('count(tickets.id) as total_tickets'), DB::raw('sum(tickets.price) as total_revenue'));
@@ -167,9 +240,9 @@ class DashboardController extends Controller
 
         return $query->first();
     }
-}
+}*/
 
-/*<?php
+/*<?php --------------------------------------------------- Cenas do rodrigo ---------------------------------------------------
 
 namespace App\Http\Controllers;
 

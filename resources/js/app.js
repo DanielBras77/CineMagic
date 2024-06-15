@@ -1,4 +1,5 @@
 import './bootstrap';
+import './Chart.min';
 import Alpine from 'alpinejs';
 /* Begin - our custom JavaScript code */
 import './menu'

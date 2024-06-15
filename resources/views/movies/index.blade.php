@@ -24,7 +24,7 @@
                         type="success"/>
                 </div>
             @endcan
-            <div class="font-base text-sm text-gray-700 dark:text-gray-300">
+            <div class="font-base text-sm text-gray-700 dark:text-gray-300 flex grow">
                 <x-movies.table :movies="$movies"
                     :showView="true"
                     :showEdit="true"

@@ -31,7 +31,7 @@ Route::middleware('auth')->group(function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
+*/
 
 //Para rotas que exigem autenticação, pessoas que estejam verificadas e não estejam bloqueadas, adicionar ao carrinho não, por exemplo
 Route::middleware(['auth', 'verified', 'can:no-blocked'])->group(function () {
@@ -43,9 +43,10 @@ Route::middleware(['auth', 'verified', 'can:no-blocked'])->group(function () {
         //statistics fica aqui
 
     });
-});
-*/
 
+});
+
+Route::view('/dashboard', 'dashboard')->name('dashboard');
 
 
 Route::get('/purchase/history', [PurchaseController::class, 'history'])->name('purchase.history');
@@ -57,7 +58,7 @@ Route::get('/purchase/{purchase}/receipt', [PurchaseController::class, 'getRecei
 
 require __DIR__ . '/auth.php';
 
-Route::view('/dashboard', 'dashboard')->name('dashboard');
+
 Route::get('/', [MovieController::class, 'showMovies'])->name('home');
 Route::get('showMovies', [MovieController::class, 'showMovies'])->name('movies.showMovies');
 Route::get("screenings\{screening}\showcase", [ScreeningController::class, 'showScreening'])->name('screenings.showcase');
@@ -68,6 +69,9 @@ Route::resource("theaters", TheaterController::class);
 Route::delete('movies/{theater}/photo', [MovieController::class, 'destroyPhoto'])->name('theaters.photo.destroy')->can('update', 'theater');
 Route::resource("users", UserController::class);
 Route::resource("customers", CustomerController::class);
+Route::get('configurations/edit', [ConfigurationController::class, 'edit'])->name('configurations.edit');
+Route::put('configurations', [ConfigurationController::class, 'update'])->name('configurations.update');
+Route::resource('purchases', PurchaseController::class);
 
 
 Route::patch('users/{user}/block', [UserController::class, 'updatedBlock'])->name('users.updatedBlock');
@@ -75,8 +79,7 @@ Route::patch('customers/{user}/block', [UserController::class, 'updatedBlock'])-
 
 Route::get('/generate-pdf', [PDFController::class, 'generatePDF']);
 
-Route::get('configurations/edit', [ConfigurationController::class, 'edit'])->name('configurations.edit');
-Route::put('configurations', [ConfigurationController::class, 'update'])->name('configurations.update');
+
 
 Route::get('send-email-pdf', [PDFController::class, 'index']);
 
@@ -95,14 +98,8 @@ Route::middleware('can:use-cart')->group(function () {
 
 
 
-
-Route::get('teste/{purchase}', function (Purchase $purchase) {
-    return view('purchases.receipt', compact('purchase'));
-});
-
-
 //Route::get("tickets\{ticket}\showcase", [ticketController::class, 'showcase'])->name('Tickets'.showcase);
-//Route::get('statistics', [StatisticsController::class, 'show'])->name('statistics.show');
+Route::get('statistics', [StatisticsController::class, 'totaisGerais'])->name('statistics.index');
 //Route::get('/statistics', [StatisticsController::class, 'index'])->name('statistics.index');
 //Route::post('/statistics/filter', [StatisticsController::class, 'filter'])->name('statistics.filter');
 //Route::post('statistics/filter', [StatisticsController::class, 'filter'])->name('statistics.filter');

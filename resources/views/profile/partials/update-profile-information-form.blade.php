@@ -47,11 +47,11 @@
 
         <div>
             <x-input-label for="NIF" :value="__('NIF')" />
-            <x-text-input id="NIF" name="NIF" type="text" class="block w-full mt-1" :value="old('NIF', $user->customer->nif)" autofocus autocomplete="NIF" oninput="validity.valid||(value='');" min="000000000" max="999999999" />
-            <x-input-error class="mt-2" :messages="$errors->get('NIF')" />
+            <x-text-input id="NIF" name="nif" type="text" class="block w-full mt-1" :value="old('nif', $user->customer->nif)" autofocus autocomplete="NIF" />
+            <x-input-error class="mt-2" :messages="$errors->get('nif')" />
         </div>
 
-        <div class="flex items-center gap-4">
+        <div class="flex justify-end items-center gap-4">
             <x-primary-button>{{ __('Save') }}</x-primary-button>
 
             @if (session('status') === 'profile-updated')

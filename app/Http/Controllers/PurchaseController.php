@@ -35,12 +35,12 @@ class PurchaseController extends \Illuminate\Routing\Controller
         }
 
         if ($filterByDate) {
-            $purchasesQuery->where('email', 'like', "%$filterByDate%");
+            $purchasesQuery->where('date', 'like', "%$filterByDate%");
         }
 
         $purchases = $purchasesQuery->paginate(20)->withQueryString();
 
-        return view('purchases.index',compact('purchases', '$filterByCustomerName', 'filterByDate'));
+        return view('purchases.index',compact('purchases', 'filterByCustomerName', 'filterByDate'));
     }
 
 

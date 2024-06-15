@@ -48,9 +48,11 @@
                             </div>
                         </form>
 
-
                         <!-- Menu Item: Cart -->
+                        @if(Auth::user()->type == 'C')
                         <x-menus.cart href="{{ route('cart.show') }}" selectable="0" selected="1" total="{{ session('total_seats', 0) }}" />
+                        @endif
+
 
                         @auth
                         <x-menus.submenu selectable="0" uniqueName="submenu_user">
@@ -66,7 +68,7 @@
                                 @if(Auth::user()->type == 'A')
                                 <x-menus.submenu-item content="Dashboard" selectable="0" href="{{route('dashboard')}}" />
                                 @endif
-                                @if(Auth::user()->type != 'E')
+                                @if(Auth::user()->type == 'C')
                                 <x-menus.submenu-item content="Profile" selectable="0" href="{{ route('profile.edit') }}" />
                                 @endif
                                 @if(Auth::user()->type == 'C')
