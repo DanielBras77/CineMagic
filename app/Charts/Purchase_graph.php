@@ -29,6 +29,9 @@ class Purchase_graph extends Chart
                 ]],
                 'yAxes' => [[]],
             ],
+            'legend' => [
+                'display' => false,
+            ]
 
         ]);
     }
