@@ -6,7 +6,7 @@
             <th class="px-2 py-2 text-left hidden lg:table-cell">Email</th>
             <th class="px-2 py-2 text-left">Type</th>
             @if($showView)
-                <th></th>
+            <th></th>
             @endif
             @if($showEdit)
                 <th></th>

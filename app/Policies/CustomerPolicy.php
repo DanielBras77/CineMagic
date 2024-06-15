@@ -31,12 +31,12 @@ class CustomerPolicy
     }
 
 
-    public function delete(User $user, Customer $customer): bool
+    public function delete(User $user): bool
     {
         return $user->type == 'A';
     }
 
-    public function updateBlock(User $user, Customer $customer): bool
+    public function updateBlock(User $user): bool
     {
         return $user->type == 'A';
     }

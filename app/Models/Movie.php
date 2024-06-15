@@ -19,7 +19,6 @@ class Movie extends Model
 
     public function getPosterFullUrlAttribute()
     {
-        debug($this->poster_filename);
 
         if ($this->poster_filename && Storage::exists("public/posters/{$this->poster_filename}")) {
             return asset("storage/posters/{$this->poster_filename}");
