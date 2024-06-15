@@ -113,12 +113,7 @@ class StatisticsController extends Controller
         $purchasesChart = new Purchase_graph;
         $purchasesChart->labels($labels)
             ->dataset('Total de Vendas', 'bar', $vendas)
-            ->backgroundColor($colors)
-            ->options([
-                'legend' => [
-                    'display' => false,
-                ]
-            ]);
+            ->backgroundColor($colors);
 
 
 

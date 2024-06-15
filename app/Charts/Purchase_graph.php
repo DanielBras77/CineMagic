@@ -17,5 +17,19 @@ class Purchase_graph extends Chart
     public function __construct()
     {
         parent::__construct();
+
+
+        $this->options([
+            'scales' => [
+                'xAxes' => [[
+                    'display' => false,
+                    'gridLines' => [
+                        'display' => false,
+                    ],
+                ]],
+                'yAxes' => [[]],
+            ],
+
+        ]);
     }
 }
