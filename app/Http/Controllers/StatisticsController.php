@@ -80,7 +80,7 @@ class StatisticsController extends Controller
             $genresChart->labels(['Sem dados'])->dataset('Gêneros', 'pie', [1])->backgroundColor(['rgb(0, 0, 255)']);
         }
 
-        // grafico de chart ------------------------------------------------------
+        // grafico de barras ------------------------------------------------------
         //query
         $vendasMensais = DB::table('purchases')
             ->select(
