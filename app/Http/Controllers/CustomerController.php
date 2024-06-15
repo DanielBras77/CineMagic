@@ -10,6 +10,7 @@ use App\Http\Requests\CustomerFormRequest;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Validation\Rule;
 
 class CustomerController extends \Illuminate\Routing\Controller
 {
@@ -110,4 +111,5 @@ class CustomerController extends \Illuminate\Routing\Controller
         }
         return redirect()->back();
     }
+
 }

@@ -97,7 +97,6 @@ Route::middleware('can:use-cart')->group(function () {
 });
 
 
-
 //Route::get("tickets\{ticket}\showcase", [ticketController::class, 'showcase'])->name('Tickets'.showcase);
 Route::get('statistics', [StatisticsController::class, 'totaisGerais'])->name('statistics.index');
 //Route::get('/statistics', [StatisticsController::class, 'index'])->name('statistics.index');

@@ -17,6 +17,27 @@
             <div class="pb-6 flex">
                 <x-field.image name="photo_file" label="Photo" width="md" deleteTitle="Delete Photo" :deleteAllow="true" :imageUrl="$user->photoFullUrl" />
             </div>
+            <form method="POST" action="{{ route('users.update', ['user' => $user]) }}"
+                enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+                @include('users.shared.fields', ['mode' => 'edit'])
+                <div class="flex mt-6">
+                    <x-button element="submit" type="dark" text="Save" class="uppercase"/>
+                    <x-button element="a" type="light" text="Cancel" class="uppercase ms-4"
+                                href="{{ url()->full() }}"/>
+                </div>
+            </form>
+        </div>
+        <div class="justify-start p-4 bg-white shadow md:col-span-2 sm:p-8 dark:bg-gray-800 sm:rounded-lg">
+            <div class="max-w-xl">
+                @include('profile.partials.update-password-form')
+            </div>
+        </div>
+        <div class="p-4 bg-white shadow sm:p-8 dark:bg-gray-800 sm:rounded-lg">
+            <div class="max-w-xl">
+                @include('profile.partials.delete-user-form')
+            </div>
         </div>
         <div class="justify-start p-4 bg-white shadow md:col-span-2 sm:p-8 dark:bg-gray-800 sm:rounded-lg">
             <div class="max-w-xl">
