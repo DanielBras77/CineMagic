@@ -4,6 +4,7 @@
     <title>Purchase Receipt</title>
 </head>
 <body>
-    <p>Thank you for your purchase. Please find your receipt attached.</p>
+    <h3>Thank you for buying in CineMagic!</h3>
+    <p> Please find your receipt attached.</p>
 </body>
 </html>

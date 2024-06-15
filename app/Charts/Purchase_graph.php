@@ -18,6 +18,7 @@ class Purchase_graph extends Chart
     {
         parent::__construct();
 
+
         $this->options([
             'scales' => [
                 'xAxes' => [[

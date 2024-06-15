@@ -20,10 +20,7 @@ class Generos extends Chart
 
         $this->options(['scales'=> ['yAxes' =>
                     ['ticks' => ['beginAtZero' => true,],],],
-                     'legend' =>
-            [
-                'display' => false,
-            ]
+                     'legend' => ['display' => false,]
         ]);
     }
 }

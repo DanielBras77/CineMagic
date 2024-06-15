@@ -16,8 +16,6 @@ use Carbon\Carbon;
 class StatisticsController extends Controller
 {
 
-    //Saber quantos movies existem por ano
-
     public function totaisGerais(Request $request): View
     {
         $total_genres = Genre::count();
@@ -53,8 +51,7 @@ class StatisticsController extends Controller
         $totalPurchases = $purchasesQuery->count();
         $totalPrices = $purchases->sum('total_price');
 
-        // pie chart ------------------------------------------------------
-        //query
+        // Pie chart
         $genreCounts = DB::table('genres')
             ->join('movies', 'genres.code', '=', 'movies.genre_code')
             ->select('genres.name', DB::raw('count(movies.id) as count'))
@@ -62,7 +59,7 @@ class StatisticsController extends Controller
             ->get();
 
         $colors = [];
-        $genresChart = new Generos; // criar a variavel pie chart
+        $genresChart = new Generos;
 
         foreach ($genreCounts as $genre) {
             $red = mt_rand(0, 255);
@@ -73,15 +70,15 @@ class StatisticsController extends Controller
 
         if ($genreCounts->isNotEmpty()) {
             $genresChart->labels($genreCounts->pluck('name')->toArray())
-                ->dataset('Gêneros', 'pie', $genreCounts->pluck('count')->toArray())
+                ->dataset('Total', 'pie', $genreCounts->pluck('count')->toArray())
                 ->backgroundColor($colors);
         } else {
 
-            $genresChart->labels(['Sem dados'])->dataset('Gêneros', 'pie', [1])->backgroundColor(['rgb(0, 0, 255)']);
+            $genresChart->labels(['No Data'])->dataset('Total', 'pie', [1])->backgroundColor(['rgb(0, 0, 255)']);
         }
 
-        // grafico de barras ------------------------------------------------------
-        //query
+        // Bar Chart
+
         $vendasMensais = DB::table('purchases')
             ->select(
                 DB::raw('YEAR(date) as year'),
@@ -112,29 +109,10 @@ class StatisticsController extends Controller
 
         $purchasesChart = new Purchase_graph;
         $purchasesChart->labels($labels)
-            ->dataset('Total de Vendas', 'bar', $vendas)
+            ->dataset('Total', 'bar', $vendas)
             ->backgroundColor($colors);
 
 
-
-
-        /**/
         return view('statistics.index', compact('total_genres', 'numAdminsAtivos', 'numEmployeesAtivos', 'numCustomersAtivos', 'numDeUserBloqueados', 'totalPurchases', 'totalPrices', 'genresChart','purchasesChart'));
     }
-
-    /*<--- public function TotalMoviesByGenre(){
-
-       $genres = Genre::withCount('movies')->all();
-
-        // Chamar vista e passar variável
-
-        /*
-            Na vista:
-
-            @foreach($genres as $genre)
-                <div> {{$genre->name}} - {{$genre->movies_count}} </div>
-
-            @endforeach
-        */
-    //} <---
 }

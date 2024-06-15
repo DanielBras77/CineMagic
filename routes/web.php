@@ -56,6 +56,9 @@ Route::get('/purchase/{purchase}', [PurchaseController::class, 'show'])->name('p
 Route::get('/purchase/{purchase}/receipt', [PurchaseController::class, 'getReceipt'])->name('purchase.getReceipt');
 
 
+Route::get('statistics', [StatisticsController::class, 'totaisGerais'])->name('statistics.index');
+
+
 require __DIR__ . '/auth.php';
 
 
