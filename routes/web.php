@@ -94,13 +94,6 @@ Route::middleware('can:use-cart')->group(function () {
 });
 
 
-
-
-Route::get('teste/{purchase}', function (Purchase $purchase) {
-    return view('purchases.receipt', compact('purchase'));
-});
-
-
 //Route::get("tickets\{ticket}\showcase", [ticketController::class, 'showcase'])->name('Tickets'.showcase);
 //Route::get('statistics', [StatisticsController::class, 'show'])->name('statistics.show');
 //Route::get('/statistics', [StatisticsController::class, 'index'])->name('statistics.index');

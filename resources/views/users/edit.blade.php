@@ -40,7 +40,8 @@
                     </p>
                 </header>
 
-                <form method="POST" action="{{ route('users.update', ['user' => $user]) }}">
+                <form method="POST" action="{{ route('users.update', ['user' => $user]) }}"
+                    enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="mt-6 space-y-4">
