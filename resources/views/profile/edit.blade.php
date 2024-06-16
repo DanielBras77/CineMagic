@@ -1,10 +1,11 @@
+@if(Auth::user()->type == 'C')
+
 @extends('layouts.main')
 
 @section('header-title', 'Profile')
 
 @section('main')
 
-@if(Auth::user()->type == 'C')
 <div class="flex flex-col min-h-screen pt-6 bg-gray-100 sm:pt-0 dark:bg-gray-800">
 
     <div class="grid grid-cols-1 gap-4 py-12 mx-auto md:grid-cols-3 max-w-7xl sm:px-6 lg:px-8">
@@ -30,5 +31,6 @@
         </div>
     </div>
 </div>
-@endif
+
 @endsection
+@endif

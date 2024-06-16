@@ -21,16 +21,6 @@ use App\Models\Ticket;
 require __DIR__ . '/auth.php';
 
 
-// Bloquear o acesso a isto do employee
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-});
-
-
-
 Route::get('/', [MovieController::class, 'showMovies'])->name('home');
 Route::get('showMovies', [MovieController::class, 'showMovies'])->name('movies.showMovies');
 Route::get("screenings\{screening}\showcase", [ScreeningController::class, 'showScreening'])->name('screenings.showcase');
@@ -66,7 +56,13 @@ Route::middleware('can:use-cart')->group(function () {
 //Para rotas que exigem autenticação, pessoas que estejam verificadas e não estejam bloqueadas, adicionar ao carrinho não, por exemplo
 Route::middleware(['auth', 'verified', 'can:no-blocked'])->group(function () {
 
+    Route::middleware('can:customer')->group(function () {
 
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    });
     // para rotas de admin
     Route::middleware('can:admin')->group(function () {
 
@@ -86,8 +82,3 @@ Route::middleware(['auth', 'verified', 'can:no-blocked'])->group(function () {
         Route::patch('customers/{user}/block', [UserController::class, 'updatedBlock'])->name('customers.updatedBlock');
     });
 });
-
-
-
-
-

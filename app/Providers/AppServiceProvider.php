@@ -25,6 +25,11 @@ class AppServiceProvider extends ServiceProvider
             return $user->type == 'A';
         });
 
+        Gate::define('customer', function (User $user) {
+            // Only "customer" users
+            return $user->type == 'C';
+        });
+
 
         Gate::define('no-blocked', function (?User $user) {
 

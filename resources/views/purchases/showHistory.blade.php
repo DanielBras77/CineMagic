@@ -5,6 +5,7 @@
 @section('main')
 <div class="justify-center">
     <div class="my-4 p-6 bg-white dark:bg-gray-900 overflow-hidden shadow-sm sm:rounded-lg text-gray-900 dark:text-gray-50">
+        <h3 class="text-xl font-medium w-96 pl-2">Purchase History</h3>
         @empty($purchases)
         <div class="flex items-center">
             <svg class="h-8 w-8 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -16,30 +17,28 @@
         </div>
         @else
         <div class="mb-6">
-            <h3 class="text-xl font-medium w-96 pl-2">Purchases History</h3>
-        </div>
-        <div class="font-base text-sm text-gray-700 dark:text-gray-300">
-            <table class="table w-full mt-8">
-                <thead>
-                    <tr class="flex justify-between">
-                        <th>Date</th>
-                        <th>Total Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach($purchases as $purchase)
-                    <tr>
-                        <td>{{ $purchase->date }}</td>
-                        <td>{{ number_format($purchase->total_price, 2) }} €</td>
-
-                        <td class="flex mt-4 justify-end">
-                            <a href="{{ route('purchase.show', ['purchase' => $purchase->id]) }}" class="text-blue-600">View Details</a>
-                        </td>
-
-                    </tr>
-                    @endforeach
-                </tbody>
-            </table>
+            <div class="font-base text-sm text-gray-700 dark:text-gray-300">
+                <table class="w-full border-collapse border border-gray-200 mt-8">
+                    <thead>
+                        <tr class="bg-gray-100 dark:bg-gray-800">
+                            <th class="py-2 px-4 border-r">Date</th>
+                            <th class="py-2 px-4 border-r">Total Price</th>
+                            <th class="py-2 px-4"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($purchases as $purchase)
+                        <tr class="border-b border-gray-200">
+                            <td class="py-2 px-4 text-center">{{ $purchase->date }}</td>
+                            <td class="py-2 px-4 text-center">{{ number_format($purchase->total_price, 2) }} €</td>
+                            <td class="py-2 px-4 text-center">
+                                <a href="{{ route('purchase.show', ['purchase' => $purchase->id]) }}" class="text-blue-600">View Details</a>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
         </div>
         @endempty
     </div>
