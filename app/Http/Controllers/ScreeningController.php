@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Screening;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
-use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class ScreeningController extends \Illuminate\Routing\Controller
 {
@@ -20,7 +22,7 @@ class ScreeningController extends \Illuminate\Routing\Controller
     public function index(): View
     {
         return view('screenings.index')
-        ->with('screenings', Screening::orderBy('name')->paginate(20)->withQueryString());
+            ->with('screenings', Screening::orderBy('name')->paginate(20)->withQueryString());
     }
 
 
@@ -85,5 +87,21 @@ class ScreeningController extends \Illuminate\Routing\Controller
         return redirect()->route('screenings.index')
             ->with('alert-type', $alertType)
             ->with('alert-msg', $alertMsg);
+    }
+
+
+    public function management()
+    {
+        if (Auth::check() && Auth::user()->type == 'E') {
+
+            $today = Carbon::today();
+            $nextTwoWeeks = Carbon::today()->addWeeks(2);
+            $screenings = Screening::whereBetween('date', [$today, $nextTwoWeeks])->get();
+
+            return view('screenings.management', compact('screenings'));
+
+        } else {
+            return redirect()->route('home')->with('error', 'Access denied');
+        }
     }
 }

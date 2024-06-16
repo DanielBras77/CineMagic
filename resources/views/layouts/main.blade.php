@@ -39,6 +39,9 @@
 
                     <!-- Menu Items -->
                     <div id="menu-container" class="flex flex-col items-stretch invisible h-0 grow sm:flex-row sm:visible sm:h-auto ms-14">
+                        <div class="mt-3 mx-auto flex justify-center w-full"></div>
+
+                        <!--Não implementado
                         <form class="mt-3 mx-auto flex justify-center w-full">
                             <div class="relative w-full max-w-lg">
                                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
@@ -49,13 +52,16 @@
                                 <input type="search" id="default-search" class="block w-full p-2.5 ps-10 text-sm text-gray-900 border border-gray-300 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search Movies" required />
                                 <x-button element="submit" class="text-white text-sm mt-[-4px] absolute end-2.5 top-1/2 transform -translate-y-1/2 " type="dark" text="Search" />
                             </div>
-                        </form>
+                        </form>-->
+
+                        <!-- Menu Item: Cart -->
+                        <x-menus.cart href="{{ route('cart.show') }}" selectable="0" selected="1" total="{{ session('total_seats', 0) }}" />
 
                         @auth
 
-                        <!-- Menu Item: Cart -->
-                        @if(Auth::user()->type == 'C')
-                        <x-menus.cart href="{{ route('cart.show') }}" selectable="0" selected="1" total="{{ session('total_seats', 0) }}" />
+                        @if(Auth::user()->type == 'E')
+                        <!-- Menu Item: Management -->
+                        <x-menus.management href="{{ route('screenings.management') }}" />
                         @endif
 
                         <x-menus.submenu selectable="0" uniqueName="submenu_user">

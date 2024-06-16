@@ -13,8 +13,6 @@ $readonly = $mode == 'show';
                             'A' => 'Admin',
                             'E' => 'Employee',
                         ]" />
-
-
     </div>
 
 
