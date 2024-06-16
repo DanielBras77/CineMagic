@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
 
         Gate::define('admin', function (User $user) {
             // Only "administrator" users can "admin"
-            return $user->admin;
+            return $user->type == 'A';
         });
 
 
@@ -31,7 +31,7 @@ class AppServiceProvider extends ServiceProvider
             return !$user->blocked;
         });
 
-        
+
         Gate::define('use-cart', function (?User $user) {
 
             return $user==null || $user->type == 'C';

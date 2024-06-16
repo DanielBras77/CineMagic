@@ -16,6 +16,9 @@ use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\ScreeningController;
 use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\ConfigurationController;
+use App\Models\Ticket;
+
+require __DIR__ . '/auth.php';
 
 
 // Bloquear o acesso a isto do employee
@@ -27,61 +30,23 @@ Route::middleware('auth')->group(function () {
 });
 
 
-/*
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-*/
-
-//Para rotas que exigem autenticação, pessoas que estejam verificadas e não estejam bloqueadas, adicionar ao carrinho não, por exemplo
-Route::middleware(['auth', 'verified', 'can:no-blocked'])->group(function () {
-
-
-
-    // para rotas de admin
-    Route::middleware('can:admin')->group(function () {
-        //statistics fica aqui
-
-    });
-
-});
-
-Route::view('/dashboard', 'dashboard')->name('dashboard');
-
-
-Route::get('/purchase/history', [PurchaseController::class, 'history'])->name('purchase.history');
-Route::get('/purchase/{purchase}', [PurchaseController::class, 'show'])->name('purchase.show');
-
-// Rota para fazer o download do recibo
-Route::get('/purchase/{purchase}/receipt', [PurchaseController::class, 'getReceipt'])->name('purchase.getReceipt');
-
-
-Route::get('statistics', [StatisticsController::class, 'totaisGerais'])->name('statistics.index');
-
-
-require __DIR__ . '/auth.php';
-
 
 Route::get('/', [MovieController::class, 'showMovies'])->name('home');
 Route::get('showMovies', [MovieController::class, 'showMovies'])->name('movies.showMovies');
 Route::get("screenings\{screening}\showcase", [ScreeningController::class, 'showScreening'])->name('screenings.showcase');
-Route::resource("genres", GenreController::class);
-Route::resource('movies', MovieController::class);
-Route::delete('movies/{movie}/photo', [MovieController::class, 'destroyPhoto'])->name('movies.photo.destroy')->can('update', 'movie');
-Route::resource("theaters", TheaterController::class);
-Route::delete('movies/{theater}/photo', [MovieController::class, 'destroyPhoto'])->name('theaters.photo.destroy')->can('update', 'theater');
-Route::resource("users", UserController::class);
-Route::resource("customers", CustomerController::class);
-Route::get('configurations/edit', [ConfigurationController::class, 'edit'])->name('configurations.edit');
-Route::put('configurations', [ConfigurationController::class, 'update'])->name('configurations.update');
-Route::resource('purchases', PurchaseController::class);
 
+Route::get("tickets", [TicketController::class, 'showTicket'])->name('tickets.showcase');
 
-Route::patch('users/{user}/block', [UserController::class, 'updatedBlock'])->name('users.updatedBlock');
-Route::patch('customers/{user}/block', [UserController::class, 'updatedBlock'])->name('customers.updatedBlock');
+Route::get('/purchase/history', [PurchaseController::class, 'history'])->name('purchase.history');
+Route::get('/purchase/{purchase}', [PurchaseController::class, 'show'])->name('purchase.show');
+Route::get('/purchase/{purchase}/receipt', [PurchaseController::class, 'getReceipt'])->name('purchase.getReceipt');
+
+Route::get('screenings/management', [ScreeningController::class, 'management'])->name('screenings.management')->middleware('auth');
+Route::get('/my-screenings', [ScreeningController::class, 'myScreenings'])->name('myScreenings');
 
 Route::get('/generate-pdf', [PDFController::class, 'generatePDF']);
 Route::get('send-email-pdf', [PDFController::class, 'index']);
+
 
 Route::middleware('can:use-cart')->group(function () {
     // Add a screening to the cart:
@@ -95,3 +60,34 @@ Route::middleware('can:use-cart')->group(function () {
     // Clear the cart:
     Route::delete('cart', [CartController::class, 'destroy'])->name('cart.destroy');
 });
+
+
+
+//Para rotas que exigem autenticação, pessoas que estejam verificadas e não estejam bloqueadas, adicionar ao carrinho não, por exemplo
+Route::middleware(['auth', 'verified', 'can:no-blocked'])->group(function () {
+
+
+    // para rotas de admin
+    Route::middleware('can:admin')->group(function () {
+
+        Route::view('/dashboard', 'dashboard')->name('dashboard');
+        Route::resource("genres", GenreController::class);
+        Route::resource('movies', MovieController::class);
+        Route::delete('movies/{movie}/photo', [MovieController::class, 'destroyPhoto'])->name('movies.photo.destroy')->can('update', 'movie');
+        Route::resource("theaters", TheaterController::class);
+        Route::delete('movies/{theater}/photo', [MovieController::class, 'destroyPhoto'])->name('theaters.photo.destroy')->can('update', 'theater');
+        Route::resource("users", UserController::class);
+        Route::resource("customers", CustomerController::class);
+        Route::get('configurations/edit', [ConfigurationController::class, 'edit'])->name('configurations.edit');
+        Route::put('configurations', [ConfigurationController::class, 'update'])->name('configurations.update');
+        Route::resource('purchases', PurchaseController::class);
+        Route::get('statistics', [StatisticsController::class, 'totaisGerais'])->name('statistics.index');
+        Route::patch('users/{user}/block', [UserController::class, 'updatedBlock'])->name('users.updatedBlock');
+        Route::patch('customers/{user}/block', [UserController::class, 'updatedBlock'])->name('customers.updatedBlock');
+    });
+});
+
+
+
+
+

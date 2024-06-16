@@ -24,6 +24,7 @@ class CustomerController extends \Illuminate\Routing\Controller
     public function index(Request $request): View
     {
         $filterByName = $request->query('name');
+        $filterByEmail = $request->query('email');
         $customersQuery = Customer::query();
 
         $customersQuery->join('users', 'users.id', '=', 'customers.id')->select('customers.*')->orderBy('users.name');
@@ -34,9 +35,13 @@ class CustomerController extends \Illuminate\Routing\Controller
                 ->where('users.name', 'like', "%$filterByName%");
         }
 
+        if ($filterByEmail) {
+            $customersQuery->where('email', 'like', "%$filterByEmail%");
+        }
+
         $customers = $customersQuery->with('user')->paginate(20)->withQueryString();
 
-        return view('customers.index',compact('customers', 'filterByName'));
+        return view('customers.index',compact('customers', 'filterByName', 'filterByEmail'));
     }
 
     public function show(Customer $customer): View

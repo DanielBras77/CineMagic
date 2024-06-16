@@ -90,7 +90,7 @@ class UserController extends \Illuminate\Routing\Controller
 
     public function update(UserFormRequest $request, User $user): RedirectResponse
     {
-        $user->fill( $request->validated());
+        $user->fill($request->validated());
         $user->save();
 
         if ($request->hasFile('photo_file')) {

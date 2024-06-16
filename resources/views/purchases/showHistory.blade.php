@@ -20,22 +20,25 @@
         </div>
         <div class="font-base text-sm text-gray-700 dark:text-gray-300">
             <table class="table w-full mt-8">
-                <tr>
-                    <th>Date</th>
-                    <th>Total Price</th>
-                    <th></th>
-                </tr>
-                @foreach($purchases as $purchase)
-                <tr>
-                    <td class="flex mt-4 align-middle">
+                <thead>
+                    <tr class="flex justify-between">
+                        <th>Date</th>
+                        <th>Total Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($purchases as $purchase)
+                    <tr>
                         <td>{{ $purchase->date }}</td>
                         <td>{{ number_format($purchase->total_price, 2) }} €</td>
-                        <td>
+
+                        <td class="flex mt-4 justify-end">
                             <a href="{{ route('purchase.show', ['purchase' => $purchase->id]) }}" class="text-blue-600">View Details</a>
                         </td>
-                        </td>
-                </tr>
-                @endforeach
+
+                    </tr>
+                    @endforeach
+                </tbody>
             </table>
         </div>
         @endempty
