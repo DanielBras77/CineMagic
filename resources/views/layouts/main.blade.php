@@ -12,8 +12,6 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="{{asset('https://use.fontawesome.com/releases/v6.1.0/js/all.js')}}" crossorigin="anonymous"></script>
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
 
@@ -128,7 +126,6 @@
             </div>
         </main>
     </div>
-    @vite('resources/js/app.js')
 </body>
 
 </html>

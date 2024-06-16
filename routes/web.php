@@ -55,9 +55,9 @@ Route::get('/purchase/{purchase}', [PurchaseController::class, 'show'])->name('p
 Route::get('/purchase/{purchase}/receipt', [PurchaseController::class, 'getReceipt'])->name('purchase.getReceipt');
 
 
+Route::view('/dashboard', 'dashboard')->name('dashboard'); // movi isto para cima
 require __DIR__ . '/auth.php';
 
-Route::view('/dashboard', 'dashboard')->name('dashboard');
 Route::get('/', [MovieController::class, 'showMovies'])->name('home');
 Route::get('showMovies', [MovieController::class, 'showMovies'])->name('movies.showMovies');
 Route::get("screenings\{screening}\showcase", [ScreeningController::class, 'showScreening'])->name('screenings.showcase');
@@ -77,6 +77,7 @@ Route::get('/generate-pdf', [PDFController::class, 'generatePDF']);
 
 Route::get('configurations/edit', [ConfigurationController::class, 'edit'])->name('configurations.edit');
 Route::put('configurations', [ConfigurationController::class, 'update'])->name('configurations.update');
+Route::resource('purchases', PurchaseController::class);
 
 Route::get('send-email-pdf', [PDFController::class, 'index']);
 
@@ -93,9 +94,5 @@ Route::middleware('can:use-cart')->group(function () {
     Route::delete('cart', [CartController::class, 'destroy'])->name('cart.destroy');
 });
 
+Route::get('statistics', [StatisticsController::class, 'totaisGerais'])->name('statistics.index');
 
-//Route::get("tickets\{ticket}\showcase", [ticketController::class, 'showcase'])->name('Tickets'.showcase);
-//Route::get('statistics', [StatisticsController::class, 'show'])->name('statistics.show');
-//Route::get('/statistics', [StatisticsController::class, 'index'])->name('statistics.index');
-//Route::post('/statistics/filter', [StatisticsController::class, 'filter'])->name('statistics.filter');
-//Route::post('statistics/filter', [StatisticsController::class, 'filter'])->name('statistics.filter');

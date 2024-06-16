@@ -5,14 +5,15 @@
 @section('main')
 <div class="justify-center">
     <div class="my-4 p-6 bg-white dark:bg-gray-900 overflow-hidden shadow-sm sm:rounded-lg text-gray-900 dark:text-gray-50">
-        <h3 class="text-xl font-medium w-96 pl-2">Purchase Details</h3>
-        <div class="font-base text-sm text-gray-700 dark:text-gray-300">
+        <h3 class="text-xl font-medium w-96">Purchase Details</h3>
+        <div class="mt-8 font-base text-sm text-gray-700 dark:text-gray-300">
             <p><strong>Date:</strong> {{ $purchase->date }}</p>
             <p><strong>Total Price:</strong> {{ number_format($purchase->total_price, 2) }} €</p>
             <h4 class="mt-4 mb-2 text-lg">Tickets:</h4>
             <table class="table w-full">
                 <thead>
                     <tr>
+                        <th>Photo</th>
                         <th>Movie</th>
                         <th>Screening Date</th>
                         <th>Seat</th>
@@ -22,6 +23,7 @@
                 <tbody>
                     @foreach($purchase->tickets as $ticket)
                     <tr>
+                        <img src="{{$ticket->screening->movie->posterFullUrl}}" alt="posterMovie" class="h-12 rounded-sm">
                         <td>{{ $ticket->screening->movie->title }}</td>
                         <td>{{ $ticket->screening->date }} {{ $ticket->screening->start_time }}</td>
                         <td>{{ $ticket->seat->row }}{{ $ticket->seat->seat_number }}</td>

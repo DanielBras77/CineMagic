@@ -21,10 +21,10 @@
         <div class="font-base text-sm text-gray-700 dark:text-gray-300">
             <table class="table w-full">
                 <tr>
-                    <th>Filme</th>
-                    <th>Sessão</th>
-                    <th>Sala</th>
-                    <th>Lugar</th>
+                    <th>Movie</th>
+                    <th>Session</th>
+                    <th>Theater</th>
+                    <th>Seat</th>
                     <th></th>
                 </tr>
                 @foreach($cart as $id=>$item)
@@ -34,12 +34,13 @@
                         <p class="ml-9">
                             {{$item['screening']->movie->title}}
                         </p>
-                    </td>
-                    <td>{{$item['screening']->date.' '.$item['screening']->start_time}}</td>
-                    <td>{{$item['screening']->theater->name}}</td>
-                    <td>{{$item['seat']->row.$item['seat']->seat_number}}</td>
-                    <td>
-                        <x-table.icon-minus class="px-0.5" method="delete" action="{{route('cart.remove', ['id' => $id])}}" />
+                        </td>
+                        <td>{{$item['screening']->date.' '.$item['screening']->start_time}}</td>
+                        <td>{{$item['screening']->theater->name}}</td>
+                        <td>{{$item['seat']->row.$item['seat']->seat_number}}</td>
+                        <td>
+                            <x-table.icon-minus class="px-0.5" method="delete" action="{{route('cart.remove', ['id' => $id])}}" />
+                        </td>
                     </td>
                 </tr>
                 @endforeach
