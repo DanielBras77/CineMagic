@@ -96,6 +96,9 @@
                         </x-menus.submenu>
 
                         @else
+
+                        <x-menus.cart href="{{ route('cart.show') }}" selectable="0" selected="1" total="{{ session('total_seats', 0) }}" />
+
                         <!-- Menu Item: Login -->
                         <x-menus.menu-item content="Login" selectable="1" href="{{ route('login') }}" selected="{{ Route::currentRouteName() == 'login'}}" />
 
