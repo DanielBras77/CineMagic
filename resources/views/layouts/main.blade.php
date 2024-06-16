@@ -12,6 +12,8 @@
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{asset('https://use.fontawesome.com/releases/v6.1.0/js/all.js')}}" crossorigin="anonymous"></script>
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
 
@@ -49,11 +51,13 @@
                             </div>
                         </form>
 
+                        @auth
 
                         <!-- Menu Item: Cart -->
+                        @if(Auth::user()->type == 'C')
                         <x-menus.cart href="{{ route('cart.show') }}" selectable="0" selected="1" total="{{ session('total_seats', 0) }}" />
+                        @endif
 
-                        @auth
                         <x-menus.submenu selectable="0" uniqueName="submenu_user">
                             <x-slot:content>
                                 <div class="pe-1">
@@ -67,7 +71,7 @@
                                 @if(Auth::user()->type == 'A')
                                 <x-menus.submenu-item content="Dashboard" selectable="0" href="{{route('dashboard')}}" />
                                 @endif
-                                @if(Auth::user()->type != 'E')
+                                @if(Auth::user()->type == 'C')
                                 <x-menus.submenu-item content="Profile" selectable="0" href="{{ route('profile.edit') }}" />
                                 @endif
                                 @if(Auth::user()->type == 'C')
@@ -126,6 +130,7 @@
             </div>
         </main>
     </div>
+    @vite('resources/js/app.js')
 </body>
 
 </html>

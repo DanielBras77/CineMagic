@@ -144,13 +144,40 @@
                     $options = [];
                     $options['All Customers'] = route('customers.index');
                     @endphp
-
                     <x-menus.admin-group-menu-items class="mt-2" title="Customers" :options="$options">
                         <svg class="w-6 h-6 text-gray-400 dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                         </svg>
                     </x-menus.admin-group-menu-items>
                     @endcan
+
+                    <!-- Purchases -->
+                    @can('viewAny', App\Models\Purchase::class)
+                    @php
+                    $options = [];
+                    $options['All Purchases'] = route('purchases.index');
+                    @endphp
+                    <x-menus.admin-group-menu-items class="mt-2" title="Purchases" :options="$options">
+                        <svg class="w-6 h-6 text-gray-400 dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                            <line x1="3" y1="6" x2="21" y2="6" />
+                            <path d="M16 10a4 4 0 0 1-8 0" />
+                        </svg>
+                    </x-menus.admin-group-menu-items>
+                    @endcan
+
+                    <!-- Statistics -->
+                    @php
+                    $options = [];
+                    $options['All Statistics'] = route('statistics.index');
+                    @endphp
+                    <x-menus.admin-group-menu-items class="mt-2" title="Statistics" :options="$options">
+                        <svg class="w-6 h-6 text-gray-400 dark:text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                            <polyline points="17 6 23 6 23 12" />
+                        </svg>
+                    </x-menus.admin-group-menu-items>
+
 
                     <!-- Configuration -->
                     @php
@@ -169,6 +196,9 @@
                         </svg>
                     </x-menus.admin-group-menu-items>
                     @endcan
+
+
+
 
 
                     <!-- Only one option -->
