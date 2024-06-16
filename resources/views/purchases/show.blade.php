@@ -30,7 +30,7 @@
                         <td>{{ $ticket->screening->date }} {{ $ticket->screening->start_time }}</td>
                         <td>{{ $ticket->seat->row }}{{ $ticket->seat->seat_number }}</td>
                         <td>{{ number_format($ticket->price, 2) }} €</td>
-                        <td>{{ $ticket->qrcode_url }}</td>
+                        <td><img src="data:image/png;base64,{{ $ticket->qrcode_url }}" alt="QR Code"></td>
                         </td>
                     </tr>
                     @endforeach

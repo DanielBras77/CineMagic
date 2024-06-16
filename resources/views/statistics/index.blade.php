@@ -3,6 +3,8 @@
 @section('header-title', 'List of Purchases')
 
 @section('main')
+
+@vite('resources/js/Chart.min.js')
 <div class="flex justify-center">
     <div class="my-4 p-6 bg-white dark:bg-gray-900 overflow-hidden shadow-sm sm:rounded-lg text-gray-900 dark:text-gray-50 w-full">
         <h1 class="pl-3 pt-3 pb-8 font-semibold text-5xl text-gray-800 dark:text-gray-200 leading-tight">Statistics</h1>
@@ -22,7 +24,7 @@
                 <h4 class="py-1 font-semibold text-gray-800 dark:text-gray-200 leading-tight mb-5">Cinema/Movies Data</h4>
                 <p class="text-xl text-gray-800 dark:text-gray-300">Number of genres available: {{ $total_genres }}</p>
                 <p class="text-xl text-gray-800 dark:text-gray-300">Number of purchases: {{ $totalPurchases }}</p>
-                <p class="text-xl text-gray-800 dark:text-gray-300">Total purchase value: {{ $totalPrices }}</p>
+                <p class="text-xl text-gray-800 dark:text-gray-300">Total purchase value: {{ number_format($totalPrices,2) }} €</p>
             </div>
         </div>
 

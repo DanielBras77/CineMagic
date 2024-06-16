@@ -35,7 +35,7 @@ Route::get('/', [MovieController::class, 'showMovies'])->name('home');
 Route::get('showMovies', [MovieController::class, 'showMovies'])->name('movies.showMovies');
 Route::get("screenings\{screening}\showcase", [ScreeningController::class, 'showScreening'])->name('screenings.showcase');
 
-Route::get("tickets\{screening}\{seat}showcase", [TicketController::class, 'showTicket'])->name('tickets.showcase');
+Route::get("tickets", [TicketController::class, 'showTicket'])->name('tickets.showcase');
 
 Route::get('/purchase/history', [PurchaseController::class, 'history'])->name('purchase.history');
 Route::get('/purchase/{purchase}', [PurchaseController::class, 'show'])->name('purchase.show');
