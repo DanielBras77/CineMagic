@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,29 +16,40 @@
         body {
             font-family: 'Rubik', sans-serif;
         }
-        table, th, td {
+
+        table,
+        th,
+        td {
             border: 1px solid black;
             border-collapse: collapse;
         }
-        th, td {
+
+        th,
+        td {
             padding: 15px;
             text-align: left;
         }
+
         th {
             background-color: #f2f2f2;
         }
+
         .header {
             display: flex;
             align-items: center;
-            justify-content: start; /* Alterado de center para start */
+            justify-content: start;
+            /* Alterado de center para start */
             margin-bottom: 1rem;
         }
+
         .header img {
             margin-right: 10px;
         }
+
         .header h1 {
             margin: 0;
         }
+
         /* Estilo adicionado para centralizar a tabela */
         .table-container {
             display: flex;
@@ -45,6 +57,7 @@
         }
     </style>
 </head>
+
 <body>
     <div>
         <div>
@@ -88,10 +101,10 @@
                 <tr class="bg-gray-100">
                     <th class="px-4 py-2">Movie</th>
                     <th class="px-4 py-2">Title</th>
-                    <th class="px-4 py-2">Genre</th>
                     <th class="px-4 py-2">Screening</th>
                     <th class="px-4 py-2">Seat</th>
                     <th class="px-4 py-2">Theater</th>
+                    <th class="px-4 py-2">QR Code</th>
                 </tr>
                 @foreach ($purchase->tickets as $ticket)
                 <tr>
@@ -102,9 +115,6 @@
                         {{ $ticket->screening->movie->title }}
                     </td>
                     <td class="px-4 py-2">
-                        {{ $ticket->screening->movie->genre->name }}
-                    </td>
-                    <td class="px-4 py-2">
                         {{ $ticket->screening->date }} {{ $ticket->screening->start_time }}
                     </td>
                     <td class="px-4 py-2">
@@ -113,10 +123,14 @@
                     <td class="px-4 py-2">
                         {{ $ticket->screening->theater->name }}
                     </td>
+                    <td class="px-4 py-2">
+                        <img src="{{ $ticket->qr_code_url }}" alt="QR Code" width="100" class="rounded" />
+                    </td>
                 </tr>
                 @endforeach
             </table>
         </div>
     </div>
 </body>
+
 </html>

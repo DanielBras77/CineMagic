@@ -16,7 +16,7 @@ use App\Http\Controllers\PurchaseController;
 use App\Http\Controllers\ScreeningController;
 use App\Http\Controllers\StatisticsController;
 use App\Http\Controllers\ConfigurationController;
-
+use App\Models\Ticket;
 
 require __DIR__ . '/auth.php';
 
@@ -31,9 +31,40 @@ Route::middleware('auth')->group(function () {
 
 
 
+Route::get('/', [MovieController::class, 'showMovies'])->name('home');
+Route::get('showMovies', [MovieController::class, 'showMovies'])->name('movies.showMovies');
+Route::get("screenings\{screening}\showcase", [ScreeningController::class, 'showScreening'])->name('screenings.showcase');
+
+Route::get("tickets\{screening}\{seat}showcase", [TicketController::class, 'showTicket'])->name('tickets.showcase');
+
+Route::get('/purchase/history', [PurchaseController::class, 'history'])->name('purchase.history');
+Route::get('/purchase/{purchase}', [PurchaseController::class, 'show'])->name('purchase.show');
+Route::get('/purchase/{purchase}/receipt', [PurchaseController::class, 'getReceipt'])->name('purchase.getReceipt');
+
+Route::get('screenings/management', [ScreeningController::class, 'management'])->name('screenings.management')->middleware('auth');
+Route::get('/my-screenings', [ScreeningController::class, 'myScreenings'])->name('myScreenings');
+
+Route::get('/generate-pdf', [PDFController::class, 'generatePDF']);
+Route::get('send-email-pdf', [PDFController::class, 'index']);
+
+
+Route::middleware('can:use-cart')->group(function () {
+    // Add a screening to the cart:
+    Route::post('cart/{screening}', [CartController::class, 'addToCart'])->name('cart.add');
+    // Remove a screening from the cart:
+    Route::delete('cart/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
+    // Show the cart:
+    Route::get('cart', [CartController::class, 'show'])->name('cart.show');
+    // Confirm (store) the cart and save screenings registration on the database:
+    Route::post('cart', [CartController::class, 'confirm'])->name('cart.confirm');
+    // Clear the cart:
+    Route::delete('cart', [CartController::class, 'destroy'])->name('cart.destroy');
+});
+
+
+
 //Para rotas que exigem autenticação, pessoas que estejam verificadas e não estejam bloqueadas, adicionar ao carrinho não, por exemplo
 Route::middleware(['auth', 'verified', 'can:no-blocked'])->group(function () {
-
 
 
     // para rotas de admin
@@ -57,37 +88,6 @@ Route::middleware(['auth', 'verified', 'can:no-blocked'])->group(function () {
 });
 
 
-Route::middleware('can:use-cart')->group(function () {
-    // Add a screening to the cart:
-    Route::post('cart/{screening}', [CartController::class, 'addToCart'])->name('cart.add');
-    // Remove a screening from the cart:
-    Route::delete('cart/{id}', [CartController::class, 'removeFromCart'])->name('cart.remove');
-    // Show the cart:
-    Route::get('cart', [CartController::class, 'show'])->name('cart.show');
-    // Confirm (store) the cart and save screenings registration on the database:
-    Route::post('cart', [CartController::class, 'confirm'])->name('cart.confirm');
-    // Clear the cart:
-    Route::delete('cart', [CartController::class, 'destroy'])->name('cart.destroy');
-});
-
-
-Route::get('/', [MovieController::class, 'showMovies'])->name('home');
-Route::get('showMovies', [MovieController::class, 'showMovies'])->name('movies.showMovies');
-Route::get("screenings\{screening}\showcase", [ScreeningController::class, 'showScreening'])->name('screenings.showcase');
 
 
 
-
-Route::get('/purchase/history', [PurchaseController::class, 'history'])->name('purchase.history');
-Route::get('/purchase/{purchase}', [PurchaseController::class, 'show'])->name('purchase.show');
-Route::get('/purchase/{purchase}/receipt', [PurchaseController::class, 'getReceipt'])->name('purchase.getReceipt');
-
-
-Route::get('screenings/management', [ScreeningController::class, 'management'])->name('screenings.management')->middleware('auth');
-Route::get('/my-screenings', [ScreeningController::class, 'myScreenings'])->name('myScreenings');
-
-
-
-
-Route::get('/generate-pdf', [PDFController::class, 'generatePDF']);
-Route::get('send-email-pdf', [PDFController::class, 'index']);

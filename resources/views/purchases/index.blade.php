@@ -10,6 +10,9 @@
                 <x-purchases.filter-card
                 :filterAction="route('purchases.index')"
                 :resetUrl="route('purchases.index')"
+                :date="old('date', $filterByDate)"
+                :costumerName="old('costumerName', $filterByCustomerName)"
+                class="mb-6"
                 />
 
             <div class="font-base text-sm text-gray-700 dark:text-gray-300">

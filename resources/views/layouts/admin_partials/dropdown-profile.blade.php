@@ -38,19 +38,6 @@
         </div>
         <ul>
             <li>
-                <a class="font-medium text-sm text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center py-1 px-3"
-                 href="(( match(Auth::user()->type) (
-                    'A' => route('users.edit', ['user' => Auth::user()]),
-                    'E' => route('users.edit', ['user' => Auth::user()]),
-                    'C' => route('customers.edit', ['customer' => Auth::user()->customer])
-
-                )))" @click="open = false" @focus="open = true" @focusout="open = false">Profile</a>
-            </li>
-            <li>
-                <a class="font-medium text-sm text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center py-1 px-3"
-                href="{{route('profile.edit')}}" @click="open = false" @focus="open = true" @focusout="open = false">Profile 2 não sei</a>
-            </li>
-            <li>
                 <form method="POST" action="{{route("logout")}}" x-data>
                     @csrf
 

@@ -11,7 +11,7 @@
                 :filterAction="route('users.index')"
                 :resetUrl="route('users.index')"
                 :name="old('name', $filterByName)"
-                :type="old('email', $filterByEmail)"
+                :email="old('email', $filterByEmail)"
                 :type="old('type', $filterByType)"
                 class="mb-6"/>
 

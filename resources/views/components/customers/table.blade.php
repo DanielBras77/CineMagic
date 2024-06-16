@@ -2,8 +2,8 @@
     <table class="table-auto border-collapse">
         <thead>
             <tr class="border-b-2 border-b-gray-400 dark:border-b-gray-500 bg-gray-100 dark:bg-gray-800">
-                <th class="px-2 py-2 text-left">Name</th>
-                <th class="px-2 py-2 text-left hidden lg:table-cell">Email</th>
+                <th class="px-14 py-2 text-left">Name</th>
+                <th class="px-14 py-2 text-left hidden lg:table-cell">Email</th>
                 @if($showDelete)
                 <th></th>
                 @endif
@@ -15,9 +15,9 @@
         <tbody>
             @foreach ($customers as $customer)
             <tr class="border-b border-b-gray-400 dark:border-b-gray-500">
-                <td class="px-2 py-2 text-left">{{ $customer->user->name }}</td>
-                <td class="px-2 py-2 text-left hidden lg:table-cell">{{ $customer->user->email }}</td>
-                <td>
+                <td class="px-14 py-2 text-left">{{ $customer->user->name }}</td>
+                <td class="px-14 py-2 text-left hidden lg:table-cell">{{ $customer->user->email }}</td>
+                <td class="px-14">
                     <div class="flex gap-2">
                         @if($showDelete)
                         @can('delete', $customer->user)

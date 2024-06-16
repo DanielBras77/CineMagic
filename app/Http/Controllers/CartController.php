@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\RedirectResponse;
 use App\Http\Controllers\PDFController;
 use App\Http\Requests\CartConfirmationFormRequest;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+
 
 class CartController extends Controller
 {
@@ -97,7 +99,7 @@ class CartController extends Controller
     {
         $request->session()->forget('cart');
         $request->session()->put('total_seats', 0);
-        
+
         return back()
             ->with('alert-type', 'success')
             ->with('alert-msg', 'Shopping Cart has been cleared');
@@ -198,7 +200,7 @@ class CartController extends Controller
                         $ticket = new Ticket();
                         $ticket->fill($itemT);
                         $ticket->purchase_id = $purchase->id;
-                        //$ticket->qrcorde_url=route('tickets.showcase', ['ticket'=>$ticket])
+                        $ticket->qrcode_url = route('tickets.showcase', ['ticket'=>$ticket]);
                         $ticket->save();
                     }
 
