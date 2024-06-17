@@ -40,7 +40,7 @@
 
             <!-- Purchases Chart Section -->
             <div class="mt-6">
-                <h4 class="py-1 font-semibold text-gray-800 dark:text-gray-200 leading-tight text-center">Tickets By Month</h4>
+                <h4 class="py-1 font-semibold text-gray-800 dark:text-gray-200 leading-tight text-center">Revenue By Month</h4>
                 <div class="mt-6">
                     {!! $purchasesChart->container() !!}
                     {!! $purchasesChart->script() !!}

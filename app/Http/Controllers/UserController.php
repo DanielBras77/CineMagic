@@ -51,8 +51,6 @@ class UserController extends \Illuminate\Routing\Controller
         return view('users.show')->with('user', $user);
     }
 
-    //showScreening
-
     public function create(): View
     {
         $newUser = new User();

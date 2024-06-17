@@ -11,7 +11,7 @@
     <form id="send-verification" method="post" action="{{ route('verification.send') }}">
         @csrf
     </form>
-    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
+    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
         @csrf
         @method('patch')
 
@@ -51,14 +51,13 @@
             <x-input-error class="mt-2" :messages="$errors->get('NIF')" />
         </div>
 
-        <div>
-            <x-field.radio-group name="type" label="Payment Type"
-                    value="{{ old('type', $user->type??'C') }}"
-                    :options="[
-                            'VISA' => 'Visa',
-                            'PAYPAL' => 'Paypal',
-                            'MBWAY' => 'MBWay',
-                        ]" />
+        <div class="mt-6 space-y-4">
+            <x-field.radio-group name="payment_type" label="Payment Type" value="{{ old('payment_type', $user->customer->payment_type) }}"
+            :options="[
+                    'VISA' => 'Visa',
+                    'PAYPAL' => 'Paypal',
+                    'MBWAY' => 'MBWay',
+                ]" />
         </div>
 
         <div class="flex justify-end items-center gap-4">

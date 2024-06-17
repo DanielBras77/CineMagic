@@ -200,16 +200,15 @@ class CartController extends Controller
                         $ticket = new Ticket();
                         $ticket->fill($itemT);
                         $ticket->purchase_id = $purchase->id;
-                        /*
-                        $ticket->save();
-                        $qrData = route('tickets.showcase', ['ticket' => $ticket]);
-                        $qrCode = QrCode::size(10)->generate($qrData);
-                        $ticket->qrcode_url = base64_encode($qrCode);*/
                         $ticket->save();
                     }
 
-                    $purchase->receipt_pdf_filename = PDFController::generatePDF($purchase);
+                    $pdfController = new PDFController();
+                    $pdfController->generate();
+                    $receipt_filename = $pdfController->generatePDF($purchase);
+                    $purchase->receipt_pdf_filename = $receipt_filename;
                     $purchase->save();
+                    
                 });
 
                 $request->session()->forget('cart');

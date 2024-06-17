@@ -38,7 +38,6 @@
             display: flex;
             align-items: center;
             justify-content: start;
-            /* Alterado de center para start */
             margin-bottom: 1rem;
         }
 
@@ -50,7 +49,6 @@
             margin: 0;
         }
 
-        /* Estilo adicionado para centralizar a tabela */
         .table-container {
             display: flex;
             justify-content: center;
@@ -124,7 +122,7 @@
                         {{ $ticket->screening->theater->name }}
                     </td>
                     <td class="px-4 py-2">
-                        <img src="{{ $ticket->qr_code_url }}" alt="QR Code" width="100" class="rounded" />
+                        <img src="{{ storage_path('app/' . $qrCodePath) }}" alt="QR Code">
                     </td>
                 </tr>
                 @endforeach
