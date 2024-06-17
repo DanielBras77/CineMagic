@@ -201,6 +201,7 @@ class CartController extends Controller
                         $ticket->fill($itemT);
                         $ticket->purchase_id = $purchase->id;
                         /*
+                        $ticket->save();
                         $qrData = route('tickets.showcase', ['ticket' => $ticket]);
                         $qrCode = QrCode::size(10)->generate($qrData);
                         $ticket->qrcode_url = base64_encode($qrCode);*/

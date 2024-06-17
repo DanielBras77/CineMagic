@@ -47,19 +47,26 @@
 
         <div>
             <x-input-label for="NIF" :value="__('NIF')" />
-            <x-text-input id="NIF" name="nif" type="text" class="block w-full mt-1" :value="old('nif', $user->customer->nif)" autofocus autocomplete="NIF" />
-            <x-input-error class="mt-2" :messages="$errors->get('nif')" />
+            <x-text-input id="NIF" name="nif" type="text" class="block w-full mt-1" :value="old('nif', $user->customer->nif)" autofocus autocomplete="NIF" oninput="validity.valid||(value='');" min="000000000" max="999999999" />
+            <x-input-error class="mt-2" :messages="$errors->get('NIF')" />
         </div>
-        <form method="POST" action="{{ route('users.update', ['user' => $user]) }}" enctype="multipart/form-data">
-            @csrf
-            <div class="flex justify-end items-center gap-4">
-                <x-primary-button>{{ __('Save') }}</x-primary-button>
-        </form>
 
+        <div>
+            <x-field.radio-group name="type" label="Payment Type"
+                    value="{{ old('type', $user->type??'C') }}"
+                    :options="[
+                            'VISA' => 'Visa',
+                            'PAYPAL' => 'Paypal',
+                            'MBWAY' => 'MBWay',
+                        ]" />
+        </div>
 
-        @if (session('status') === 'profile-updated')
-        <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)" class="text-sm text-gray-600 dark:text-gray-400">{{ __('Saved.') }}</p>
-        @endif
+        <div class="flex justify-end items-center gap-4">
+            <x-primary-button>{{ __('Save') }}</x-primary-button>
+
+            @if (session('status') === 'profile-updated')
+            <p x-data="{ show: true }" x-show="show" x-transition x-init="setTimeout(() => show = false, 2000)" class="text-sm text-gray-600 dark:text-gray-400">{{ __('Saved.') }}</p>
+            @endif
         </div>
     </form>
 </section>
