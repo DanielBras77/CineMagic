@@ -24,11 +24,11 @@ class PurchaseFormRequest extends FormRequest
 
         return [
             'customer_id' => 'required|integer|exists:customers,id',
-            'date' => 'required|date',
-            'total_price' => 'required|numeric|min:0',
+            'required|date|date_format:Y-m-d|after_or_equal:now',
+            'total_price' => 'required|numeric|min:0|regex:/^\d{1,6}(\.\d{1,2})?$/',
             'receipt_pdf_filename' => 'required|string|max:255',
             'customer_name' => 'required|string|min:3|max:255',
-            'customer_email' => 'required|email',
+            'costumer_email' => 'required|email|unique:users, email,'.($this->user?$this->user->id:null), // preciso de alterar ?
             'nif' => 'required|string|digits:9',
             'payment_type' => 'required|in:MBWAY,VISA,PAYPAL',
             'payment_ref' => 'required:payment_type' . $rules,

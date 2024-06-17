@@ -99,3 +99,4 @@ Route::get('statistics', [StatisticsController::class, 'totaisGerais'])->name('s
 //Route::get('qr-codes', [qrCodeController::class, 'generate'])->name('qrcode.index');;
 Route::get('qr-codes', [qrCodeController::class, 'generate'])->name('qrcode.index');
 Route::get('/qr-codes/{content}', function ($content) {})->name('qr-codes.index');
+Route::get("tickets", [TicketController::class, 'showTicket'])->name('tickets.showcase');
