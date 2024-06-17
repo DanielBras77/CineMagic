@@ -8,20 +8,33 @@ use Illuminate\Support\Facades\Mail;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use SimpleSoftwareIO\QrCode\Facades\QrCode;
+use Illuminate\Support\Str;
 
 class PDFController extends \Illuminate\Routing\Controller
 {
     use AuthorizesRequests;
+    protected $qrCodePath;
 
     public function __construct()
     {
         $this->authorizeResource(PDF::class);
     }
 
+    public function generate() {
+        $content = Str::random(45);
+        //$qrCodes = [];
+        $qrCode = QrCode::size(60)->generate("qr-codes/$content");
+        $qrCodePath = 'qrcodes/' . $content . '.png';
+        Storage::put($qrCodePath, $qrCode);
+        $this->qrCodePath = $qrCodePath;
 
-    public static function generatePDF(Purchase $purchase)
+        return $content;
+    }
+
+    public function generatePDF(Purchase $purchase)
     {
-        $data = ['purchase' => $purchase];
+        $data = ['purchase' => $purchase,  'qrCodePath' => $this->qrCodePath];
         $pdf = PDF::loadView('purchases.receipt', $data);
         $receipt_name = $purchase->id . '.pdf';
         Storage::put("pdf_purchases/$receipt_name", $pdf->download()->getOriginalContent());
@@ -39,4 +52,5 @@ class PDFController extends \Illuminate\Routing\Controller
 
         Mail::to($customer_email)->send(new PurchaseReceipt($file_path));
     }
+
 }

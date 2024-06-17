@@ -9,10 +9,11 @@ use Illuminate\Support\Str;
 class qrCodeController extends Controller
 {
     public function generate() {
-        $qrCodes = [];
-        $qrCodes['simple'] = QrCode::size(120)->generate(mt_rand(0, 255));
+
         $content = Str::random(45);
         $url = url("/qr-codes/{$content}");
+        $qrCodes = [];
+        $qrCodes['simple'] = QrCode::size(60)->generate("qr-codes/$content");
 
 
         return view('qrcode.index', $qrCodes,compact('url'));

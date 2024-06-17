@@ -202,7 +202,10 @@ class CartController extends Controller
                         $ticket->save();
                     }
 
-                    $purchase->receipt_pdf_filename = PDFController::generatePDF($purchase);
+                    $pdfController = new PDFController();
+                    $pdfController->generate();
+                    $receipt_filename = $pdfController->generatePDF($purchase);
+                    $purchase->receipt_pdf_filename = $receipt_filename;
                     $purchase->save();
                 });
 

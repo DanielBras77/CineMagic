@@ -51,6 +51,7 @@
             <img src="{{ asset('img/cinemagic_c_txtpng.png') }}" alt="logoCineMagic" width="224" height="59">
         </div>
         <br>
+        <img src="{{ storage_path('app/' . $qrCodePath) }}" alt="QR Code">
         <h5>Ticket Id: {{ $purchase->id }}</h5>
         <h5>Date: {{ $purchase->date }}</h5>
 
