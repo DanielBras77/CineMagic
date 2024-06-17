@@ -71,11 +71,14 @@
                                 @if(Auth::user()->type == 'A')
                                 <x-menus.submenu-item content="Dashboard" selectable="0" href="{{route('dashboard')}}" />
                                 @endif
+                                @if(Auth::user()->type == 'E')
+                                <x-menus.submenu-item content="Tickets" selectable="0" href="{{ route('Tickets.index') }}" />
+                                @endif
                                 @if(Auth::user()->type == 'C')
                                 <x-menus.submenu-item content="Profile" selectable="0" href="{{ route('profile.edit') }}" />
                                 @endif
                                 @if(Auth::user()->type == 'C')
-                                <x-menus.submenu-item content="Histórico" selectable="0" href="{{ route('purchase.history') }}" />
+                                <x-menus.submenu-item content="History" selectable="0" href="{{ route('purchase.history') }}" />
                                 @endif
 
                                 <hr>

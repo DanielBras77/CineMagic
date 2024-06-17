@@ -55,10 +55,10 @@ class PurchaseController extends \Illuminate\Routing\Controller
     {
         $user = Auth::user();
         $purchases = Purchase::where('customer_id', $user->id)->orderBy('date', 'desc')->get();
-        $qrCodes = [];
-        $qrCodes['simple'] = QrCode::size(40)->generate(mt_rand(0, 255));
         $content = Str::random(45);
         $url = url("/qr-codes/{$content}");
+        $qrCodes = [];
+        $qrCodes['simple'] = QrCode::size(60)->generate("qr-codes/$content");
 
         return view('purchases.showHistory',$qrCodes,compact('purchases','url'));
     }
